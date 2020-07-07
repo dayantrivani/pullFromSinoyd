@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d20923a"],{a87d:function(e,t,n){"use strict";n.r(t);var a=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("el-card",{attrs:{type:"title",header:"锁定页"}})},c=[],l={name:"Lock"},r=l,u=n("2877"),s=Object(u["a"])(r,a,c,!1,null,null,null);t["default"]=s.exports}}]);

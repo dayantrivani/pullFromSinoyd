@@ -1,0 +1,79 @@
+/* Login 登录页
+ * @see views/auth/Login.vue
+-------------------------- */
+.g-login {
+
+  $login-bg: #fff;
+  $login-color: #0896d8;
+  $height: 46px;
+  
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $login-bg;
+
+  > header, > footer {
+    > .container { @include container; }
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: $height;
+    z-index: 10;
+    background-color: rgba($color: #000000, $alpha: 0.5)
+  }
+
+  > header {
+    top: 0;
+    font-size: 18px;
+    color: $login-color;
+    span {
+      margin-right: 10px;
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+  }
+
+  > footer {
+    bottom: 0;
+    color: $-color-content;
+    line-height: $height - 18px;
+    text-align: center;
+  }
+
+  > main {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: {
+      size: cover;
+      repeat: no-repeat;
+      position: center;
+      color: #43AFF0;
+      image: url('../assets/img/login_bg_1920x1080.jpg');
+    };
+    .login-form {
+      position: absolute;
+      top: 25%;
+      right: 15%;
+      padding: 20px 10px;
+      background-color: $login-bg;
+      border-radius: 5px;
+      box-shadow: 35px 40px 60px rgba($color: #000000, $alpha: .3);
+    }
+    .title {
+      font-size: 18px;
+      color: $login-color;
+    }
+  }
+  .el-form {
+    .el-form-item {
+      input {
+        border-radius: 0;
+        &:focus + .el-input__prefix { color: $login-color; }
+      }
+    }
+    .el-input__suffix { cursor: pointer; }
+    .fa-eye { color: $login-color; }
+  }
+}

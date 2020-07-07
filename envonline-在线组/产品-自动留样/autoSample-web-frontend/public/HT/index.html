@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Preview Display</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="custom/images/favicon.ico?v=2" />
+        <style>
+            html, body {
+                padding: 0px;
+                margin: 0px;
+            }
+        </style>
+        <script src='libs/ht.js'></script>
+
+        <script>
+            // 加载js
+            var dataModel; // 全局变量
+            var liuDong; // 流动定时器
+            function init() {
+                dataModel = new ht.DataModel();
+                graphView = new ht.graph.GraphView(dataModel);
+                graphView.addToDOM();
+                window.addEventListener('resize', function(e) { graphView.fitContent() }, false)
+
+                ht.Default.xhrLoad('displays/main.json', function(text) {
+                    var json = ht.Default.parse(text);
+                    if(json.title) document.title = json.title;
+                    dataModel.deserialize(json);
+                    graphView.fitContent(true);
+                    if (!isIE()) {
+                      // 圆环滚动
+                      var oricle = dataModel.getDataByTag('oricle');
+                      setInterval(function(){ oricle.setRotation(oricle.getRotation()-Math.PI/180)  }, 100);
+                      // 仪器状态连线流动
+                      var statusLine = dataModel.getDataByTag('statusLine');
+                      setInterval(function(){ statusLine.s('shape.dash.offset', statusLine.s('shape.dash.offset') + 1 )  }, 100);
+                    }
+                });
+                // 防止切换选项卡后的页面刷新丢失数据
+                setTimeout(function(){ parent.postMessage({ commond: 'reload' }, '*'); }, 1000);
+            }
+            // 设置采样信息
+            function setSampleInfo(data) {
+              
+              // 设置仪器状态
+              var yqzt = dataModel.getDataByTag('yqzt');
+              yqzt.s('text', data.sampleInsStatus?data.sampleInsStatus:'无'); // 修改参数的方式
+              // 修改字体颜色
+              if (data.sampleInsStatus == '工作中') {
+                yqzt.s('text.color', 'rgb(48,242,120)'); // 绿色
+              } else if(data.sampleInsStatus == '故障') {
+                yqzt.s('text.color', 'rgb(255,0,0)'); // 红色
+              } else if(data.sampleInsStatus == '维护') {
+                yqzt.s('text.color', '#FEB64D'); // 橙色
+              } else if(data.sampleInsStatus == '待机') {
+                yqzt.s('text.color', '#60ACFC'); // 蓝色
+              } else {
+                yqzt.s('text.color', 'rgb(247,247,247)'); // 白色
+              }
+              if (!isIE()) {
+                // 进样泵状态，管道流动
+                if (data.injectPumpStatus) {
+                  // 管道流动
+                  clearInterval(liuDong); // 防止重复执行
+                  var pipe = dataModel.getDataByTag('pipe');
+                  liuDong = setInterval(function(){ pipe.s('shape.dash.offset', pipe.s('shape.dash.offset') - 1 )  }, 100);
+                } else {
+                  clearInterval(liuDong);
+                }
+              }
+              // 设置留样瓶状态
+              var currentNum = data.currentNum;
+              for(var i=1;i<=24;i++) { // 更新瓶编号
+                var obj = dataModel.getDataByTag('pipe' + i);
+                // 先设置瓶颜色
+                // 设置瓶颜色
+                if (!data.bottleStatus.length) { // 无数据则显示空
+                    obj.setImage('symbols/pipe.json');
+                 } else {
+                    var status = data.bottleStatus[currentNum - 1].value;
+                    if (status == '工作中') {
+                        obj.setImage('symbols/pipe-green.json');
+                    } else if (status == '有效') {
+                        obj.setImage('symbols/pipe-blue.json');
+                    } else if (status == '无效') {
+                        obj.setImage('symbols/pipe-red.json');
+                    } else if (status == '维护') {
+                        obj.setImage('symbols/pipe-red2.json');
+                    } else { // 空闲/无数据
+                        obj.setImage('symbols/pipe.json');
+                    }
+                 }
+                 obj.setAttr('num', currentNum); // 设置瓶编号
+                 currentNum ++;
+                 if (currentNum > 24) { // 24一个轮回
+                    currentNum = currentNum - 24;
+                 }
+              }
+              setTimeout(function() { // 防止初次加载文字丢失
+                // 采样信息通过html实现，直接通过定位DOM元素可修改内容
+                // id取中文首字母
+                document.getElementById('txt_ylyps').innerHTML = data.alreadyBottle;
+                document.getElementById('txt_syps').innerHTML = data.remainBottle;
+                document.getElementById('txt_lyps').innerHTML = data.sampleNum;
+                document.getElementById('txt_cyfs').innerHTML = data.sampleType;
+                document.getElementById('txt_lysj').innerHTML = data.tstamp;
+                document.getElementById('txt_cbxx').innerHTML = data.overInfo;
+                document.getElementById('txt_cbxx').title = data.overInfo;
+                document.getElementById('txt_lyp').innerHTML = data.relationBottle;
+                document.getElementById('txt_lyp').title = data.relationBottle;
+              }, 500);
+            };
+            
+            // 立即采样
+            function btn_ljcy() {
+              var data = {
+                commond: 'ljcy',
+                lyps: document.getElementById('input_lyps0').value,
+                hhl: document.getElementById('input_hhl0').value
+              };
+              parent.postMessage(data, '*');
+            }
+            // 定时采样
+            function btn_dscy() {
+              var data = {
+                commond: 'dscy',
+                year: document.getElementById('input_year').value,
+                month: document.getElementById('input_month').value,
+                day: document.getElementById('input_day').value,
+                hour: document.getElementById('input_hour').value,
+                minute: document.getElementById('input_minute').value,
+                lyps: document.getElementById('input_lyps').value,
+                hhl: document.getElementById('input_hhl').value
+              };
+              parent.postMessage(data, '*');
+            }
+            // 因子选择
+            function btn_yzxz(data) {
+              if (data) {
+                document.getElementById('input_yzxz').value = data;
+              } else {
+                var data = {
+                  commond: 'szyz'
+                };
+                parent.postMessage(data, '*');
+              }
+            }
+            // 超标留样设置
+            function btn_cblysz() {
+              var data = {
+                commond: 'cblysz',
+                cbxz1: document.getElementById('input_cbxz1').value,
+                cbxz2: document.getElementById('input_cbxz2').value,
+                lyps: document.getElementById('input_lyps2').value,
+                hhl: document.getElementById('input_hhl2').value,
+                lysjjg: document.getElementById('input_lysjjg').value,
+              };
+              parent.postMessage(data, '*');
+            }
+            // 判断是否IE浏览器，IE不显示动态效果
+            function isIE() {
+              if (!!window.ActiveXObject || "ActiveXObject" in window){
+                  return true;
+              }else{
+                  return false;
+              }
+            }   
+        </script>
+    </head>
+    <body style="background-color: #030B21">
+      <script>
+        // 如果是IE浏览器，给出提示
+        if (isIE()) {
+          alert("为了获得最好的显示效果,请使用Chrome浏览器或切换成极速模式！");
+        };
+        setTimeout(init(), 300);
+      </script>
+    </body>
+</html>

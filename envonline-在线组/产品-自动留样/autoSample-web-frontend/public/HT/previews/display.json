@@ -1,0 +1,2388 @@
+{
+  "v": "7.0.1",
+  "p": {
+    "background": "rgb(0,17,61)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": false
+  },
+  "a": {
+    "width": 960,
+    "height": 560
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 7854,
+      "p": {
+        "displayName": "背景",
+        "position": {
+          "x": 479.89927,
+          "y": 280.98109
+        },
+        "width": 959.79855,
+        "height": 561.96218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(3,11,33)",
+        "shape.border.color": "#979797",
+        "shape.gradient": "radial.center",
+        "shape.gradient.color": "rgb(12,19,51)",
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7855,
+      "p": {
+        "displayName": "圆环",
+        "tag": "oricle",
+        "image": "symbols/demo/lighting/装饰科技圆环.json",
+        "rotation": 6.28319,
+        "position": {
+          "x": 157.29963,
+          "y": 402.49636
+        },
+        "width": 150,
+        "height": 150
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 7856,
+      "p": {
+        "position": {
+          "x": 480,
+          "y": 27.90246
+        },
+        "width": 960,
+        "height": 55.80492
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7857,
+      "p": {
+        "displayName": "中",
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 480,
+          "y": 27.90246
+        },
+        "width": 960,
+        "height": 55.80492,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 0,
+              "y": 0.00001
+            },
+            {
+              "x": 0,
+              "y": 17.8875
+            },
+            {
+              "x": 295.41752,
+              "y": 20.23897
+            },
+            {
+              "x": 337.5854,
+              "y": 55.80492
+            },
+            {
+              "x": 630.5395,
+              "y": 55.80492
+            },
+            {
+              "x": 671.23992,
+              "y": 20.23897
+            },
+            {
+              "x": 960,
+              "y": 20.23897
+            },
+            {
+              "x": 960,
+              "y": 0.00001
+            }
+          ]
+        },
+        "closePath": true
+      },
+      "s": {
+        "shape.background": "rgba(0,0,0,0.00)",
+        "shape.border.color": "rgb(41,155,217)",
+        "shape.gradient.color": "rgba(0,0,0,0.48)",
+        "shape.gradient": "radial.south",
+        "opacity": 0.61,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7858,
+      "p": {
+        "displayName": "中",
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 480.56704,
+          "y": 27.9693
+        },
+        "width": 958.46301,
+        "height": 15.04695,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1.33554,
+              "y": 20.44583
+            },
+            {
+              "x": 320.67336,
+              "y": 21.76977
+            },
+            {
+              "x": 336.71091,
+              "y": 35.49278
+            },
+            {
+              "x": 657.94782,
+              "y": 35.49278
+            },
+            {
+              "x": 674.95734,
+              "y": 21.76977
+            },
+            {
+              "x": 959.79855,
+              "y": 21.76977
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(255,255,255,0)",
+        "shape.border.color": "rgb(13,90,184)",
+        "shape.border.width": 2,
+        "shape.gradient.color": "rgba(255,255,255,0.4)",
+        "opacity": 0.61,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7859,
+      "p": {
+        "displayName": "中",
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 480.3714,
+          "y": 27.91175
+        },
+        "width": 958.95182,
+        "height": 14.9115,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 0.8955,
+              "y": 20.456
+            },
+            {
+              "x": 297.92573,
+              "y": 21.6445
+            },
+            {
+              "x": 313.96328,
+              "y": 35.3675
+            },
+            {
+              "x": 635.20019,
+              "y": 35.3675
+            },
+            {
+              "x": 652.20971,
+              "y": 21.6445
+            },
+            {
+              "x": 959.84731,
+              "y": 21.6445
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(255,255,255,0)",
+        "shape.border.color": "rgb(13,90,184)",
+        "shape.border.width": 2,
+        "shape.gradient.color": "rgba(255,255,255,0.4)",
+        "opacity": 0.61,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7860,
+      "p": {
+        "displayName": "中",
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 476.7371,
+          "y": 33.5958
+        },
+        "width": 510.49524,
+        "height": 35.75197,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 221.48947,
+              "y": 15.71981
+            },
+            {
+              "x": 302.37625,
+              "y": 15.71981
+            },
+            {
+              "x": 340.3902,
+              "y": 51.47178
+            },
+            {
+              "x": 630.05272,
+              "y": 51.47178
+            },
+            {
+              "x": 670.93637,
+              "y": 15.71981
+            },
+            {
+              "x": 731.98472,
+              "y": 15.71981
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(255,255,255,0)",
+        "shape.border.color": "rgb(13,90,184)",
+        "shape.border.width": 2,
+        "shape.gradient.color": "rgba(255,255,255,0.4)",
+        "opacity": 0.61,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7861,
+      "p": {
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 485.32037,
+          "y": 36.45961
+        },
+        "width": 324.5592,
+        "height": 10.2343
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(5,15,38)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7862,
+      "p": {
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 793.79853,
+          "y": 26.52956
+        },
+        "width": 274.17428,
+        "height": 9.62581,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 930.88567,
+              "y": 21.71666
+            },
+            {
+              "x": 668.23812,
+              "y": 21.71666
+            },
+            {
+              "x": 656.71139,
+              "y": 31.34247
+            },
+            {
+              "x": 911.52477,
+              "y": 31.34247
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(44,198,222,0.54)",
+        "shape.border.color": "#979797",
+        "shape.gradient": "linear.northeast",
+        "shape.gradient.color": "rgba(0,0,0,0.00)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7863,
+      "p": {
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 177.9478,
+          "y": 27.07904
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        },
+        "width": 278.5048,
+        "height": 9.62581,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 317.2002,
+              "y": 22.26613
+            },
+            {
+              "x": 48.9395,
+              "y": 22.26613
+            },
+            {
+              "x": 38.6954,
+              "y": 31.89195
+            },
+            {
+              "x": 297.8393,
+              "y": 31.89195
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(44,198,222,0.54)",
+        "shape.border.color": "#979797",
+        "shape.gradient": "linear.northeast",
+        "shape.gradient.color": "rgba(0,0,0,0.00)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7864,
+      "p": {
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 649.50925,
+          "y": 34.78629
+        },
+        "width": 33.17662,
+        "height": 15.64227,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 666.09756,
+              "y": 26.96515
+            },
+            {
+              "x": 652.93891,
+              "y": 26.96515
+            },
+            {
+              "x": 632.92094,
+              "y": 42.60743
+            },
+            {
+              "x": 646.32912,
+              "y": 42.60743
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgb(44,198,222)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7865,
+      "p": {
+        "parent": {
+          "__i": 7856
+        },
+        "position": {
+          "x": 321.31791,
+          "y": 34.78629
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        },
+        "width": 29.30932,
+        "height": 15.64227,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 335.97257,
+              "y": 26.96515
+            },
+            {
+              "x": 324.75625,
+              "y": 26.96515
+            },
+            {
+              "x": 306.66325,
+              "y": 42.60743
+            },
+            {
+              "x": 318.06496,
+              "y": 42.60743
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgb(44,198,222)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 7866,
+      "p": {
+        "position": {
+          "x": 837.34184,
+          "y": 171.76567
+        },
+        "width": 210.71423,
+        "height": 240.58779
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 7867,
+      "p": {
+        "parent": {
+          "__i": 7866
+        },
+        "position": {
+          "x": 837.34184,
+          "y": 175.88893
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        },
+        "width": 210.71423,
+        "height": 232.34127,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7868,
+      "p": {
+        "parent": {
+          "__i": 7867
+        },
+        "position": {
+          "x": 838.34178,
+          "y": 177.00555
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        },
+        "width": 207.02818,
+        "height": 230.10802,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 734.8277,
+              "y": 61.95154
+            },
+            {
+              "x": 928.97318,
+              "y": 61.95154
+            },
+            {
+              "x": 941.85587,
+              "y": 78.46144
+            },
+            {
+              "x": 941.85587,
+              "y": 292.05957
+            },
+            {
+              "x": 746.80329,
+              "y": 292.05957
+            },
+            {
+              "x": 735.81821,
+              "y": 271.07706
+            },
+            {
+              "x": 734.8277,
+              "y": 61.95154
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(3,12,33,0.75)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7869,
+      "p": {
+        "parent": {
+          "__i": 7867
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 809.76079,
+          "y": 172.7647
+        },
+        "scale": {
+          "x": 1,
+          "y": -1
+        },
+        "width": 226.09223,
+        "height": 155.55131,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 696.71574,
+              "y": 94.98904
+            },
+            {
+              "x": 696.71468,
+              "y": 250.53995
+            },
+            {
+              "x": 907.15038,
+              "y": 250.54037
+            },
+            {
+              "x": 922.8069,
+              "y": 238.44524
+            },
+            {
+              "x": 922.80668,
+              "y": 198.49436
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.border.color": "rgb(22,57,99)",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7870,
+      "p": {
+        "parent": {
+          "__i": 7867
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 915.24795,
+          "y": 172.91959
+        },
+        "scale": {
+          "x": -1,
+          "y": -1
+        },
+        "width": 225.05027,
+        "height": 54.90118,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 802.72281,
+              "y": 200.37018
+            },
+            {
+              "x": 802.72312,
+              "y": 145.46943
+            },
+            {
+              "x": 861.4081,
+              "y": 145.46931
+            },
+            {
+              "x": 863.49964,
+              "y": 147.18447
+            },
+            {
+              "x": 873.73661,
+              "y": 147.18447
+            },
+            {
+              "x": 876.25934,
+              "y": 145.46931
+            },
+            {
+              "x": 1015.0372,
+              "y": 145.46901
+            },
+            {
+              "x": 1027.77309,
+              "y": 153.5421
+            },
+            {
+              "x": 1027.77296,
+              "y": 173.91667
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.border.color": "rgb(22,57,99)",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7871,
+      "p": {
+        "displayName": "采样信息",
+        "parent": {
+          "__i": 7866
+        },
+        "position": {
+          "x": 838.34178,
+          "y": 60.58705
+        },
+        "scale": {
+          "x": 1.5,
+          "y": 1.5
+        },
+        "width": 57.51763,
+        "height": 12.1537
+      },
+      "s": {
+        "text": "采样信息",
+        "text.color": "rgb(44,198,222)",
+        "text.align": "center",
+        "text.font": "10px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7872,
+      "p": {
+        "parent": {
+          "__i": 7866
+        },
+        "dataBindings": {
+          "p": {}
+        },
+        "rotation": 4.71239,
+        "position": {
+          "x": 744.34646,
+          "y": 61.79248
+        },
+        "anchor": {
+          "x": 0.38229,
+          "y": 0.5
+        },
+        "width": 3.61271,
+        "height": 6.28706,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 742.96535,
+              "y": 58.64895
+            },
+            {
+              "x": 746.57805,
+              "y": 61.34837
+            },
+            {
+              "x": 746.57805,
+              "y": 64.93601
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(255,255,255)",
+        "shape.border.width": 3,
+        "shape.border.join": "bevel",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 7900,
+      "p": {
+        "position": {
+          "x": 124.43824,
+          "y": 231.17856
+        },
+        "width": 215.72279,
+        "height": 342.63561,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7901,
+      "p": {
+        "parent": {
+          "__i": 7900
+        },
+        "position": {
+          "x": 123.71792,
+          "y": 232.8252
+        },
+        "width": 212.39565,
+        "height": 339.34232,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 17.52009,
+              "y": 63.15406
+            },
+            {
+              "x": 221.92327,
+              "y": 63.15406
+            },
+            {
+              "x": 229.91574,
+              "y": 87.50136
+            },
+            {
+              "x": 229.91574,
+              "y": 402.49637
+            },
+            {
+              "x": 30.91629,
+              "y": 402.49637
+            },
+            {
+              "x": 18.62811,
+              "y": 371.55328
+            },
+            {
+              "x": 17.52009,
+              "y": 63.15406
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(3,12,33,0.75)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7902,
+      "p": {
+        "parent": {
+          "__i": 7900
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 145.29722,
+          "y": 226.57119
+        },
+        "width": 333.42021,
+        "height": 174.0036,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -21.41132,
+              "y": 139.56938
+            },
+            {
+              "x": -21.41289,
+              "y": 313.57251
+            },
+            {
+              "x": 288.91846,
+              "y": 313.57298
+            },
+            {
+              "x": 312.00733,
+              "y": 302.05789
+            },
+            {
+              "x": 312.00709,
+              "y": 273.83438
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.border.color": "rgb(22,57,99)",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7903,
+      "p": {
+        "parent": {
+          "__i": 7900
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 32.4886,
+          "y": 226.79964
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        },
+        "width": 331.88334,
+        "height": 31.82227,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -133.45307,
+              "y": 242.71001
+            },
+            {
+              "x": -133.45287,
+              "y": 210.88899
+            },
+            {
+              "x": -46.90964,
+              "y": 210.88886
+            },
+            {
+              "x": -43.82525,
+              "y": 212.80748
+            },
+            {
+              "x": -28.72866,
+              "y": 212.80748
+            },
+            {
+              "x": -25.00838,
+              "y": 210.88886
+            },
+            {
+              "x": 179.64853,
+              "y": 210.88851
+            },
+            {
+              "x": 198.43028,
+              "y": 220.11797
+            },
+            {
+              "x": 198.43008,
+              "y": 242.71077
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.border.color": "rgb(22,57,99)",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7904,
+      "p": {
+        "displayName": "控制面板",
+        "position": {
+          "x": 107.08225,
+          "y": 59.71924
+        },
+        "anchor": {
+          "x": 0.40935,
+          "y": 0.46016
+        },
+        "scale": {
+          "x": 1.5,
+          "y": 1.5
+        },
+        "width": 95.56818,
+        "height": 11.94871
+      },
+      "s": {
+        "text": "控制面板",
+        "text.color": "rgb(44,198,222)",
+        "text.align": "center",
+        "text.font": "10px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7905,
+      "p": {
+        "rotation": 4.71239,
+        "position": {
+          "x": 220.21891,
+          "y": 63.33244
+        },
+        "anchor": {
+          "x": 0.38229,
+          "y": 0.5
+        },
+        "width": 6.74184,
+        "height": 7.47688,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 224.38339,
+              "y": 59.59401
+            },
+            {
+              "x": 224.38339,
+              "y": 63.95175
+            },
+            {
+              "x": 217.64155,
+              "y": 67.07089
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(255,255,255)",
+        "shape.border.width": 3,
+        "shape.border.join": "bevel",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7906,
+      "p": {
+        "displayName": "标题",
+        "position": {
+          "x": 484.44676,
+          "y": 29.14145
+        },
+        "width": 296.94837,
+        "height": 41.64145
+      },
+      "s": {
+        "text": "工况组态图",
+        "text.color": "rgb(44,198,222)",
+        "text.font": "20px arial, sans-serif",
+        "text.align": "center",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7907,
+      "p": {
+        "displayName": "箭头",
+        "image": "symbols/demo/pump/flow_arrow.json",
+        "rotation": 3.66915,
+        "position": {
+          "x": 619.86303,
+          "y": 312.32159
+        },
+        "width": 75,
+        "height": 17.66634
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7908,
+      "p": {
+        "displayName": "管道",
+        "tag": "pipe",
+        "position": {
+          "x": 566.65711,
+          "y": 296.71362
+        },
+        "width": 251.13464,
+        "height": 81.30801,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 692.22443,
+              "y": 328.84964
+            },
+            {
+              "x": 568.9264,
+              "y": 256.05961
+            },
+            {
+              "x": 441.08979,
+              "y": 337.36762
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(33,102,195)",
+        "shape.border.width": 6,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false,
+        "shape.border.3d": true,
+        "border.color": null,
+        "shape.border.3d.color": "rgb(100,158,231)",
+        "shape.dash": true,
+        "shape.foreground": null,
+        "border.width": 3,
+        "shape.dash.color": "rgb(102,218,249)",
+        "shape.dash.pattern": [
+          10,
+          10
+        ],
+        "shape.dash.width": 3
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7909,
+      "p": {
+        "displayName": "水泵",
+        "image": "symbols/demo/污水平板膜处理/水泵.json",
+        "rotation": 2.092,
+        "position": {
+          "x": 692.22443,
+          "y": 352.7936
+        }
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7910,
+      "p": {
+        "displayName": "控制面板div",
+        "image": "symbols/html/div.json",
+        "position": {
+          "x": 124.90986,
+          "y": 232.70542
+        },
+        "width": 214.77954,
+        "height": 320.0719
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "div.background": null,
+        "div.content": "<div style=\"height:100%;text-align:center;color:rgb(117,175,255);font:12px arial, sans-serif\">\n  <div id='btn_ljcy' style=\"display:inline-block;padding:3px 6px;;cursor:pointer;color:white;background-color:rgb(25,90,168);border-radius:0px\" onclick=\"\">立即采样</div>\n  <div style=\"border-top:1px solid RGB(22,57,99);margin-top:5px;\">\n            <div style=\"text-align:left\">\n                <span style=\"display:inline-block;padding:5px 0;\">定时时间：</span>\n                <br />\n               <input id='year' type=\"text\" style=\"width:38px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" />年\n                <input id='month'  type=\"text\" style=\"width:18px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" />月\n                <input id='day'  type=\"text\" style=\"width:18px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" />日\n                <input id='hour'  type=\"text\" style=\"width:18px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" />时\n                <input id='minute'  type=\"text\" style=\"width:18px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" />分\n            </div>\n            <div style=\"text-align:left;padding:5px 0;\">\n                <span>留样瓶数：</span>\n               <input id=\"lyps\" type=\"text\" style=\"width:45px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center\"  onclick=\"this.focus()\" />\n            </div>\n            <div id='btn_dscy' style=\"display:inline-block;padding:3px 10px;cursor:pointer;margin-top:10px;color:white;background-color:rgb(25,90,168);border-radius:0px\" onclick=\"\">定时采样</div>\n            <div style=\"border-top:1px solid RGB(22,57,99);margin-top:5px;\">\n                <div style=\"text-align:left;padding:5px 0;\">\n                <span>因子选择：</span>\n                <input id='yzxz' type='text' style=\"width:120px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);\"  onclick=\"alert('模糊检索')\" />\n                </div>\n                <div style=\"text-align:left;padding:5px 0;\">\n                <span>超标限值：</span> \n                    <input id='cbxz1' type=\"text\" style=\"width:52px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" /> ~\n                    <input id='cbxz2' type=\"text\" style=\"width:52px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" />\n                </div>\n                <div style=\"text-align:left;padding:5px 0;\">\n                <span>留样时间间隔：</span> \n                    <input id='lysjjg' type=\"text\" style=\"width:80px;background-color:transparent;border:1px solid  RGB(22,57,99);color:rgb(224,118,25);text-align:center;\" onclick=\"this.focus()\" /> 分\n                </div>\n                <div id='btn_cblysz' style=\"display:inline-block;padding:3px 10px;cursor:pointer;margin-top:10px;color:white;background-color:rgb(25,90,168);border-radius:0px\" onclick=\"\">超标留样设置</div>\n            </div>\n  </div>\n</div>"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 7911,
+      "p": {
+        "position": {
+          "x": 383.97382,
+          "y": 159.03258
+        },
+        "width": 108.25037,
+        "height": 35.94594
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7912,
+      "p": {
+        "displayName": "已采样",
+        "parent": {
+          "__i": 7911
+        },
+        "position": {
+          "x": 362.7742,
+          "y": 150.24927
+        },
+        "width": 26.80163,
+        "height": 18.37932
+      },
+      "s": {
+        "text": "已采样",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "10px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7913,
+      "p": {
+        "displayName": "等待",
+        "parent": {
+          "__i": 7911
+        },
+        "position": {
+          "x": 397.89656,
+          "y": 156.05961
+        },
+        "width": 26.80163,
+        "height": 18.37932
+      },
+      "s": {
+        "text": "等待",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "10px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7914,
+      "p": {
+        "displayName": "过期",
+        "parent": {
+          "__i": 7911
+        },
+        "position": {
+          "x": 343.24945,
+          "y": 166.69927
+        },
+        "width": 26.80163,
+        "height": 18.37932
+      },
+      "s": {
+        "text": "过期",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "10px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7915,
+      "p": {
+        "displayName": "空瓶",
+        "parent": {
+          "__i": 7911
+        },
+        "position": {
+          "x": 424.69819,
+          "y": 167.81589
+        },
+        "width": 26.80163,
+        "height": 18.37932
+      },
+      "s": {
+        "text": "空瓶",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "10px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7916,
+      "p": {
+        "displayName": "留样仪改",
+        "image": "assets/留样仪改.svg",
+        "position": {
+          "x": 700.21891,
+          "y": 345.90978
+        }
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 7917,
+      "p": {
+        "position": {
+          "x": 378.74646,
+          "y": 320.60681
+        },
+        "width": 154.85711,
+        "height": 77.78638
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7918,
+      "p": {
+        "parent": {
+          "__i": 7917
+        },
+        "position": {
+          "x": 369.84863,
+          "y": 358
+        },
+        "width": 9,
+        "height": 3
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(61,61,61)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7919,
+      "p": {
+        "displayName": "pipe1",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe1",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 379.5,
+          "y": 322.36762
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7920,
+      "p": {
+        "displayName": "pipe2",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe2",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 349.84864,
+          "y": 342
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7921,
+      "p": {
+        "displayName": "pipe3",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe3",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 339.5,
+          "y": 337.7936
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7922,
+      "p": {
+        "displayName": "pipe4",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe4",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 329.84864,
+          "y": 334
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7923,
+      "p": {
+        "displayName": "pipe5",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe5",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 322.7742,
+          "y": 327.49601
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7924,
+      "p": {
+        "displayName": "pipe6",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe6",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 321.31791,
+          "y": 315.8111
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7925,
+      "p": {
+        "displayName": "pipe7",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe7",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 329.37339,
+          "y": 307.36762
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7926,
+      "p": {
+        "displayName": "pipe8",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe8",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 336.65027,
+          "y": 304
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7927,
+      "p": {
+        "displayName": "pipe9",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe9",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 345,
+          "y": 300.8111
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7928,
+      "p": {
+        "displayName": "pipe10",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe10",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 354,
+          "y": 299
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7929,
+      "p": {
+        "displayName": "pipe11",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe11",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 362.7742,
+          "y": 297.49601
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7930,
+      "p": {
+        "displayName": "pipe12",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe12",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 371.95004,
+          "y": 296.71362
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7931,
+      "p": {
+        "displayName": "pipe13",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe13",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 387.04457,
+          "y": 296.71362
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7932,
+      "p": {
+        "displayName": "pipe14",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe14",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 396.17502,
+          "y": 297.32159
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7933,
+      "p": {
+        "displayName": "pipe15",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe15",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 405,
+          "y": 299
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7934,
+      "p": {
+        "displayName": "pipe16",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe16",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 414,
+          "y": 300.44483
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7935,
+      "p": {
+        "displayName": "pipe17",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe17",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 422,
+          "y": 304
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7936,
+      "p": {
+        "displayName": "pipe18",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe18",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 430,
+          "y": 307.05956
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7937,
+      "p": {
+        "displayName": "pipe19",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe19",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 436.17501,
+          "y": 315.8111
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7938,
+      "p": {
+        "displayName": "pipe20",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe20",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 431.95004,
+          "y": 327.49601
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7939,
+      "p": {
+        "displayName": "pipe21",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe21",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 424.69819,
+          "y": 334.43649
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7940,
+      "p": {
+        "displayName": "pipe22",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe22",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 416.17502,
+          "y": 337.7936
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7941,
+      "p": {
+        "displayName": "pipe23",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe23",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 405,
+          "y": 342
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7942,
+      "p": {
+        "displayName": "pipe24",
+        "parent": {
+          "__i": 7917
+        },
+        "tag": "pipe24",
+        "image": "symbols/pipe.json",
+        "position": {
+          "x": 391.29737,
+          "y": 344
+        },
+        "width": 40,
+        "height": 30
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 7943,
+      "p": {
+        "position": {
+          "x": 545.66694,
+          "y": 163.92782
+        },
+        "width": 188.15687,
+        "height": 76.07779,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7944,
+      "p": {
+        "parent": {
+          "__i": 7943
+        },
+        "position": {
+          "x": 528.46655,
+          "y": 150.88893
+        },
+        "width": 117.56926,
+        "height": 35.21157,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 469.68192,
+              "y": 133.28314
+            },
+            {
+              "x": 582.82704,
+              "y": 133.28314
+            },
+            {
+              "x": 587.25118,
+              "y": 135.80952
+            },
+            {
+              "x": 587.25118,
+              "y": 168.49472
+            },
+            {
+              "x": 477.09724,
+              "y": 168.49472
+            },
+            {
+              "x": 470.29526,
+              "y": 165.28393
+            },
+            {
+              "x": 469.68192,
+              "y": 133.28314
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "rgba(3,12,33,0.75)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7945,
+      "p": {
+        "parent": {
+          "__i": 7943
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 540.41147,
+          "y": 150.23989
+        },
+        "width": 34.59726,
+        "height": 96.31763,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 523.113,
+              "y": 102.08107
+            },
+            {
+              "x": 523.11284,
+              "y": 198.39858
+            },
+            {
+              "x": 552.47584,
+              "y": 198.39871
+            },
+            {
+              "x": 557.70986,
+              "y": 192.15202
+            },
+            {
+              "x": 557.7101,
+              "y": 115.23539
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.border.color": "rgb(22,57,99)",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7946,
+      "p": {
+        "parent": {
+          "__i": 7943
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 477.96764,
+          "y": 150.26368
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        },
+        "width": 34.43758,
+        "height": 17.61473,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 460.74885,
+              "y": 159.07062
+            },
+            {
+              "x": 460.74887,
+              "y": 141.45645
+            },
+            {
+              "x": 469.72896,
+              "y": 141.45637
+            },
+            {
+              "x": 470.04901,
+              "y": 142.51841
+            },
+            {
+              "x": 471.61549,
+              "y": 142.51841
+            },
+            {
+              "x": 472.00152,
+              "y": 141.45637
+            },
+            {
+              "x": 490.46475,
+              "y": 141.45632
+            },
+            {
+              "x": 495.1864,
+              "y": 146.65776
+            },
+            {
+              "x": 495.18643,
+              "y": 159.07105
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.border.color": "rgb(22,57,99)",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7947,
+      "p": {
+        "parent": {
+          "__i": 7943
+        },
+        "rotation": 4.71239,
+        "position": {
+          "x": 582.07113,
+          "y": 133.97459
+        },
+        "anchor": {
+          "x": 0.38229,
+          "y": 0.5
+        },
+        "scale": {
+          "x": 1,
+          "y": -1
+        },
+        "width": 1.62525,
+        "height": 4.99178,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 581.44981,
+              "y": 131.4787
+            },
+            {
+              "x": 583.07506,
+              "y": 133.50458
+            },
+            {
+              "x": 583.07506,
+              "y": 136.47048
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(255,255,255)",
+        "shape.border.width": 3,
+        "shape.border.join": "bevel",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7948,
+      "p": {
+        "displayName": "仪器状态",
+        "parent": {
+          "__i": 7943
+        },
+        "position": {
+          "x": 524.78927,
+          "y": 150.88893
+        }
+      },
+      "s": {
+        "text": "仪器状态：",
+        "text.color": "rgb(247,247,247)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 7949,
+      "p": {
+        "displayName": "仪器状态2",
+        "parent": {
+          "__i": 7943
+        },
+        "tag": "yqzt",
+        "position": {
+          "x": 589.74537,
+          "y": 150.88893
+        }
+      },
+      "s": {
+        "text": "无",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 7950,
+      "p": {
+        "displayName": "连线",
+        "parent": {
+          "__i": 7943
+        },
+        "tag": "statusLine",
+        "position": {
+          "x": 462.17852,
+          "y": 184.56884
+        },
+        "width": 21.18003,
+        "height": 34.79576,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 472.76853,
+              "y": 167.17095
+            },
+            {
+              "x": 451.5885,
+              "y": 201.96672
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(118,247,244)",
+        "shape.border.width": 1,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          5,
+          5
+        ],
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 7951,
+      "p": {
+        "displayName": "遮挡",
+        "rotation": 5.7257,
+        "position": {
+          "x": 308.94995,
+          "y": 183.22743
+        },
+        "width": 26.0976,
+        "height": 26.10565
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(9,16,45)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 16624,
+      "p": {
+        "displayName": "采样信息div",
+        "image": "symbols/html/div.json",
+        "position": {
+          "x": 838.76332,
+          "y": 178.33473
+        },
+        "width": 207.87127,
+        "height": 211.33053
+      },
+      "a": {
+        "div.content": "<div style=\"color:rgb(117,175,255);font:12px Microsoft YaHei,arial, sans-serif;line-height:20px\">\n           <div style=\"width:110px\"><span>已留样瓶数</span><span style=\"float:right;color:rgb(224,118,25)\">20</span></div>\n           <div style=\"width:110px\"><span>剩余瓶数</span><span style=\"float:right;color:rgb(224,118,25)\">4</span></div>\n           <div style=\"width:110px\"><span>留样瓶号</span><span style=\"float:right;color:rgb(224,118,25)\">20</span></div>\n            <div style=\"width:110px\"><span>留样瓶数</span><span style=\"float:right;color:rgb(224,118,25)\">6</span></div>\n            <div style=\"width:110px\"><span>采样方式</span><span style=\"float:right;color:rgb(224,118,25)\">超标</span></div>\n             <div style=\"width:190px;\"><span style=\"display:inline-block;width:60px\">留样时间</span><span style=\"color:rgb(224,118,25)\">2019-05-01 13:30</span></div>\n             <div style=\"width:190px\"><span style=\"display:inline-block;width:60px\">超标信息</span><span style=\"color:rgb(224,118,25)\" title=\"COD，85mg/LCOD，85mg/LCOD，85mg/L\">COD，85mg/L</span></div>\n              <div style=\"float:left;\">留样瓶(留样量)</div><div style=\"float:left;word-break:break-all;color:rgb(224,118,25)\" title=\"\">16(600mL)</div>\n    </div>",
+        "div.background": null,
+        "div.debug": false
+      }
+    }
+  ],
+  "title": "main"
+}

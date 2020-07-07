@@ -1,0 +1,182 @@
+/* Login 登录页
+ * @see views/auth/Login.vue
+-------------------------- */
+@import '../path-variables.scss';
+
+.g-login {
+  // $img-path: '../../../assets/img/login';
+  // $img-login-bg: '#{$img-path}/login_bg_1920x825.png';
+  // $img-login-icon-pc: '#{$img-path}/login_icon_pc_41x33.png';
+  // $img-login-icon-code: '#{$img-path}/login_icon_code_54x49.png';
+
+  $login-bg: #fff;
+  $login-color: #0896d8;
+  $height: 68px;
+  
+  position: relative;
+  top: -32px;
+  width: 100%;
+  height: 100%;
+
+  background: {
+    size: 100% 100%;
+    repeat: no-repeat;
+    position: center;
+    color: #43AFF0;
+    image: url($img-login-bg);
+  }
+
+  > header {
+    > .container {
+      font-size: 32px;
+      line-height: 200px;
+      text-shadow: 0 2px #606061;
+      letter-spacing: 15px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 30px;
+      // background: -webkit-linear-gradient(#eee, #eee);
+      //-webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      // margin: 32px 100px 12px 100px;
+      img {
+        max-width: 100%;
+        // max-height: 100%;
+        min-width: 768px;
+        user-select:none;
+      }
+    }
+  }
+
+  > footer {
+    display: flex;
+    height: 190px;
+    min-width: 768px;
+    color: #ababab;
+    align-items:center;
+    justify-content: center;
+  }
+
+  > main {
+    display: block;
+    height: calc(100% - 258px);
+    min-width: 768px;
+    .login-form {
+      margin: 0 auto;
+      width: 450px;
+      // position: absolute;
+      // top: 23%;
+      // right: 18%;
+      padding: 0px 50px;
+      //border: 1px solid #DEDEDE;
+      //background-color: rgba(245,248,248, 0.4) !important;
+      background-color: rgba(0, 0, 0, 0.5);
+      // border-radius: 6px;
+      //box-shadow: 1px 1px 2px rgba($color: #DEDEDE, $alpha: 1);
+      .el-form-item {
+        margin-bottom: 5.5px !important;
+        .el-input__prefix i {
+          font-size: 20px;
+        }
+      }
+      .title {
+        user-select: none;
+      }
+      .btn-pc {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        width: 41px;
+        height: 33px;
+        background: url($img-login-icon-pc);
+        cursor: pointer; 
+      }
+      .btn-QRcode {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        width: 54px;
+        height: 49px;
+        background: url($img-login-icon-code);
+        cursor: pointer; 
+      }
+      .QRcode {
+        margin: -19.5px 16.5px;
+        > .tips {
+          font-size: 12px;
+          color: #ababab;
+        }
+      }
+      .form-label {
+        span.ch-label {
+          word-spacing: .7em;
+          width: 3em;
+          color: #2d8cf0;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        span.symbol { color: #efefef; }
+        span.en-label {
+          color: #efefef;
+          font-weight: bold;
+        }
+        .el-input {
+          border-radius: 10px;
+        }
+      }
+      .btn-login {
+        width: 100%;
+        // background:#2d8cf0;
+        // color:#fff;
+        border-radius:5px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+  // .el-form::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background: rgba(0,0,0,0) url($img-login-bg) top no-repeat;
+  //   background-size: 100% 100%;
+  //   background-attachment: fixed;
+  //   filter: blur(2px);
+  //   border-radius: 5px;
+  //   z-index: -1;
+  // }
+  .el-form {
+    filter: blur(0px);
+    // background: transparent !important;
+    .el-form-item {
+      input {
+        color: white;
+        font-weight: 500;
+        border-radius: 0;
+        &:focus + .el-input__prefix { color: #2d8cf0; }
+        border-width: 0 0 2px;
+        background: transparent !important;
+      }
+      input::-webkit-input-placeholder {
+        color: #fff;
+      }
+      input:-webkit-autofill,
+      textarea:-webkit-autofill,
+      select:-webkit-autofill {
+        box-shadow: 0 0 0 1000px transparent inset;
+      }
+      .el-button {
+        border: 0;
+      }
+    }
+    .el-input__prefix { color: #fff; }
+    .el-input__suffix { cursor: pointer; }
+    .fa-eye { color: #2d8cf0; }
+    .el-checkbox__input.is-checked+.el-checkbox__label { color: white; }
+    .el-radio__input.is-checked+.el-radio__label {color: white;}
+  }
+}

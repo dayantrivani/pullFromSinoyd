@@ -1,0 +1,18 @@
+/* 入口文件 */
+
+// 公共样式引入
+@import "common/variables.scss";  // 变量定义
+@import "common/reset.scss";      // 清除浏览器差异
+@import "common/mixins.scss";     // 混合类
+@import "common/helper.scss";     // 助手类
+
+// Element UI
+@import "element/element-theme.scss";  // 样式定制
+
+// 自定义样式
+// @import "custom/login.scss";    // 登录页
+@import "custom/layout.scss";   // 框架布局
+@import "custom/modules.scss";  // 组件样式类
+
+// 主题配色
+@import "theme.scss";  // 样式定制

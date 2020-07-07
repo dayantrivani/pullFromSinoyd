@@ -1,0 +1,312 @@
+// 树形控件列表
+.mod-tree-list {
+  height: 100%;
+  .el-tree { height: inherit; }
+  .el-tree-node .el-tree-node__content {
+    position: relative;
+    &:hover {
+      cursor: default;
+      .node-item .tree-btns { display: inline-block; }
+    }
+    .node-item {
+      width: 100%;
+      user-select: none;
+    }
+    .node-item .tree-btns {
+      position: absolute;
+      top: 3.5px;
+      right: 5px;
+      display: none;
+      font-size: 0;
+      background-color: $-color-title-bg;
+    }
+  }
+}
+
+
+/* dynamic-edit 可编辑表格
+-------------------------- */
+.mod-table-edit{
+  $cell-height: 35px !important;
+  td {
+    padding: 0 !important;
+    .cell{
+      padding: 0 !important;
+      >.cell {
+        padding: 0 10px !important;
+      }
+      .el-input--mini {
+        .el-input__inner {
+          border-radius: 0 !important;
+          height: $cell-height;
+        }
+        .el-textarea__inner {
+          border-radius: 0 !important;
+          min-height: $cell-height;
+        }
+      }
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        height: 16px;
+        line-height: 16px !important;
+      }
+    }
+  }
+  .border-red > input {
+    border: 1px solid #ff1818 !important;
+  }
+  table th.test div:before {
+    content: '* ';
+    color: #ff1818;
+  }
+}
+
+
+
+/* context-menu 右键菜单
+-------------------------- */
+.mod-context-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 6px 0;
+  z-index: 9999;
+  color: $-color-content;
+  background-color: $--color-white;
+  border: 1px solid $-color-border;
+  box-shadow: $--box-shadow-light;
+
+  li {
+    padding: 0 25px;
+    &:hover, &.is-active {
+      color: $--color-primary;
+      background-color: $--background-color-base;
+      cursor: default;
+    }
+  }
+
+  > li {
+    position: relative;
+    margin: 0;
+    padding: 0 25px;
+    line-height: 30px;
+    white-space: nowrap;
+    &:hover {
+      > ul {
+        display: block;
+        margin-top: -7px;
+      }
+    }
+    > ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      padding: 6px 0;
+      z-index: 9999;
+      color: $-color-content;
+      background-color: $--color-white;
+      border: 1px solid $-color-border;
+      box-shadow: $--box-shadow-light;
+    }
+  }
+
+  > li i {
+    position: absolute;
+    left: 5px;
+    display: inline-block;
+    width: 20px;
+    line-height: inherit;
+    text-align: center;
+    color: $-color-sub;
+  }
+
+  > li:hover {
+    background-color: $--background-color-base;
+    cursor: default;
+  }
+}
+
+
+
+/* editor-tinymce 富文本编辑器
+-------------------------- */
+.mod-editor-tinymce {
+  position: relative;
+
+  .editor-image-box {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    /*z-index: 2005;*/
+  }
+
+  .editor-image { display: inline-block; }
+
+  @at-root {
+    .mce-fullscreen { z-index: 1000; }
+    .tinymce-textarea {
+      visibility: hidden;
+      z-index: -1;
+    }
+    .fullscreen .editor-image-box {
+      z-index: 10000;
+      position: fixed;
+    }
+    .editor-image-upload {
+      margin-bottom: 10px;
+      /deep/ .el-upload--picture-card {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+/* fieldset-flex 伸缩组
+-------------------------- */
+.mod-fieldset-flex {
+  margin-top: 5px;
+  padding: 5px 0;
+  // overflow-x: hidden;
+  border-width: 0 0 1px;
+
+  legend {
+    padding: 0 0 0 1px;
+    font-size: 14px;
+    font-weight: bold;
+    color: $--color-primary;
+    transition: $--all-transition;
+
+    &:hover { cursor: pointer }
+
+    + div {  padding-left: 1px }
+
+    > *:not(:nth-child(1)) { margin-left: 5px }
+
+    > i {
+      width: 10px;
+      text-align: center;
+      color: inherit;
+      transition: $--all-transition;
+    }
+  }
+}
+
+
+
+/* paging-query 分页查询
+-------------------------- */
+.mod-paging-query {
+  $icon-color: #808695;
+  $icon-hover-color: #409EFF;
+
+  .btn-refresh {
+    position: relative;
+    margin: {
+      top: 3px;
+      right: 5px;
+    };
+    i { color: $icon-color }
+  }
+
+  .btn-refresh:hover i { color: $icon-hover-color }
+
+  .btn-refresh::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -10px;
+    left: -10px;
+    cursor: pointer;
+  }
+}
+
+
+
+/* select-pane 窗格选择器
+-------------------------- */
+.mod-select-pane {
+
+  .col-title {
+    display: flex;
+    padding-top: 5px;
+    height: 40px;
+    > span {
+      display: inline-block;
+      flex: 1;
+      line-height: 35px;
+    }
+  }
+  .col-body {
+    display: flex;
+    height: calc(100% - 45px);
+    > .col-item {
+      display: inline-block;
+      flex: 1;
+      border-width: 1px 1px 1px 0;
+      border-style: solid;
+      border-color: $--border-color-light;
+      &:nth-child(1) {
+        border-width: 1px;
+      }
+    }
+  }
+  .col-item > ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto;
+    > li {
+      padding: 0 10px;
+      line-height: 24px;
+      &.is-active { color: $--color-primary; }
+      &:hover, &.is-active { background-color: $--background-color-base; }
+    }
+  }
+
+  .dialog-footer > span {
+    float: left;
+    line-height: 28px;
+  }
+}
+
+
+
+/* select-tree 树选择器
+-------------------------- */
+.mod-select-tree {
+
+  max-height: 350px;
+  overflow-y: scroll;
+
+  .el-tree { max-height: 350px; }
+
+  .el-input.el-input--suffix {
+    cursor: pointer;
+
+    &.rotate .el-input__suffix {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* intro 页面说明
+-------------------------- */
+.mod-hint-text {
+  @extend .fn-flex;
+  @extend .text-info;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: lighten($-color-sub, 15%);
+  > label > i {
+    font-size: 14px;
+    margin-right: 5px;
+    color: inherit;
+  }
+  > label > b { font-weight: bold; }
+  > div { @extend .flex-1; }
+}

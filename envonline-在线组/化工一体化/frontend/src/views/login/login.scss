@@ -1,0 +1,204 @@
+/* Login 登录页
+ * @see views/auth/Login.vue
+-------------------------- */
+
+$img-path: '../../assets/loginImage';
+$img-login-bg: '#{$img-path}/loginBg.png';
+// $img-login-form-bg: '#{$img-path}/loginBoxBg.png';
+// $img-login-icon-pc: '#{$img-path}/login_icon_pc_41x33.png';
+// $img-login-icon-code: '#{$img-path}/login_icon_code_54x49.png';
+
+.g-login {
+
+  $login-bg: #fff;
+  $login-color: #0896d8;
+  $height: 68px;
+  
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background: {
+    size: 100% 100%;
+    repeat: no-repeat;
+    position: center;
+    color: #43AFF0;
+    image: url($img-login-bg);
+  }
+
+  > header {
+    overflow: hidden;
+    > .container {
+      margin-top: 80px;
+      text-align: center;
+      img {
+        width: 50%;
+        user-select:none;
+      }
+      .title {
+        font-size: 0.44rem;
+        font-weight: bold;
+        color: #fcfcfc;
+      }
+    }
+  }
+
+  > footer {
+    display: flex;
+    height: 190px;
+    min-width: 768px;
+    color: #ababab;
+    align-items:center;
+    justify-content: center;
+  }
+
+  > main {
+    display: block;
+    height: calc(100% - 200px);
+    min-width: 768px;
+    .login-box {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background-color: rgba($color: #91a6bb, $alpha: 0.8);
+      .login-form {
+        float: right;
+        display: block;
+        text-align: start;
+        width: 45%;
+        min-width: 360px;
+        padding: 0px 15px;
+        &::after {
+          content: '';
+          clear: both;
+        }
+        .el-form-item {
+          margin-bottom: 5.5px !important;
+          .el-input__prefix i {
+            font-size: 20px;
+          }
+        }
+        .title {
+          user-select: none;
+        }
+        .btn-pc {
+          position: absolute;
+          right: 3px;
+          top: 3px;
+          width: 41px;
+          height: 33px;
+          // background: url($img-login-icon-pc);
+          cursor: pointer; 
+        }
+        .btn-QRcode {
+          position: absolute;
+          right: 3px;
+          top: 3px;
+          width: 54px;
+          height: 49px;
+          // background: url($img-login-icon-code);
+          cursor: pointer; 
+        }
+        .QRcode {
+          margin: -19.5px 16.5px;
+          > .tips {
+            font-size: 12px;
+            color: #ababab;
+          }
+        }
+        .form-label {
+          span.ch-label {
+            word-spacing: .7em;
+            width: 3em;
+            color: #0c3055;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          span.symbol {
+            padding: 0 10px;
+            color: #0c3055;
+          }
+          span.en-label {
+            color: #0c3055;
+          }
+          .el-input {
+            border-radius: 10px;
+          }
+        }
+        .icon-user {
+          width: 22px;
+          vertical-align: middle;
+          content: url('#{$img-path}/icon_user.png');
+        }
+        .icon-pwd {
+          width: 18px;
+          vertical-align: middle;
+          content: url('#{$img-path}/icon_pwd.png');
+        }
+        .btn-login {
+          width: 100%;
+          // background:#2d8cf0;
+          // color:#fff;
+          border-radius:5px;
+          font-weight: bold;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  // .el-form::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background: rgba(0,0,0,0) url($img-login-bg) top no-repeat;
+  //   background-size: 100% 100%;
+  //   background-attachment: fixed;
+  //   filter: blur(2px);
+  //   border-radius: 5px;
+  //   z-index: -1;
+  // }
+  .el-form {
+    filter: blur(0px);
+    // background: transparent !important;
+    .el-form-item {
+      input {
+        // color: white;
+        font-weight: 500;
+        border-radius: 0;
+        // &:focus + .el-input__prefix { color: #2d8cf0; }
+        // border-width: 0 0 2px;
+        // background: transparent !important;
+        &.el-input__inner {
+          background-color: #bbc9d5;
+          border-color: transparent;
+          border-radius: 5px;
+        }
+      }
+      input::-webkit-input-placeholder {
+        color: #0c3055;
+      }
+      input:-webkit-autofill,
+      textarea:-webkit-autofill,
+      select:-webkit-autofill {
+        box-shadow: 0 0 0 1000px transparent inset;
+      }
+      .el-button {
+        border: 0;
+      }
+    }
+    .el-input__prefix { color: #fff; }
+    .el-input__suffix { cursor: pointer; }
+    .fa-eye { color: #2d8cf0; }
+    .el-checkbox__input.is-checked+.el-checkbox__label { color: white; }
+    .el-radio__input.is-checked+.el-radio__label {color: white;}
+  }
+}

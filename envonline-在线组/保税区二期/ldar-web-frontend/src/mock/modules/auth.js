@@ -1,0 +1,20 @@
+export default {
+  code: 200,
+  count: 1,
+  success: true,
+  msg: '操作成功',
+  data: {
+    token: '@word(551)',
+    refreshToken: '@word(551)',
+    homeUrl: '@url',
+    loginID: 'sinoyd',
+    loginUrl: null,
+    deptGuid: '@word(32)',
+    orgGuid: '@word(32)',
+    navGuid: '@word(36)',
+    themeCode: '008000',
+    uniqueId: 'sinoyd-@word',
+    userGuid: '@word(32)',
+    userName: '模拟数据',
+  },
+};

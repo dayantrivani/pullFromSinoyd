@@ -1,0 +1,31 @@
+export default {
+  'total': '@integer(5, 50)',
+  'rows|10-50': [
+    {
+      projectName: '@word(3, 9)',
+      principal: '@cname',
+      projectType: '@integer(1, 6)',
+      finishDate: '@date("yyyy-MM-dd")',
+      status: '@pick(["项目登记中", "任务下达中", "编制方案中", "测试中", "已办结"])',
+      nextOperator: '@cname',
+      plan: [
+        { label: '任务终止', status: 1 },
+        { label: '项目登记中', status: 1 },
+        { label: '任务下达中', status: 1 },
+        { label: '任务办理中', status: 1 },
+        { label: '测试中', status: 2 },
+        { label: '数据确认中', status: 3 },
+        { label: '数据审核中', status: 3 },
+        { label: '编制报告中', status: 3 },
+        { label: '报告未通过', status: 3 },
+        { label: '报告初审中', status: 3 },
+        { label: '报告复审中', status: 3 },
+        { label: '报告审核中', status: 3 },
+        { label: '办结归档中', status: 3 },
+        { label: '已办结', status: 3 },
+        { label: '报告传送中', status: 3 },
+        { label: '报告已传送', status: 3 },
+      ],
+    },
+  ],
+};

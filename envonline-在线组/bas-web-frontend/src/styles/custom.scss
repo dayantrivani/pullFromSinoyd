@@ -1,0 +1,275 @@
+// 自定义样式
+
+
+/* Login 登录页
+ * @see views/auth/Login.vue
+-------------------------- */
+.g-login {
+
+  $login-bg: #fff;
+  $login-color: #0896d8;
+  $height: 46px;
+  
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $login-bg;
+
+  > header, > footer {
+    > .container { @include container; }
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: $height;
+    z-index: 10;
+    background-color: rgba($color: #000000, $alpha: 0.5)
+  }
+
+  > header {
+    top: 0;
+    font-size: 18px;
+    color: $login-color;
+    span {
+      margin-right: 10px;
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+  }
+
+  > footer {
+    bottom: 0;
+    color: $-color-content;
+    line-height: $height - 18px;
+    text-align: center;
+  }
+
+  > main {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: {
+      size: cover;
+      repeat: no-repeat;
+      position: center;
+      color: #43AFF0;
+      image: url('../assets/img/login_bg_1920x1080.jpg');
+    };
+    .login-form {
+      position: absolute;
+      top: 25%;
+      right: 15%;
+      padding: 20px 10px;
+      background-color: $login-bg;
+      border-radius: 5px;
+      box-shadow: 35px 40px 60px rgba($color: #000000, $alpha: .3);
+    }
+    .title {
+      font-size: 18px;
+      color: $login-color;
+    }
+  }
+  .el-form {
+    .el-form-item {
+      input {
+        border-radius: 0;
+        &:focus + .el-input__prefix { color: $login-color; }
+      }
+    }
+    .el-input__suffix { cursor: pointer; }
+    .fa-eye { color: $login-color; }
+  }
+}
+
+
+/* empty 主页栏目缺省状态
+ * @see views/Home.vue
+-------------------------- */
+$empty-text: (
+  complaint: '当前没有任何顾客投诉',
+  alarm: '暂无报警',
+  task: '当前没有任务进度展示',
+  contract: '暂无即将到期合同与收款',
+  perform:'当前没有任何任务信息',
+  ops: '暂无提示',
+  notice: '暂无公告',
+  order: '暂无预约',
+  opinion: '暂无意见',
+  gtask: '暂无待办任务',
+);
+@each $name, $value in $empty-text {
+  .empty-#{$name}::after { content: $value; }
+}
+.el-card__body {
+  position: relative;
+  // // 待处理投诉
+  .empty-complaint, .empty-alarm, .empty-task, .empty-contract, .empty-perform,
+  .empty-ops, .empty-notice, .empty-order, .empty-opinion, .empty-gtask {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 50px;
+    background-image: url(../assets/img/column_empty_750x50.jpg);
+    &::after {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translate(-50%);
+      text-align: center;
+      color: $-color-tree-icon;
+      white-space: nowrap;
+    }
+  }
+  .empty-alarm { background-position: -75px; }      // 待处理警报
+  .empty-task { background-position: -150px; }      // 小组今日任务进度
+  .empty-contract { background-position: -225px;  } // 合同提醒
+  .empty-perform { background-position: -300px; }   // 最近完成任务
+  .empty-ops { background-position: -375px; }       // 今日运维进展
+  .empty-notice { background-position: -450px; }    // 通知公告
+  .empty-order { background-position: -525px; }     // 预约
+  .empty-opinion { background-position: -600px; }   // 意见
+  .empty-gtask { background-position: 675px; }      // 代办任务
+}
+
+
+
+
+/* v-resize 拖拽指令分隔线
+-------------------------- */
+.drag-line {
+  $space: $-block-space; // 间隔
+
+  position: absolute;
+  display: inline-block;
+  top: 1px;
+  right: - ($space / 2);
+  bottom: 1px;
+  width: $space - 2px;
+  border-width: 0 1px;
+  border-style: dashed;
+  border-color: transparent;
+  z-index: 1000;
+  cursor: e-resize;
+  &.hover {
+    border-color: $-color-theme;
+  }
+}
+
+
+
+/* drag-item 拖拽元素
+-------------------------- */
+.mod-drag-col {
+  height: 100%;
+  &.is-dragging .drag-item {
+    cursor: grabbing !important;
+  }
+  > ul { height: 100%; }
+  // 过渡动画
+  .drag-col-move {
+    transition: transform .5s;
+  }
+}
+// 拖拽元素
+.drag-item {
+  display: block;
+  padding: 0 15px;
+  height: 36px;
+  line-height: 36px;
+  color: $--color-text-regular;
+  border-bottom: 1px solid $--border-color-lighter;
+  cursor: grab;
+  &:hover { background: lighten($-color-theme, 40%) }
+  // 状态 - 目标拖动时
+  // &.is-drag {
+  //   background: lighten($-color-theme, 37%) !important;
+  //   border-width: 1px 0;
+  //   border-style: dashed;
+  //   border-color: green;
+  //   cursor: grabbing;
+  // }
+  // 状态 - 目标被选中时
+  &.is-chosen {
+    border-width: 1px 0;
+    border-style: dashed;
+    border-color: green;
+    background: lighten($-color-theme, 40%);
+  }
+  // 状态 - 拖拽模拟影子
+  // &.is-ghost {
+  //   background: lighten($-color-theme, 40%);
+  // }
+  // 状态 - 拖拽结束/点击选中
+  &[draggable="false"] {
+    background: lighten($-color-theme, 37%);
+  }
+}
+
+
+
+/* dynamic-edit 可编辑表格
+-------------------------- */
+.mod-table-edit{
+  $cell-height: 35px !important;
+  td {
+    padding: 0 !important;
+    .cell{
+      padding: 0 !important;
+      >.cell {
+        padding: 0 10px !important;
+      }
+      .el-input--mini {
+        .el-input__inner {
+          border-radius: 0 !important;
+          height: $cell-height;
+        }
+        .el-textarea__inner {
+          border-radius: 0 !important;
+          min-height: $cell-height;
+        }
+      }
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        height: 16px;
+        line-height: 16px !important;
+      }
+    }
+  }
+  .border-red > input {
+    border: 1px solid #ff1818 !important;
+  }
+}
+table th.test div:before {
+  content: '* ';
+  color: #ff1818;
+}
+
+
+/* dynamic-edit 电子表格
+-------------------------- */
+.hot-table {
+  thead th { line-height: 32px; }
+  tbody th, tbody td {
+    padding: 0 15px;
+    line-height: 35px;
+  }
+  tbody td {
+    cursor: pointer;
+  }
+}
+.handsontableInput {
+  line-height: 35px !important;
+}
+.invalid-error {
+  border-top: 1px solid #f00 !important;
+  border-left: 1px solid #f00 !important;
+  border-color: #f00 !important;
+}
+.currentColClassName {
+  background-color: lighten($-color-theme, 31%) !important;
+}
+.currentRow {
+  background-color: lighten($-color-theme, 31%) !important;
+}
