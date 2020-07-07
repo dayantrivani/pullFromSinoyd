@@ -1,0 +1,30 @@
+{
+  "width": 51,
+  "height": 795,
+  "comps": [
+    {
+      "type": "shape",
+      "background": "#979797",
+      "borderWidth": 1,
+      "borderColor": "rgb(61,61,61)",
+      "gradient": "spread.horizontal",
+      "displayName": "管道",
+      "points": [
+        0.06414,
+        4.72867,
+        0.06414,
+        0.8533,
+        0.06414,
+        792.82792,
+        51,
+        792.82792,
+        51,
+        0.8533,
+        0.06414,
+        0.8533,
+        0.06414,
+        0.8533
+      ]
+    }
+  ]
+}

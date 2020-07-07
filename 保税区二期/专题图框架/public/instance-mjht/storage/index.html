@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Preview Display</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="custom/images/favicon.ico?v=2" />
+    <style>
+        html,
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+        .trans-color {
+            transition: all 1s linear;
+        }
+    </style>
+
+    <!-- <script src='libs/htconfig.js'></script> -->
+    <script src='libs/ht.js'></script>
+    <!-- <script src='libs/ht-edgetype.js'></script>
+        <script src="libs/ht-obj.js"></script>
+        <script src='libs/ht-ui.js'></script>
+        <script src='libs/ht-vector.js'></script> -->
+
+    <script>
+        function init() {
+            dataModel = new ht.DataModel();
+            graphView = new ht.graph.GraphView(dataModel);
+            graphView.addToDOM();
+            window.addEventListener('resize', function () {
+                graphView.fitContent();
+            }, false);
+
+            ht.Default.xhrLoad('previews/display.json', function (text) {
+                var json = ht.Default.parse(text);
+                if (json.title) document.title = json.title;
+                dataModel.deserialize(json);
+                graphView.fitContent();
+
+
+                if (!isIE()) {
+                    // 水流动
+                    var flow = {
+                        'flowLeft': dataModel.getDataByTag('flow-left'),
+                        /* 排向污水厂 */
+                        'flowCenterTop': dataModel.getDataByTag('flow-center-top'),
+                        'flowRightTop': dataModel.getDataByTag('flow-right-top'),
+                        /* 排放至河道 */
+                        'flowCenterBottom': dataModel.getDataByTag('flow-center-bottom'),
+                        'flowRightBottom': dataModel.getDataByTag('flow-right-bottom'),
+                    }
+                    // setInterval(function(){ flow.flowLeft.s('shape.dash.offset', flow.flowLeft.s('shape.dash.offset') + 10 )  }, 100);
+                    /* 排向污水厂 */
+                    // setInterval(function(){ flow.flowCenterTop.s('shape.dash.offset', flow.flowCenterTop.s('shape.dash.offset') + 10 )  }, 100);
+                    // setInterval(function(){ flow.flowRightTop.s('shape.dash.offset', flow.flowRightTop.s('shape.dash.offset') - 10 )  }, 100);
+                    /* 排放至河道 */
+                    // setInterval(function(){ flow.flowCenterBottom.s('shape.dash.offset', flow.flowCenterBottom.s('shape.dash.offset') + 10 )  }, 100);
+                    // setInterval(function(){ flow.flowRightBottom.s('shape.dash.offset', flow.flowRightBottom.s('shape.dash.offset') - 10 )  }, 100);
+                    // flow.flowLeft.s('opacity', 0); 如果不要谁流动，设置谁的opacity为0就可以
+
+                    /* 风扇旋转以及变色 */
+                    var fan = {
+                        top: dataModel.getDataByTag('fan-top'),
+                        bottom: dataModel.getDataByTag('fan-bottom'),
+                    };
+                    var fantop = setInterval(function(){ fan.top.setRotation(fan.top.getRotation() - Math.PI/180 * 100)  }, 100);
+                    fan.top.setImage('symbols/julian/fan3.json');
+                    var fanbottom = setInterval(function(){ fan.bottom.setRotation(fan.bottom.getRotation() - Math.PI/180 * 100)  }, 100);
+                    fan.bottom.setImage('symbols/julian/fan3.json');
+                    if (true) {
+                        clearInterval(fantop);
+                        clearInterval(fanbottom);
+                    }
+
+                    /* 水池的水 */
+                    var waterLevel = {
+                        left: dataModel.getDataByTag('water-level-left'),
+                        right: dataModel.getDataByTag('water-level-right'),
+                    };
+                    waterLevel.left.s('shape.fill.clip.percentage', 0.5);
+                    waterLevel.right.s('shape.fill.clip.percentage', 0);
+
+
+                    /* 文本内容 */
+                    var text = {
+                        COD: dataModel.getDataByTag('COD'),
+                        level: dataModel.getDataByTag('level'),
+                        light: dataModel.getDataByTag('light'),
+                    };
+                    text.COD.s('text', 23.59);
+                    text.level.s('text', '中');
+                    
+
+                    /* 灯闪烁效果 */
+                    text.light.s('2d.visible', true);
+                    text.light.s('body.color', '#00E900');
+                    // text.light.s('body.color', '#0000E9');
+                    var onOff = true;
+
+                    // var _that = this;
+                    setInterval(function() {
+                        if (onOff) {
+                            text.light.s('opacity', text.light.s('opacity') - 0.01);
+                        } else {
+                            text.light.s('opacity', text.light.s('opacity') + 0.01);
+                        }
+                        if (text.light.s('opacity') < 0) {
+                            onOff = false;
+                            text.light.s('opacity', 0);
+                        }
+                        if (text.light.s('opacity') > 1) {
+                            onOff = true;
+                            text.light.s('opacity', 1);
+                        }
+                    }, 10);
+                }
+            });
+        }
+
+
+        function isIE() {
+            if (!!window.ActiveXObject || "ActiveXObject" in window) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        // 如果是IE浏览器，给出提示
+        if (isIE()) {
+            alert("为了获得最好的显示效果,请使用Chrome浏览器或切换成极速模式！");
+        };
+        setTimeout(init, 300);
+    </script>
+</body>
+
+</html>

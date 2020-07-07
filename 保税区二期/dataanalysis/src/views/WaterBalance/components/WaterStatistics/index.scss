@@ -1,0 +1,89 @@
+.draw {
+  height: 1rem;
+  padding: 0.1rem 0.3rem;
+  display: flex;
+  font-size: 0.12rem;
+  > img {
+    height: 0.8rem;
+    margin:0 0.2rem 0 0.5rem;
+  }
+  > .num-text {
+    flex: 1;
+    > .number {
+      height: 0.5rem;
+      color: #12A1F7;
+      font-weight: bold;
+      font-size: 0.4rem;
+      line-height: 0.5rem;
+    }
+    > .text {
+      height: 0.3rem;
+      line-height: 0.3rem;
+      display: flex;
+      > .name {
+        color: #A4C4DD;
+        padding: 0 0.1rem 0 0.05rem;
+        font-size: 0.14rem;
+      }
+      > .rule {
+        flex: 1;
+        color: #12A1F7;
+        > span {
+          color: #FFB423;
+        }
+      }
+    }
+  }
+}
+section {
+  width: 100%;
+  height: calc(50% - 0.5rem);
+  position: relative;
+  > div.icon-text {
+    height: 22%;
+    width: 90%;
+    margin: 0 auto;
+    background: {
+      repeat: no-repeat;
+      size: 100% 100%;
+      position: center;
+      image: url('~@/assets/img/common/panel.png');
+    };
+    > div {
+      float: left;
+      height: 100%;
+      line-height: 0.7rem;
+      &.rate {
+        color: #01BFEA;
+        font-size: 0.2rem;
+        margin: 0 0.2rem 0 0.16rem;
+        > span {
+          font-size: 0.12rem;
+        }
+      }
+      &.name {
+        color: #12A1F7;
+        margin-right: 0.2rem;
+      }
+      &.number {
+        max-width: 60%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.2rem;
+        color: #01BFEA;
+        span {
+          font-family: 'Siekoo';
+          font-size: 0.4rem;
+        }
+      }
+    }
+  }
+  > .charts {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

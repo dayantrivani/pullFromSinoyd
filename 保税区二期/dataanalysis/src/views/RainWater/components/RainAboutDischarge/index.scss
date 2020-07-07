@@ -1,0 +1,104 @@
+.icon-draw {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .icon-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 30%;
+    width: 100%;
+    color: #87A5BF;
+    font-size: 0.14rem;
+    display: flex;
+    z-index: 2;
+    > div {
+      flex: 1;
+      display: flex;
+      // align-items: center;
+      // justify-content: center;
+      background: {
+        size: 90% 94%;
+        repeat: no-repeat;
+        position: center top;
+        image: url('~@/assets/img/common/panel2.png');
+      };
+      > div {
+        height: 100%;
+        line-height: 0.64rem;
+      }
+      > div.percent{
+        margin-left: 0.25rem;
+        line-height: 0.6rem;
+        font-size: 0.16rem;
+        color: #009ffe;
+        > span {
+          font-size: 0.12rem;
+        }
+      }
+      > div.name{
+        &.icon-active {
+          color: #87A5BF !important;
+          &::before{
+            background-color: #87A5BF !important;
+          }
+        }
+        cursor: pointer;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        // align-items: center;
+        text-align: end;
+        font-size: 0.16rem;
+        color: #009ffe;
+        padding: 0rem 0.02rem 0 0;
+        &::before{
+          content: '';
+          margin: 0.28rem 0.03rem 0 0;
+          width: 0.08rem;
+          height: 0.08rem;
+          border-radius: 0.1rem;
+        }
+      }
+      > div.num {
+        // line-height: 0.6rem;
+        width: 1rem;
+        text-align: center;
+        font-size: 0.2rem;
+        font-family: 'Siekoo';
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      > div.unit {
+        width: 0.2rem;
+        margin-right: 0.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    > .icon-left {
+      > div.name {
+        &::before{
+          background-color: #00d5fc;
+        }
+      }
+    }
+    > .icon-right {
+      > div.name {
+        &::before{
+          background-color: #0d7a71;
+        }
+      }
+    }
+  }
+  > .charts{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}

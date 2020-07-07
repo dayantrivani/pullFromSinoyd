@@ -1,0 +1,17 @@
+// 修改专题图全局样式
+.g-box {
+  .yd-date-picker {
+    width: 0.6rem !important;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    input {
+      border-radius: 0.1rem;
+      height: 0.2rem !important;
+      line-height: 0.2rem !important;
+      padding: 0 0.1rem;
+    }
+    .el-input__icon {
+      line-height: 0.2rem;
+    }
+  }
+}

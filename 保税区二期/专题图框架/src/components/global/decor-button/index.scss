@@ -1,0 +1,22 @@
+.mod-decor-button {
+  position: absolute;
+  width: 259px;
+  height: 80px;
+  top: -68px;
+  z-index: 9;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  transition: transform 0.25s linear;
+  &:hover {
+    transform: scale(1.05);
+  }
+  .concent {
+    position: absolute;
+    width: 100%;
+    line-height: 90px;
+    font-size: 0.16rem;
+    text-align: center;
+    color: #42c2f8;
+  }
+}

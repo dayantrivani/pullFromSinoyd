@@ -1,0 +1,75 @@
+{
+  "width": 100,
+  "height": 100,
+  "pixelPerfect": false,
+  "comps": [
+    {
+      "type": "shape",
+      "background": "rgb(145,145,145)",
+      "borderWidth": 1,
+      "borderColor": "rgb(61,61,61)",
+      "gradient": "spread.antidiagonal",
+      "points": [
+        10.41488,
+        81.11588,
+        13.41917,
+        25.43634,
+        49.27039,
+        9.21316,
+        85.52217,
+        9.21316,
+        85.52217,
+        66.89557,
+        75.30758,
+        66.89557,
+        71.50215,
+        71.30186,
+        71.50215,
+        81.11588,
+        10.41488,
+        81.11588
+      ],
+      "segments": [
+        1,
+        4,
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "#979797",
+      "borderWidth": 1,
+      "borderColor": "rgb(61,61,61)",
+      "gradient": "spread.vertical",
+      "rotation": 3.14159,
+      "closePath": true,
+      "points": [
+        84.7242,
+        2.20361,
+        97.83952,
+        2.20361,
+        97.83952,
+        76.5093,
+        84.7242,
+        76.5093,
+        84.7242,
+        2.20361
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(150,150,150)",
+      "borderWidth": 1,
+      "borderColor": "rgb(61,61,61)",
+      "gradient": "spread.horizontal",
+      "rect": [
+        7.27142,
+        81.09769,
+        74.84589,
+        13.00121
+      ]
+    }
+  ]
+}

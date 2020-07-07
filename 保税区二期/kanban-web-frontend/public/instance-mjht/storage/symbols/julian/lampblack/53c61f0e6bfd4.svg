@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    id="Layer_1"
+    enable-background="new 0 0 497.975 473.977"
+    xml:space="preserve"
+    viewBox="0 0 497.975 473.977"
+    version="1.1"
+    y="0px"
+    x="0px"
+  >
+<radialGradient
+      id="SVGID_1_"
+      gradientUnits="userSpaceOnUse"
+      cy="231.67"
+      cx="928.92"
+      gradientTransform="matrix(1 0 0 1.2 0 -46.335)"
+      r="206.35"
+    >
+	<stop
+        style="stop-color:#FFDE17"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#ABA01F"
+        offset="1"
+    />
+</radialGradient
+  >
+<path
+      stroke="#000000"
+      stroke-width="19"
+      stroke-miterlimit="10"
+      d="m722.02 414.92c-23.16-33.24 171.74-387.11 207.91-387.11s228.78 361.14 205.92 387.11c-25.5 28.99-395.7 25.96-413.78 0z"
+      fill="url(#SVGID_1_)"
+  />
+<path
+      d="m905.41 356.15c0-14.623 12.155-23.186 26.373-23.186s25.561 8.563 25.561 23.186c0 14.219-11.343 23.186-26.373 23.186-13.81 0-25.56-8.97-25.56-23.19zm12.15-48.68c-6.018-7.507-13.969-189.32-5.687-198.39 6.574-7.2 32.684-7.429 38.997 0 6.221 7.32-2.027 193.21-5.687 198.39-3.98 5.64-23.3 5.39-27.62 0z"
+  />
+<linearGradient
+      id="SVGID_2_"
+      y2="48.45"
+      gradientUnits="userSpaceOnUse"
+      x2="929.92"
+      y1="304.93"
+      x1="929.92"
+    >
+	<stop
+        style="stop-color:#FFFFFF"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#FFFFFF;stop-opacity:.9104"
+        offset=".0896"
+    />
+	<stop
+        style="stop-color:#FFFFFF;stop-opacity:0"
+        offset="1"
+    />
+</linearGradient
+  >
+<path
+      opacity=".32"
+      d="m801.6 231.73c50.63-93.41 109.17-183.28 127.4-183.28 18.633 0 78.777 95.828 129.6 192.31 47.8 90.81-306.83 82.92-257-9.03z"
+      fill="url(#SVGID_2_)"
+  />
+<path
+      stroke="#ED1C24"
+      stroke-width="24"
+      stroke-miterlimit="10"
+      d="m47.384 414.92c-23.155-33.24 171.75-387.11 207.92-387.11s228.78 361.14 205.92 387.11c-25.54 28.99-395.75 25.96-413.84 0z"
+      fill="#D1D3D4"
+  />
+<path
+      d="m230.78 356.15c0-14.623 12.155-23.186 26.373-23.186s25.561 8.563 25.561 23.186c0 14.219-11.343 23.186-26.373 23.186-13.81 0-25.56-8.97-25.56-23.19zm12.15-48.68c-6.018-7.507-13.969-189.32-5.687-198.39 6.574-7.2 32.684-7.429 38.997 0 6.221 7.32-2.027 193.21-5.687 198.39-3.98 5.64-23.3 5.39-27.62 0z"
+  />
+<linearGradient
+      id="SVGID_3_"
+      y2="48.45"
+      gradientUnits="userSpaceOnUse"
+      x2="255.29"
+      y1="304.93"
+      x1="255.29"
+    >
+	<stop
+        style="stop-color:#FFFFFF"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#FFFFFF;stop-opacity:.9104"
+        offset=".0896"
+    />
+	<stop
+        style="stop-color:#FFFFFF;stop-opacity:0"
+        offset="1"
+    />
+</linearGradient
+  >
+<path
+      opacity=".32"
+      d="m126.97 231.73c50.63-93.41 109.17-183.28 127.4-183.28 18.633 0 78.777 95.828 129.6 192.31 47.83 90.81-306.83 82.92-257-9.03z"
+      fill="url(#SVGID_3_)"
+  />
+<path
+      stroke="#ED1C24"
+      stroke-width="24"
+      stroke-miterlimit="10"
+      d="m722.02-82.557c-23.16-33.243 171.74-387.1 207.91-387.1s228.78 361.14 205.92 387.11c-25.5 28.985-395.7 25.953-413.78-0.007z"
+      fill="#FFFFFF"
+  />
+<path
+      d="m901.62-122.9c0-15.69 13.042-24.877 28.296-24.877s27.425 9.187 27.425 24.877c0 15.256-12.17 24.876-28.296 24.876-14.81-0.003-27.42-9.626-27.42-24.876zm13.04-52.24c-6.457-8.055-14.987-203.13-6.102-212.86 7.053-7.725 35.067-7.97 41.841 0 6.675 7.854-2.175 207.3-6.102 212.86-4.27 6.06-25 5.78-29.64 0z"
+  />
+<metadata
+    ><rdf:RDF
+      ><cc:Work
+        ><dc:format
+          >image/svg+xml</dc:format
+        ><dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        /><cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        /><dc:publisher
+          ><cc:Agent
+              rdf:about="http://openclipart.org/"
+            ><dc:title
+              >Openclipart</dc:title
+            ></cc:Agent
+          ></dc:publisher
+        ><dc:title
+          >warning3</dc:title
+        ><dc:date
+          >2011-04-26T22:19:34</dc:date
+        ><dc:description
+          >Warning icon</dc:description
+        ><dc:source
+          >https://openclipart.org/detail/134227/warning3-by-docguy</dc:source
+        ><dc:creator
+          ><cc:Agent
+            ><dc:title
+              >docguy</dc:title
+            ></cc:Agent
+          ></dc:creator
+        ><dc:subject
+          ><rdf:Bag
+            ><rdf:li
+              >exclamation</rdf:li
+            ><rdf:li
+              >exclamation mark</rdf:li
+            ><rdf:li
+              >exclamation point</rdf:li
+            ><rdf:li
+              >important</rdf:li
+            ><rdf:li
+              >important icon</rdf:li
+            ><rdf:li
+              >red</rdf:li
+            ><rdf:li
+              >warning</rdf:li
+            ><rdf:li
+              >warning icon</rdf:li
+            ></rdf:Bag
+          ></dc:subject
+        ></cc:Work
+      ><cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        ><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        /></cc:License
+      ></rdf:RDF
+    ></metadata
+  ></svg
+>

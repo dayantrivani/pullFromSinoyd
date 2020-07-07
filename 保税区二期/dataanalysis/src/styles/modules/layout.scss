@@ -1,0 +1,76 @@
+body > .divScrollBar{
+  transition: opacity 0.5s linear;
+  >div{
+    border-radius: 8px;
+  }
+  background-color: transparent;
+  position: absolute;
+  opacity: 0;
+  filter: Alpha(opacity=0);
+}
+body:hover > .divScrollBar{
+  opacity: 0.5;
+  filter: Alpha(opacity=50);
+}
+body .divScrollBar div{
+  &:hover{
+    background-color: rgb(167, 169, 172);
+  }
+  background-color: rgb(197, 199, 202);
+  position: absolute;
+  left:0px;
+  top:0px;
+}
+
+
+
+// 1920 * 1080
+// @media screen and (max-width: 1920px) {
+// }
+.g-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.g-wrap > .g-box {
+  width: 100%;
+  height: 9rem;
+  overflow: hidden;
+  @each $name, $value in $page-bg {
+    &.#{$name} {
+      background: {
+        color: #101e2a;
+        size: 100% 100%;
+        repeat: no-repeat;
+        image: url('../assets/img/common/#{$value}');
+      }
+    }
+  }
+}
+
+.g-wrap > .g-box > header.g-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.3rem;
+  font-weight: bold;
+  text-align: center;
+  // z-index: 999;
+}
+
+.g-wrap > .g-box > div.g-main {
+  width: calc(100% - 0.2rem);
+  height: calc(100% - 1.175rem);
+  margin: $bg_title-height $-base-size $-base-size;
+  transition: $time;
+  /* 如果内容中包含点位的定位,横坐标百分比，纵坐标固定值 */
+  > div {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+}

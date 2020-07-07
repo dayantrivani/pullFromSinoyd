@@ -1,0 +1,178 @@
+// 引入 Element 预设变量
+@import "../element/element-variables.scss";
+
+
+
+/* font 字体代码
+-------------------------- */
+$-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei" ,"微软雅黑", Arial, sans-serif;
+
+$-font-size-title:    16px; // 主标题
+$-font-size-minor:    15px; // 次级标题
+$-font-size-main:     14px; // 正文文字
+$-font-size-link:     14px; // 链接文字
+$-font-size-assist:   13px; // 辅助文字
+$-font-size-content:  12px; // 内容文字
+$-font-size-table:    12px; // 表格文字
+$-font-size-disabled: 12px; // 失效文字
+
+
+
+/* color 配色
+-------------------------- */
+$-color-theme:      #2d8cf0;  // 主色调
+$-color-assist:     #FCFE36;  // 辅色调
+$-color-title:      #17233d;  // 标题
+$-color-title-bg:   #f5f7fa;  // 标题背景
+$-color-content:    #515a6e;  // 正文
+$-color-sub:        #808695;  // 辅助&图标
+$-color-tree-icon:  #C0C4CC;  // 树节点图标
+$-color-disabled:   #c6c8ce;  // 失效
+$-color-border:     #dcdee2;  // 边框
+$-color-divider:    #e8eaec;  // 分割线
+$-color-background: #ECF0F5;  // 背景
+// 阴影颜色
+$-color-shade: rgba($color: $--color-black, $alpha: .15);
+$-color-red:        #F56C6C;   // 红色标题内容
+
+
+
+/* size 布局配置
+-------------------------- */
+$-base-size: 10px;
+
+$g-head-height:        46px;  // 顶栏 - 高度
+$g-head-user-width:   334px;  // 顶栏 - 宽度
+$g-tags-height:        30px;  // 标签栏 - 高度
+$g-side-width:         50px;  // 侧栏 - 收缩宽度
+$g-side-max-width:    220px;  // 侧栏 - 展开宽度
+$g-side-item-height:   43px;  // 侧栏 - 子项高度
+$g-side-item-indent:   13px;  // 侧栏 - 子项缩进
+$g-side-icon-space:     5px;  // 侧栏 - 子项文字与图标间距
+$g-side-item-space:     2px;  // 侧栏 - 子项之间的空隙间隔
+$g-side-item-padding:   5px;  // 侧栏 - 子项左右内边距
+$g-side-vertical-left:  3px;  // 侧栏 - 收缩弹出层左边距
+
+
+
+/* color 侧栏配色
+-------------------------- */
+$g-side-mode: 2;                // 侧栏高亮方案
+$g-side-menu-color: #cddaef;
+$g-side-menu-bg: #212836;
+$g-side-item-color: #a2afc3;
+$g-side-item-bg: #434e63;
+$g-side-item1-bg: #2e3542;
+$g-side-item2-bg: #212836;
+$g-side-item3-bg: #151922;
+$g-side-item-hover-color: $--color-white;
+$g-side-item-hover-bg: transparent;
+$g-side-item-active-color: $-color-theme;
+$g-side-item-active-bg: #f8f8fa;
+
+
+
+/* size 尺寸
+-------------------------- */
+$-block-space: 10px;   // 区块间隔
+
+// 按钮组合
+$-btn-space:        10px;     // 按钮之间间隔
+$-btn-padding:      7px 5px;  // 按钮尺寸
+$-btn-cell-space:   5px;      // 单元格中按钮间隔
+$-btn-cell-padding: 3px 5px;  // 单元格中按钮尺寸
+$-btn-tree-space:   3px;      // 树控件中按钮间隔
+$-btn-tree-padding: 3px 3px;  // 树控件中按钮尺寸
+
+// grid 栅格布局
+$row-gutter: $-block-space;   // 分栏间隔
+$row-count: 12;               // 分栏高度划分等份
+
+$login-bg-img: '../../public/img/login_bg_1920x1080.jpg';
+
+
+
+/* Table 表格
+-------------------- */
+$table-index: '2';              // 序号所在列
+$table-font-size: 14px;         // 表格字体大小
+$table-cell-h: 35px;            // 单元格高度
+$table-cell-double-h: 55px;     // 双行单元格高度
+$table-cell-y-pad: 5px;         // 单元格上下内边距
+$table-row-status-ap: 30%;      // 状态行背景透明度
+$table-border-color: #f4f4f5; // 表格内容行边框颜色
+
+$table-loading-img: '../../public/img/table_loading_100x100.gif';
+$table-empty-img: '../../public/img/table_empty_310x239.gif';
+
+
+/* standard 规范约束变量
+-------------------- */
+$s-title-herght: 40px;
+
+// 次级标题
+$s-title-minor-size: 15px;
+$s-title-minor-bold: bold;
+$s-title-minor-color: $--color-primary;
+
+// 信息块标题
+$s-title-info-size: 14px;
+$s-title-info-bold: bold;
+$s-title-info-color: $s-title-minor-color;
+$s-title-info-height: $table-cell-h + 1px;
+
+// 输入表单控件预设宽度
+$s-form-input-width:          150px;  // 输入框
+$s-form-number-width:         150px;  // 计数器
+$s-form-select-width:         110px;  // 选择框
+$s-form-time-width:           150px;  // 时间选择器
+$s-form-time-range-width:     200px;  // 时间范围选择器
+$s-form-date-width:           125px;  // 日期选择器
+$s-form-date-range-width:     220px;  // 日期范围选择器
+$s-form-datetime-width:       160px;  // 日期时间选择器
+$s-form-datetime-range-width: 300px;  // 日期时间范围选择器
+
+// 输入控件高度
+$s-form-item-height: 28px; 
+
+// 选择框显示最大条数
+$s-form-select-count: 10;
+
+
+
+/* Grid 栅格布局
+-------------------- */
+$grid-y-name: 'h';              // 区块纵向划分属性名
+$grid-y-count: 12;              // 区块可划分等份（纵向）
+$grid-x-space: $-block-space;   // 区块左右间隔
+$grid-y-space: $grid-x-space;   // 区块上下间隔
+
+
+
+/* Card 卡片
+-------------------- */
+$card-head-height: $s-title-herght; // 标题区高度
+// 缺省文字
+$card-empty-text: (
+  complaint: '当前没有任何顾客投诉',
+  alarm: '暂无报警',
+  task: '当前没有任务进度展示',
+  contract: '暂无即将到期合同与收款',
+  perform:'当前没有任何任务信息',
+  ops: '暂无提示',
+  notice: '暂无公告',
+  order: '暂无预约',
+  opinion: '暂无意见',
+  gtask: '暂无待办任务',
+);
+
+
+
+/* Tabs 卡片
+-------------------- */
+$tabs-head-height: $s-title-herght; // 标题区高度
+
+
+/* Dialog 对话框
+-------------------- */
+$dialog-head-height: $s-title-herght + 10px; // 标题区高度

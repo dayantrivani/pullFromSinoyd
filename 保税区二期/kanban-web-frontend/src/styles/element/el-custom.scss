@@ -1,0 +1,126 @@
+.g-box { // 避免修改login页面的样式  在这个类下的样式才会被修改
+  /* Loading 加载状态
+  ------------------------------------------------ No.01
+  */
+  // transparent 透明背景
+  .el-loading-mask{
+    background-color: #ffffff00!important;
+    border-radius: 5px!important;
+  }
+
+  /* Grid 栅格布局
+  --------- --------- --------- --------- --------- No.04 */
+  .el-row {
+    $row-count: $grid-y-count;  // 区块可划分等份（纵向）
+    $row-h: 100% / $row-count;  // 区块高度
+    $row-space: $grid-y-space;  // 区块上下间隔
+    $name-y: $grid-y-name;      // 纵向划分属性名
+
+    > .el-col {
+      height: inherit;
+      transition: all $-transition;
+      &:last-child { margin-bottom: 0; }
+    }
+    @for $i from 1 through $row-count {
+      $space-count: $row-count / $i;  // 高度划分间隔数
+      > .el-col[#{$name-y}='#{$i}'], > div > .el-col[#{$name-y}='#{$i}'] {
+        // 区块高度 - 间隔数 * 每个间隔的 margin(10px) / 元素个数
+        height: calc(#{$row-h * $i} - #{($space-count * $row-space - $row-space) / $space-count});
+      }
+    }
+  }
+
+  /* 滚动条 */
+  .el-scrollbar__wrap{
+    overflow-x: hidden;
+  }
+  // .el-scrollbar__view{
+  // overflow-x: hidden !important;
+  // }
+
+
+  /**
+    progress 的样式
+  **/
+
+  .el-progress-bar__outer {
+    background-color: #010e17;
+  }
+  .el-progress__text {
+    color: #c0c6cb;
+  }
+  .suoerwei {
+    .el-progress-bar__inner {
+      background: linear-gradient(to right, #1598ff, #2ad2ff);
+    }
+  }
+  .fumiao {
+    .el-progress-bar__inner {
+      background: linear-gradient(to right, #e97818, #f9d701);
+    }
+  }
+  .geruite {
+    .el-progress-bar__inner {
+      background: linear-gradient(to right, #5affaa, #54fef2);
+    }
+  }
+  .tianpu {
+    .el-progress-bar__inner {
+      background: linear-gradient(to right, #d5f530, #49cb7c);
+    }
+  }
+  .akema {
+    .el-progress-bar__inner {
+      background: linear-gradient(to right, #ff4343, #fdaf77);
+    }
+  }
+
+  /**
+    input, select 以及 datepick 组件的样式 
+  **/
+  .el-input__inner {
+    color: #cfd1d4;
+    background-color: #000919;
+    border-width: 4px;
+    border: 1px solid #0ebcbc;
+  }
+  .el-select:hover .el-input__inner {
+    border: 1px solid #0ebcbc;
+  }
+  .el-input__inner:hover {
+    border: 1px solid #0ebcbc;
+  }
+  .el-select .el-input.is-focus .el-input__inner {
+    border: 1px solid #0ebcbc;
+  }
+    .el-input__prefix, .el-input__suffix {
+      color: #0ebcbc;
+    }
+  .el-input.is-active .el-input__inner, .el-input__inner:focus {
+    border: 1px solid #0ebcbc;
+  }
+  .el-button--mini, .el-button--mini.is-round {
+    padding: 6px 8px;
+  }
+  .el-button--primary {
+    border-color: transparent;
+    color: #fff;
+    background: #0ebcbc;
+  }
+  .el-button--primary:focus, .el-button--primary:hover {
+    color: #fff;
+    background: #0ebcbc;
+  }
+  .el-button--success {
+    border-color: transparent;
+    color: #fff;
+    background: #00e400;
+  }
+  .el-button--success:focus, .el-button--success:hover {
+    color: #fff;
+    background: #00e400;
+  }
+  .el-button--mini, .el-button--small {
+    border-radius: 5px;
+  }
+}

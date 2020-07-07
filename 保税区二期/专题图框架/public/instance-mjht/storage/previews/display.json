@@ -1,0 +1,2218 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {},
+  "d": [
+    {
+      "c": "ht.Block",
+      "i": 2167,
+      "p": {
+        "displayName": "整体",
+        "position": {
+          "x": 717.28092,
+          "y": 348.96112
+        },
+        "width": 1440.70002,
+        "height": 669.05744
+      },
+      "s": {
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2168,
+      "p": {
+        "displayName": "水池（左侧）",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 152.82601,
+          "y": 595.977
+        },
+        "width": 311.7902,
+        "height": 175.02568
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2169,
+      "p": {
+        "parent": {
+          "__i": 2168
+        },
+        "tag": "water-level-left",
+        "position": {
+          "x": 125.33748,
+          "y": 625.81023
+        },
+        "anchor": {
+          "x": 0.5,
+          "y": 1
+        },
+        "width": 222.43792,
+        "height": 105.9804
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(71,184,245)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2170,
+      "p": {
+        "parent": {
+          "__i": 2168
+        },
+        "position": {
+          "x": 14.11852,
+          "y": 570.977
+        },
+        "width": 6.18947,
+        "height": 125.02568
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2171,
+      "p": {
+        "parent": {
+          "__i": 2168
+        },
+        "position": {
+          "x": 239.65118,
+          "y": 570.977
+        },
+        "width": 6.18947,
+        "height": 125.02568
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2172,
+      "p": {
+        "displayName": "高",
+        "parent": {
+          "__i": 2168
+        },
+        "position": {
+          "x": 274.1882,
+          "y": 544.00758
+        },
+        "width": 69.06582,
+        "height": 25.32566
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2173,
+      "p": {
+        "parent": {
+          "__i": 2172
+        },
+        "position": {
+          "x": 245.18997,
+          "y": 542.85442
+        },
+        "width": 11.06935,
+        "height": 2.30633
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(250,0,0)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2174,
+      "p": {
+        "parent": {
+          "__i": 2172
+        },
+        "position": {
+          "x": 283.57243,
+          "y": 544.00758
+        },
+        "width": 50.29736,
+        "height": 25.32566
+      },
+      "s": {
+        "text": "高",
+        "text.font": "20px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2175,
+      "p": {
+        "displayName": "低",
+        "parent": {
+          "__i": 2168
+        },
+        "position": {
+          "x": 274.18408,
+          "y": 610.3112
+        },
+        "width": 69.06582,
+        "height": 25.32566
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2176,
+      "p": {
+        "parent": {
+          "__i": 2175
+        },
+        "position": {
+          "x": 245.18585,
+          "y": 609.15803
+        },
+        "width": 11.06935,
+        "height": 2.30633
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(255,0,0)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2177,
+      "p": {
+        "parent": {
+          "__i": 2175
+        },
+        "position": {
+          "x": 283.56831,
+          "y": 610.3112
+        },
+        "width": 50.29736,
+        "height": 25.32566
+      },
+      "s": {
+        "text": "低",
+        "text.font": "20px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2178,
+      "p": {
+        "parent": {
+          "__i": 2168
+        },
+        "position": {
+          "x": 127.99394,
+          "y": 629.65004
+        },
+        "width": 262.12606,
+        "height": 7.6796
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2179,
+      "p": {
+        "parent": {
+          "__i": 2168
+        },
+        "position": {
+          "x": 127.99394,
+          "y": 658.48984
+        },
+        "width": 146.45886
+      },
+      "s": {
+        "text": "雨水池",
+        "text.font": "25px arial, sans-serif,bold",
+        "text.align": "center",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2180,
+      "p": {
+        "displayName": "测量器",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 54.76451,
+          "y": 491.06463
+        },
+        "width": 47.1985,
+        "height": 236.1868
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2181,
+      "p": {
+        "parent": {
+          "__i": 2180
+        },
+        "position": {
+          "x": 54.76451,
+          "y": 396.57049
+        },
+        "width": 27.4122,
+        "height": 47.1985
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#737373",
+        "shape.border.width": 1,
+        "shape.border.color": "#48403E",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2182,
+      "p": {
+        "parent": {
+          "__i": 2180
+        },
+        "rotation": 4.71239,
+        "position": {
+          "x": 54.76451,
+          "y": 396.57049
+        },
+        "width": 27.4122,
+        "height": 47.1985
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#888888",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2183,
+      "p": {
+        "parent": {
+          "__i": 2180
+        },
+        "position": {
+          "x": 54.76451,
+          "y": 396.47856
+        },
+        "width": 43.13501,
+        "height": 42.76554
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "#7CBDF7",
+        "shape.border.width": 1,
+        "shape.border.color": "#4B4341",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2184,
+      "p": {
+        "parent": {
+          "__i": 2180
+        },
+        "position": {
+          "x": 54.76451,
+          "y": 396.57049
+        },
+        "width": 27.4122,
+        "height": 10.57599
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#25FF1F",
+        "shape.border.width": 1,
+        "shape.border.color": "#4D4846",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2185,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2180
+        },
+        "image": "symbols/julian/Pipe.json",
+        "position": {
+          "x": 54.76451,
+          "y": 517.42584
+        },
+        "width": 9.08557,
+        "height": 183.46438
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2186,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2180
+        },
+        "image": "symbols/julian/Pipe.json",
+        "position": {
+          "x": 54.76451,
+          "y": 423.52413
+        },
+        "width": 13.68203,
+        "height": 6.70879
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2187,
+      "p": {
+        "parent": {
+          "__i": 2180
+        },
+        "position": {
+          "x": 54.76451,
+          "y": 501.77509
+        },
+        "width": 10.43104,
+        "height": 34.24092
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "#979797",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "shape.gradient": "spread.horizontal",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2188,
+      "p": {
+        "displayName": "右边水管",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 223.26011,
+          "y": 345.32643
+        },
+        "width": 68.21036,
+        "height": 391.73001
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2189,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2188
+        },
+        "image": "symbols/julian/Pipe.json",
+        "rotation": 4.71239,
+        "position": {
+          "x": 232.22743,
+          "y": 158.06709
+        },
+        "width": 11.77246,
+        "height": 50.2757
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2190,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2188
+        },
+        "image": "symbols/julian/Pipe.json",
+        "position": {
+          "x": 198.54516,
+          "y": 355.26821
+        },
+        "width": 11.77246,
+        "height": 371.84645
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2191,
+      "p": {
+        "displayName": "Lpipe",
+        "parent": {
+          "__i": 2188
+        },
+        "image": "symbols/julian/Lpipe.json",
+        "position": {
+          "x": 199.85051,
+          "y": 160.77471
+        },
+        "anchor": {
+          "x": 0.4727,
+          "y": 0.5
+        },
+        "width": 22.62657,
+        "height": 22.62657
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2192,
+      "p": {
+        "displayName": "监测仪",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 322.63058,
+          "y": 176.07296
+        },
+        "width": 146.45886,
+        "height": 248.67841
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2193,
+      "p": {
+        "parent": {
+          "__i": 2192
+        },
+        "tag": "div",
+        "position": {
+          "x": 322.63058,
+          "y": 148.03733
+        },
+        "width": 130.5306,
+        "height": 192.60716
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "#EFEFEF",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2194,
+      "p": {
+        "parent": {
+          "__i": 2192
+        },
+        "tag": "div",
+        "position": {
+          "x": 322.63058,
+          "y": 151.61942
+        },
+        "width": 112.73109,
+        "height": 77.67002
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "rgb(0,0,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2195,
+      "p": {
+        "parent": {
+          "__i": 2192
+        },
+        "tag": "div",
+        "position": {
+          "x": 322.63539,
+          "y": 79.4869
+        },
+        "width": 112.72147,
+        "height": 26.84771
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "#3E3A39",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2196,
+      "p": {
+        "parent": {
+          "__i": 2192
+        },
+        "tag": "div",
+        "position": {
+          "x": 347.59262,
+          "y": 79.4869
+        },
+        "width": 38.36124,
+        "height": 18.01084
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#727171",
+        "shape.border.width": 1,
+        "shape.border.color": "#727171",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2197,
+      "p": {
+        "parent": {
+          "__i": 2192
+        },
+        "position": {
+          "x": 322.63058,
+          "y": 275.41216
+        },
+        "width": 146.45886
+      },
+      "s": {
+        "text": "COD监测仪",
+        "text.font": "20px arial, sans-serif,bold",
+        "text.align": "center",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2198,
+      "p": {
+        "displayName": "中部水管",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 488.72497,
+          "y": 222.54831
+        },
+        "width": 201.65818,
+        "height": 202.27259
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2199,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2198
+        },
+        "image": "symbols/julian/Pipe.json",
+        "rotation": 4.71239,
+        "position": {
+          "x": 479.65186,
+          "y": 220.85506
+        },
+        "width": 11.77246,
+        "height": 183.51195
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2200,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2198
+        },
+        "image": "symbols/julian/Pipe.json",
+        "position": {
+          "x": 581.29863,
+          "y": 222.54831
+        },
+        "width": 11.80458,
+        "height": 202.27259
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2201,
+      "p": {
+        "displayName": "Tpipe2",
+        "parent": {
+          "__i": 2198
+        },
+        "image": "symbols/julian/Tpipe2.json",
+        "rotation": 4.71239,
+        "position": {
+          "x": 579.96309,
+          "y": 220.85506
+        },
+        "width": 25.57593,
+        "height": 19.18195
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2202,
+      "p": {
+        "displayName": "抽水机1",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 883.858,
+          "y": 129.90042
+        },
+        "width": 621.93471,
+        "height": 156.33334
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2203,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2202
+        },
+        "image": "symbols/julian/Pipe.json",
+        "rotation": 1.5708,
+        "position": {
+          "x": 736.93514,
+          "y": 112.71367
+        },
+        "width": 11.80458,
+        "height": 291.43343
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2204,
+      "p": {
+        "displayName": "pump",
+        "parent": {
+          "__i": 2202
+        },
+        "image": "symbols/julian/series/pump.json",
+        "position": {
+          "x": 959.86098,
+          "y": 118.06709
+        },
+        "width": 170,
+        "height": 80
+      },
+      "s": {
+        "2d.movable": false
+      },
+      "a": {
+        "rotation": 45
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2205,
+      "p": {
+        "displayName": "fan4",
+        "parent": {
+          "__i": 2202
+        },
+        "tag": "fan-top",
+        "image": "symbols/julian/fan4.json",
+        "position": {
+          "x": 932.70054,
+          "y": 112.71367
+        },
+        "width": 38.98848,
+        "height": 38.98848
+      },
+      "s": {
+        "2d.movable": false,
+        "shape.foreground": "rgb(255,0,0)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2206,
+      "p": {
+        "parent": {
+          "__i": 2202
+        },
+        "position": {
+          "x": 959.86098,
+          "y": 183.06709
+        },
+        "width": 146.45886
+      },
+      "s": {
+        "text": "雨水超标排放",
+        "text.font": "25px arial, sans-serif,bold",
+        "text.align": "center",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2207,
+      "p": {
+        "displayName": "抽水管（右上）",
+        "parent": {
+          "__i": 2202
+        },
+        "position": {
+          "x": 1039.77639,
+          "y": 66.97331
+        },
+        "width": 310.09793,
+        "height": 30.47912
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2208,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2207
+        },
+        "image": "symbols/julian/Pipe.json",
+        "position": {
+          "x": 893.31754,
+          "y": 76.94524
+        },
+        "width": 10.89506,
+        "height": 10.53528
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2209,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2207
+        },
+        "image": "symbols/julian/Pipe.json",
+        "rotation": 1.5708,
+        "position": {
+          "x": 1049.10864,
+          "y": 59.82989
+        },
+        "width": 11.80458,
+        "height": 291.43343
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2210,
+      "p": {
+        "displayName": "Lpipe",
+        "parent": {
+          "__i": 2207
+        },
+        "image": "symbols/julian/Lpipe.json",
+        "position": {
+          "x": 895.39226,
+          "y": 62.39859
+        },
+        "width": 21.32968,
+        "height": 21.32968
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2211,
+      "p": {
+        "displayName": "Lpipe",
+        "parent": {
+          "__i": 2202
+        },
+        "image": "symbols/julian/Lpipe.json",
+        "position": {
+          "x": 583.09232,
+          "y": 114.98383
+        },
+        "width": 20.40335,
+        "height": 20.40335
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2212,
+      "p": {
+        "displayName": "抽水机2",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 993.41653,
+          "y": 351.39283
+        },
+        "width": 838.34779,
+        "height": 156.34904
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2213,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2212
+        },
+        "image": "symbols/julian/Pipe.json",
+        "rotation": 1.5708,
+        "position": {
+          "x": 733.93514,
+          "y": 333.66506
+        },
+        "width": 11.80458,
+        "height": 291.43343
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2214,
+      "p": {
+        "displayName": "pump",
+        "parent": {
+          "__i": 2212
+        },
+        "image": "symbols/julian/series/pump.json",
+        "position": {
+          "x": 959.59042,
+          "y": 339.56735
+        },
+        "width": 170,
+        "height": 80
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2215,
+      "p": {
+        "displayName": "fan4",
+        "parent": {
+          "__i": 2212
+        },
+        "tag": "fan-bottom",
+        "image": "symbols/julian/fan4.json",
+        "position": {
+          "x": 932.3053,
+          "y": 334.61776
+        },
+        "width": 38.98848,
+        "height": 38.98848
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2216,
+      "p": {
+        "parent": {
+          "__i": 2212
+        },
+        "position": {
+          "x": 958.48553,
+          "y": 404.56735
+        },
+        "width": 146.45886
+      },
+      "s": {
+        "text": "雨水合格排放",
+        "text.font": "25px arial, sans-serif",
+        "text.align": "center",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2217,
+      "p": {
+        "displayName": "抽水管（右上）",
+        "parent": {
+          "__i": 2212
+        },
+        "position": {
+          "x": 1148.92326,
+          "y": 288.45788
+        },
+        "width": 527.33432,
+        "height": 30.47912
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2218,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2217
+        },
+        "image": "symbols/julian/Pipe.json",
+        "position": {
+          "x": 893.84621,
+          "y": 298.4298
+        },
+        "width": 10.89506,
+        "height": 10.53528
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2219,
+      "p": {
+        "displayName": "Pipe",
+        "parent": {
+          "__i": 2217
+        },
+        "image": "symbols/julian/Pipe.json",
+        "rotation": 1.5708,
+        "position": {
+          "x": 1158.25551,
+          "y": 281.31445
+        },
+        "width": 11.80458,
+        "height": 508.66982
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2220,
+      "p": {
+        "displayName": "Lpipe",
+        "parent": {
+          "__i": 2217
+        },
+        "image": "symbols/julian/Lpipe.json",
+        "position": {
+          "x": 895.92094,
+          "y": 283.88315
+        },
+        "width": 21.32968,
+        "height": 21.32968
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2221,
+      "p": {
+        "displayName": "Lpipe",
+        "parent": {
+          "__i": 2212
+        },
+        "image": "symbols/julian/Lpipe.json",
+        "rotation": 4.71239,
+        "position": {
+          "x": 584.4443,
+          "y": 332.03345
+        },
+        "width": 20.40335,
+        "height": 20.40335
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2222,
+      "p": {
+        "parent": {
+          "__i": 2212
+        },
+        "position": {
+          "x": 1303.91143,
+          "y": 324.56735
+        },
+        "width": 146.45886
+      },
+      "s": {
+        "text": "排放至河道",
+        "text.font": "25px arial, sans-serif,bold",
+        "text.align": "center",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2223,
+      "p": {
+        "displayName": "水池（右侧）",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 1306.5679,
+          "y": 107.75268
+        },
+        "width": 262.12606,
+        "height": 186.64056
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2224,
+      "p": {
+        "parent": {
+          "__i": 2223
+        },
+        "tag": "water-level-right",
+        "position": {
+          "x": 1306.04431,
+          "y": 79.4869
+        },
+        "width": 222.43792,
+        "height": 105.9804
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(71,184,245)",
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2225,
+      "p": {
+        "parent": {
+          "__i": 2223
+        },
+        "position": {
+          "x": 1192.69247,
+          "y": 76.94524
+        },
+        "width": 6.18947,
+        "height": 125.02568
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2226,
+      "p": {
+        "parent": {
+          "__i": 2223
+        },
+        "position": {
+          "x": 1418.22513,
+          "y": 76.94524
+        },
+        "width": 6.18947,
+        "height": 125.02568
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2227,
+      "p": {
+        "parent": {
+          "__i": 2223
+        },
+        "position": {
+          "x": 1306.5679,
+          "y": 135.61828
+        },
+        "width": 262.12606,
+        "height": 7.6796
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2228,
+      "p": {
+        "parent": {
+          "__i": 2223
+        },
+        "position": {
+          "x": 1306.5679,
+          "y": 176.07296
+        },
+        "width": 146.45886
+      },
+      "s": {
+        "text": "排放至污水厂",
+        "text.font": "25px arial, sans-serif,bold",
+        "text.align": "center",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2229,
+      "p": {
+        "displayName": "雨水排放运行指示",
+        "parent": {
+          "__i": 2167
+        },
+        "position": {
+          "x": 587.20092,
+          "y": 501.07999
+        },
+        "width": 298.12372,
+        "height": 243.02528
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2230,
+      "p": {
+        "parent": {
+          "__i": 2229
+        },
+        "position": {
+          "x": 590.07723,
+          "y": 501.07999
+        },
+        "width": 292.3711,
+        "height": 233.02528
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "rgb(0,0,0)",
+        "shape.border.width": 10,
+        "shape.border.color": "#29292B",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2231,
+      "p": {
+        "parent": {
+          "__i": 2229
+        },
+        "position": {
+          "x": 593.83358,
+          "y": 384.56735
+        },
+        "width": 258.30017,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#29292B",
+        "shape.border.color": "#979797",
+        "shape.gradient": "radial.center",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2232,
+      "p": {
+        "parent": {
+          "__i": 2229
+        },
+        "position": {
+          "x": 589.45335,
+          "y": 617.59263
+        },
+        "width": 274.47612,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#29292B",
+        "shape.border.color": "#979797",
+        "shape.gradient": "radial.center",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2233,
+      "p": {
+        "parent": {
+          "__i": 2229
+        },
+        "position": {
+          "x": 589.45335,
+          "y": 420.5462
+        },
+        "width": 292.3711,
+        "height": 50.01825
+      },
+      "s": {
+        "text": "雨水排放运行指示",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "bold 18px arial, sans-serif",
+        "text.align": "center",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2234,
+      "p": {
+        "parent": {
+          "__i": 2229
+        },
+        "tag": "date",
+        "position": {
+          "x": 587.20092,
+          "y": 454.57648
+        },
+        "width": 298.12372,
+        "height": 50.01825
+      },
+      "s": {
+        "text": "--",
+        "text.color": "#13CDF7",
+        "text.font": "18px arial, sans-serif",
+        "text.align": "center",
+        "body.color": "",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2235,
+      "p": {
+        "parent": {
+          "__i": 2229
+        },
+        "position": {
+          "x": 533.65251,
+          "y": 498.22715
+        }
+      },
+      "s": {
+        "text": "COD：",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "16px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2236,
+      "p": {
+        "displayName": "COD浓度",
+        "parent": {
+          "__i": 2229
+        },
+        "tag": "COD",
+        "position": {
+          "x": 589.71386,
+          "y": 498.22715
+        },
+        "height": 62.46987
+      },
+      "s": {
+        "text": "--",
+        "text.color": "#13CDF7",
+        "text.font": "20px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2237,
+      "p": {
+        "parent": {
+          "__i": 2229
+        },
+        "position": {
+          "x": 537.51027,
+          "y": 535.06773
+        }
+      },
+      "s": {
+        "text": "液位：",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "16px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2238,
+      "p": {
+        "displayName": "液位高度",
+        "parent": {
+          "__i": 2229
+        },
+        "tag": "level",
+        "position": {
+          "x": 589.71386,
+          "y": 534.74207
+        },
+        "height": 62.46987
+      },
+      "s": {
+        "text": "--",
+        "text.color": "#13CDF7",
+        "text.font": "20px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 2239,
+      "p": {
+        "displayName": "灯",
+        "parent": {
+          "__i": 2229
+        },
+        "position": {
+          "x": 586.951,
+          "y": 583.00481
+        },
+        "width": 130.04017,
+        "height": 50
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2240,
+      "p": {
+        "parent": {
+          "__i": 2239
+        },
+        "position": {
+          "x": 536.93091,
+          "y": 580.977
+        },
+        "width": 30,
+        "height": 30
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 2420,
+      "p": {
+        "parent": {
+          "__i": 2239
+        },
+        "tag": "light",
+        "position": {
+          "x": 536.92848,
+          "y": 580.971
+        },
+        "width": 28.98627,
+        "height": 29.06397
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(17,255,0)",
+        "shape.border.color": "rgba(255,0,0,0)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "opacity": 1,
+        "pixelPerfect": false,
+        "2d.visible": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 2241,
+      "p": {
+        "parent": {
+          "__i": 2239
+        },
+        "position": {
+          "x": 529.96158,
+          "y": 572.82003
+        },
+        "width": 9.37768,
+        "height": 10.29133,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            4,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 534.65043,
+              "y": 569.9015
+            },
+            {
+              "x": 530.17905,
+              "y": 567.67436
+            },
+            {
+              "x": 525.27274,
+              "y": 573.61561
+            },
+            {
+              "x": 525.27274,
+              "y": 575.73116
+            },
+            {
+              "x": 526.49158,
+              "y": 576.74686
+            },
+            {
+              "x": 528.82769,
+              "y": 577.9657
+            },
+            {
+              "x": 528.82769,
+              "y": 577.9657
+            },
+            {
+              "x": 534.65043,
+              "y": 569.9015
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": "#FFF",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 2242,
+      "p": {
+        "parent": {
+          "__i": 2239
+        },
+        "position": {
+          "x": 601.97108,
+          "y": 581.14381
+        },
+        "anchor": {
+          "x": 0.5,
+          "y": 0.46278
+        }
+      },
+      "s": {
+        "text": "超标报警",
+        "text.align": "center",
+        "text.font": "20px arial, sans-serif",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 2243,
+      "p": {
+        "displayName": "左侧水流",
+        "tag": "flow-left",
+        "position": {
+          "x": 227.04485,
+          "y": 348.36572
+        },
+        "width": 56.99938,
+        "height": 380.89508,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            4,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 198.54516,
+              "y": 538.81326
+            },
+            {
+              "x": 198.54516,
+              "y": 538.81326
+            },
+            {
+              "x": 198.54516,
+              "y": 213.7379
+            },
+            {
+              "x": 198.54516,
+              "y": 164.64304
+            },
+            {
+              "x": 198.54516,
+              "y": 159.89185
+            },
+            {
+              "x": 205.9099,
+              "y": 158.26408
+            },
+            {
+              "x": 212.40908,
+              "y": 158.26408
+            },
+            {
+              "x": 236.06565,
+              "y": 157.91818
+            },
+            {
+              "x": 245.34131,
+              "y": 158.26408
+            },
+            {
+              "x": 255.54454,
+              "y": 158.26408
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 10,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          4,
+          8
+        ],
+        "shape.dash.3d.color": "#60ACFC",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": "rgba(96,172,252,0)",
+        "shape.border.color": "rgba(0,0,0,0.00)",
+        "shape.dash.color": "#60ACFC",
+        "border.width": 1,
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 2244,
+      "p": {
+        "displayName": "中部向上水流",
+        "tag": "flow-center-top",
+        "rotation": 4.71239,
+        "position": {
+          "x": 633.51803,
+          "y": 166.8017
+        },
+        "scale": {
+          "x": 1,
+          "y": -1
+        },
+        "width": 108.10672,
+        "height": 484.96416,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 579.46467,
+              "y": 409.28378
+            },
+            {
+              "x": 579.46467,
+              "y": 409.28378
+            },
+            {
+              "x": 579.46467,
+              "y": 253.72274
+            },
+            {
+              "x": 579.46467,
+              "y": 229.19631
+            },
+            {
+              "x": 579.46467,
+              "y": 219.17199
+            },
+            {
+              "x": 579.46467,
+              "y": 219.17199
+            },
+            {
+              "x": 592.72637,
+              "y": 219.17199
+            },
+            {
+              "x": 608.96064,
+              "y": 219.17199
+            },
+            {
+              "x": 653.03224,
+              "y": 219.17199
+            },
+            {
+              "x": 678.90758,
+              "y": 219.17199
+            },
+            {
+              "x": 687.57139,
+              "y": 219.17199
+            },
+            {
+              "x": 687.57139,
+              "y": 211.35478
+            },
+            {
+              "x": 687.57139,
+              "y": 207.50724
+            },
+            {
+              "x": 687.57139,
+              "y": 191.61095
+            },
+            {
+              "x": 687.57139,
+              "y": -69.84349
+            },
+            {
+              "x": 687.57139,
+              "y": -75.68038
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 10,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          4,
+          8
+        ],
+        "shape.dash.3d.color": "#60ACFC",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": "rgba(96,172,252,0)",
+        "shape.border.color": "rgba(0,0,0,0.00)",
+        "shape.dash.color": "#60ACFC",
+        "border.width": 1,
+        "shape.dash.width": 0,
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 2245,
+      "p": {
+        "displayName": "中部向下水流",
+        "tag": "flow-center-bottom",
+        "rotation": 1.5708,
+        "position": {
+          "x": 633.72028,
+          "y": 277.36304
+        },
+        "width": 113.01596,
+        "height": 485.78552,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 577.2123,
+              "y": 520.2558
+            },
+            {
+              "x": 577.2123,
+              "y": 520.2558
+            },
+            {
+              "x": 577.2123,
+              "y": 364.4313
+            },
+            {
+              "x": 577.2123,
+              "y": 339.86333
+            },
+            {
+              "x": 577.2123,
+              "y": 329.82202
+            },
+            {
+              "x": 577.2123,
+              "y": 329.82202
+            },
+            {
+              "x": 591.07622,
+              "y": 329.82202
+            },
+            {
+              "x": 608.04771,
+              "y": 329.82202
+            },
+            {
+              "x": 654.12064,
+              "y": 329.82202
+            },
+            {
+              "x": 681.17101,
+              "y": 329.82202
+            },
+            {
+              "x": 690.22826,
+              "y": 329.82202
+            },
+            {
+              "x": 690.22826,
+              "y": 321.99158
+            },
+            {
+              "x": 690.22826,
+              "y": 318.13752
+            },
+            {
+              "x": 690.22826,
+              "y": 302.21431
+            },
+            {
+              "x": 690.22826,
+              "y": 40.31705
+            },
+            {
+              "x": 690.22826,
+              "y": 34.47028
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 10,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          4,
+          8
+        ],
+        "shape.dash.3d.color": "#60ACFC",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": "rgba(96,172,252,0)",
+        "shape.border.color": "rgba(0,0,0,0.00)",
+        "shape.dash.color": "#60ACFC",
+        "border.width": 1,
+        "shape.dash.width": 0,
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 2246,
+      "p": {
+        "displayName": "右上侧水流",
+        "tag": "flow-right-top",
+        "rotation": 1.5708,
+        "position": {
+          "x": 1037.86755,
+          "y": 70.57742
+        },
+        "scale": {
+          "x": 1,
+          "y": -1
+        },
+        "width": 23.41541,
+        "height": 289.46168,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1027.18313,
+              "y": 215.30825
+            },
+            {
+              "x": 1027.18313,
+              "y": 215.30825
+            },
+            {
+              "x": 1027.18313,
+              "y": 49.02173
+            },
+            {
+              "x": 1027.18313,
+              "y": -28.67594
+            },
+            {
+              "x": 1027.18313,
+              "y": -44.4697
+            },
+            {
+              "x": 1027.18313,
+              "y": -56.60302
+            },
+            {
+              "x": 1027.18313,
+              "y": -62.93516
+            },
+            {
+              "x": 1027.18313,
+              "y": -66.56262
+            },
+            {
+              "x": 1026.15985,
+              "y": -73.88933
+            },
+            {
+              "x": 1038.11265,
+              "y": -73.88933
+            },
+            {
+              "x": 1046.90178,
+              "y": -74.15342
+            },
+            {
+              "x": 1045.78445,
+              "y": -73.88933
+            },
+            {
+              "x": 1049.57526,
+              "y": -73.88933
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 10,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          4,
+          8
+        ],
+        "shape.dash.3d.color": "#60ACFC",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": "rgba(96,172,252,0)",
+        "shape.border.color": "rgba(0,0,0,0.00)",
+        "shape.dash.color": "#60ACFC",
+        "border.width": 1,
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 2247,
+      "p": {
+        "displayName": "右下侧水流",
+        "tag": "flow-right-bottom",
+        "rotation": 1.5708,
+        "position": {
+          "x": 1151.85725,
+          "y": 291.30075
+        },
+        "scale": {
+          "x": 1,
+          "y": -1
+        },
+        "width": 24.79339,
+        "height": 515.94968,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1141.86182,
+              "y": 549.27558
+            },
+            {
+              "x": 1141.86182,
+              "y": 549.27558
+            },
+            {
+              "x": 1141.86182,
+              "y": 252.60825
+            },
+            {
+              "x": 1141.86182,
+              "y": 113.98991
+            },
+            {
+              "x": 1141.86182,
+              "y": 85.81268
+            },
+            {
+              "x": 1141.86182,
+              "y": 64.16596
+            },
+            {
+              "x": 1141.86182,
+              "y": 52.86895
+            },
+            {
+              "x": 1141.86182,
+              "y": 46.3973
+            },
+            {
+              "x": 1139.46056,
+              "y": 33.32591
+            },
+            {
+              "x": 1152.79135,
+              "y": 33.32591
+            },
+            {
+              "x": 1161.60499,
+              "y": 33.32591
+            },
+            {
+              "x": 1160.46314,
+              "y": 33.32591
+            },
+            {
+              "x": 1164.25395,
+              "y": 33.32591
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 10,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          4,
+          8
+        ],
+        "shape.dash.3d.color": "#60ACFC",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": "rgba(96,172,252,0)",
+        "shape.border.color": "rgba(0,0,0,0.00)",
+        "shape.dash.color": "#60ACFC",
+        "border.width": 1,
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    }
+  ]
+}
