@@ -1,0 +1,55 @@
+.page-icons {
+  .search-icon {
+    padding-top: 15px;
+    width: 100%;
+    text-align: center;
+    > .el-input {
+      max-width: 40%;
+      min-width: 400px;
+      font-size: 1.2em;
+      input {
+        border-width: 0 0 1px 0;
+        border-radius: 0;
+        background-color: transparent;
+      }
+    }
+    .el-input__inner {
+      height: 36px;
+      line-height: 36px;
+    }
+  }
+  .icon-group {
+    padding-bottom: 30px;
+    > h1 {
+      position: relative;
+      margin-left: 5px;
+      padding: 10px 10px 10px 0;
+      font-size: 1.2em;
+      border-bottom: 1px dashed #4dabf7;
+    }
+  }
+  .icon-item {
+    display: inline-block;
+    width: 100px;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid transparent;
+    overflow: hidden;
+    &:hover {
+      background-color: $-color-white;
+      box-shadow: $-color-shadow;
+      cursor: pointer;
+      > .icon-block {
+        color: $-color-white;
+        background-color: #4dabf7;
+      }
+    }
+    > .icon-block { padding: 10px 0; }
+    > .icon-label {
+      padding: 5px;
+      width: 100px;
+      line-height: 20px;
+      color: #000;
+    }
+  }
+}

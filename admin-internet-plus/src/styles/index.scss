@@ -1,0 +1,16 @@
+/* 入口文件 */
+
+/*
+ * common 分类下样式文件已在 vue.config.js 中全局引入
+ */
+
+// 默认主题
+@import './theme.scss';
+
+// 控件主题
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @import './element/element.color.scss';
+}
+
+// UI 定制化
+@import './element/element.custom.scss';

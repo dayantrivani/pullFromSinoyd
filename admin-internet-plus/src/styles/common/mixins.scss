@@ -1,0 +1,84 @@
+/* 扩大可点击区域
+[x: X轴扩展大小; y: Y轴扩展大小]
+-------------------------- */
+@mixin click-extend($x: 10px, $y: $x) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -$y;
+    right: -$x;
+    bottom: -$y;
+    left: -$x;
+  }
+}
+
+
+/* 超出指定行溢出隐藏
+[row: 指定行数; line: 指定行高]
+-------------------------- */
+@mixin lines-omit($row: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $row;
+  overflow: hidden;
+}
+
+
+/* animation 动画
+-------------------------- */
+@mixin animation ($name: shake, $duration: 1s, $count: infinite) {
+  animation: $name $duration $count;
+  // 旋转
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(120deg); }
+    50% { transform: rotate(240deg); }
+    75% { transform: rotate(360deg); }
+    100% { transform: rotate(360deg); }
+  }
+  // 显隐
+  @keyframes fade {
+    0% { opacity: 1; }
+    25% { opacity: .5; }
+    50% { opacity: 0; }
+    75% { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  // 摇晃
+  @keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-45deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(45deg); }
+    100% { transform: rotate(0deg); }
+  }
+  // 缩放
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% { opacity: 1 }
+  }
+  // 回弹
+  @keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    0% {opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+    20% {transform: scale3d(1.1, 1.1, 1.1); }
+    40% {transform: scale3d(0.9, 0.9, 0.9); }
+    60% {opacity: 1; transform: scale3d(1.03, 1.03, 1.03); }
+    80% {transform: scale3d(0.97, 0.97, 0.97); }
+    to {opacity: 1; transform: scale3d(1, 1, 1); }
+  }
+  // 跌落
+  @keyframes bounceInDown {
+    from, 60%, 75%, 90%, to {animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    0% {opacity: 0; transform: translate3d(0, -1500px, 0); }
+    60% {opacity: 1; transform: translate3d(0, 25px, 0); }
+    75% {transform: translate3d(0, -10px, 0); }
+    90% {transform: translate3d(0, 5px, 0); }
+    to {transform: translate3d(0, 0, 0); }
+  }
+}

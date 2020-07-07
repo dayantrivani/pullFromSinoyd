@@ -1,0 +1,589 @@
+/* UI 组件定制化样式
+-------------------- */
+
+
+/* Button 按钮
+------------------- */
+.el-button {
+  &::before {
+    padding-right: 3px;
+  }
+  // 简化风格图标按钮
+  &[simple].el-button--small {
+    padding: 2px 3px;
+    + .el-button {
+      margin-left: 5px;
+    }
+    i {
+      font-size: 14px;
+      transform: scale(1.2),
+    }
+    // fix: 调整修复表格内按钮element-ui图标与自定义图标上下间距1px偏差
+    .icon-svg:not([class*="el-icon"]) {
+      top: 1px !important;
+    }
+    &::before {
+      padding-right: 0;
+    }
+  }
+  &.el-button--small,
+  &.el-button--small.is-round {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  > .el-icon-search {
+    padding: 0 5px;
+  }
+}
+
+
+/* PageHeader 页头
+------------------- */
+.el-page-header {
+  padding: 10px $-scope;
+  background-color: $-color-white;
+  // 贴合边缘
+  &[fit] {
+    width: calc(100% + #{$-scope * 2});
+    margin-left: -($-scope);
+    margin-right: -($-scope);
+  }
+  > .el-page-header__left {
+    height: 24px;
+  }
+  > .el-page-header__content {
+    display: flex;
+    flex: 1;
+  }
+}
+
+
+/* Card 卡片
+------------------- */
+.el-card {
+  // 参数: 撑满高度，取决于父元素
+  &[fill] {
+    height: 100%;
+    > .el-card__header + .el-card__body {
+      height: calc(100% - 40px);
+    }
+    > .el-card__body {
+      height: 100%;
+    }
+  }
+  > .el-card__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    > * {
+      font-weight: normal;
+    }
+    // > .el-card__title {}
+    // > .el-card__more {}
+
+    // 多标签卡片
+    .el-tabs.el-tabs--top {
+      position: absolute;
+      bottom: 0;
+      right: 50px;
+      display: inline-block;
+      > .el-tabs__header.is-top {
+        margin-bottom: 0;
+      }
+    }
+    .el-tabs__nav-wrap::after {
+      background-color: transparent;
+    }
+  }
+  > .el-card__body {
+    position: relative;
+    padding: 10px 15px;
+    overflow: hidden;
+  }
+}
+
+
+/* Dialog 对话框
+------------------- */
+.el-dialog {
+  &.fit > .el-dialog__body{
+    padding: 0;
+  }
+  > .el-dialog__header {
+    padding: 10px 15px;
+    border-bottom: $--border-base;
+    > .el-dialog__title {
+      font-size: 16px;
+    }
+    .el-dialog__headerbtn {
+      top: 15px;
+      right: 15px;
+    }
+  }
+  > .el-dialog__body {
+    position: relative;
+    padding: 10px 15px;
+  }
+  > .el-dialog__footer {
+    padding: 10px 15px;
+    border-top: $--border-base;
+  }
+}
+
+
+/* Tabs 标签页
+------------------- */
+.el-tabs {
+  $tab-head-h: 40px;
+
+  // 参数: 撑满高度，取决于父元素
+  &[fill] {
+    &.el-tabs--top {
+      height: 100%;
+      &.el-tabs--card > .el-tabs__content {
+        height: calc(100% - #{$tab-head-h + 1px});
+      }
+      > .el-tabs__content {
+        height: calc(100% - #{$tab-head-h - 1px});
+      }
+      > .el-tabs__content > .el-tab-pane {
+        height: 100%;
+      }
+    }
+  }
+  // 参数: 贴边，无内边距
+  &[fit] {
+    > .el-tabs__content {
+      padding: 0;
+      > .el-tab-pane {
+        padding: inherit;
+      }
+    }
+  }
+  > .el-tabs__content {
+    position: relative;
+  }
+  // 卡片化
+  &.el-tabs--border-card {
+    border-color: $-color-border;
+    box-shadow: none;
+  }
+  // 选项卡样式
+  // &.el-tabs--card > .el-tabs__content {
+  //   border-width: 0 1px 1px;
+  //   border-style: solid;
+  //   border-color: $-color-border;
+  // }
+
+  > .el-tabs__header.is-top {
+    margin-bottom: 0;
+    .el-tabs__nav.is-top > .el-tabs__item.is-top:nth-child(2) {
+      padding-left: 20px;
+    }
+  }
+}
+
+
+/* Popconfirm 气泡确认框
+------------------- */
+.el-popconfirm {
+  > .el-popconfirm__main {
+    padding-bottom: 10px;
+  }
+}
+
+
+/* Form 表单
+------------------- */
+.el-form {
+  .el-form-item__content {
+    @extend .text-info;
+  }
+  > .el-form-item:last-child {
+    margin-right: 0;
+  }
+  // 子元素撑满宽度
+  &[item-fill] .el-form-item__content {
+    .el-input,
+    .el-input-number,
+    .el-select {
+      width: 100% !important;
+    }
+  }
+  // 消除底部外边距
+  &[clear-mar] .el-form-item {
+    margin-bottom: 0 !important;
+  }
+  .el-form-item__label-wrap {
+    // fix: 修复IE下排版换行问题
+    @media screen and (min-width: 0\0) {
+      margin-right: -15px;
+    }
+  }
+}
+
+
+/* 输入框
+------------------- */
+
+.el-input {
+  + .el-button {
+    margin-left: 10px;
+    > i {
+      transform: scale(1.2);
+    }
+    &.el-button--mini {
+      padding: 6px 15px;
+    }
+  }
+  > .el-input-group__append i {
+    font-size: 1.4em;
+  }
+}
+
+// 简约模式（仅保留底部边框，去除上左右边框）
+.simple {
+  input {
+    border-width: 0 0 1px !important;
+    border-radius: 0 !important;
+  }
+  .el-input-number {
+    > .el-input-number__increase,
+    > .el-input-number__decrease {
+      background-color: transparent;
+      border-left: none;
+    }
+    > .el-input-number__increase {
+      border-bottom: none;
+    }
+  }
+}
+
+/* intro 页面说明
+-------------------------- */
+.mod-hint-text {
+  @extend .fn-flex;
+  @extend .text-info;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: lighten($-color-sub, 15%);
+  > label > i {
+    font-size: 14px;
+    margin-right: 5px;
+    color: inherit;
+  }
+  > label > b { font-weight: bold; }
+  > div { @extend .flex-1; }
+}
+
+/* 数值输入框
+------------------- */
+.el-input-number {
+  // 文字左对齐，与其他控件保持一致
+  &.is-controls-right .el-input__inner {
+    text-align: left !important;
+  }
+}
+
+
+/* Select 选择器
+--------- --------- --------- --------- --------- No.17 */
+.el-select {
+  // 标签不换行
+  &[nowrap] {
+    > .el-select__tags {
+      white-space: nowrap;
+      overflow: hidden;
+      flex-wrap: nowrap;
+    }
+  }
+  + .el-button {
+    margin-left: 10px;
+    > i {
+      transform: scale(1.2);
+    }
+    &.el-button--mini {
+      padding: 6px 15px;
+    }
+  }
+}
+
+
+/* 树形控件
+------------------- */
+.el-tree {
+  // 选中节点样式
+  .el-tree-node.is-current {
+    > .el-tree-node__content {
+      color: $-color-white;
+      background-color: $--color-primary;
+    }
+  }  
+}
+
+
+/* 表格
+------------------- */
+.el-table {
+  border-top: 1px solid $--border-color-lighter;
+
+  // 设置表格标题行浅色背景
+  > .el-table__header-wrapper,
+  > .el-table__header-wrapper > .el-table__header,
+  > .el-table__fixed-right-patch,
+  > .el-table__fixed > .el-table__fixed-header-wrapper,
+  > .el-table__fixed-right > .el-table__fixed-header-wrapper {
+    background-color: $-color-lighter;
+    tr, th {
+      background-color: inherit;
+    }
+  }
+  // 调大表格行高与字体
+  &.el-table--small {
+    .cell {
+      font-size: 14px;
+      line-height: 28px;
+    }
+    td, th {
+      padding: 4px 0;
+    }
+  }
+
+  // 双行列表单元格采用不同的上下内边距
+  &[double].el-table--small {
+    td, th {
+      padding: 5px 0;
+    }
+  }
+
+  // 选中行
+  .current-row > td {
+    background-color: $--color-primary-light-7 !important;
+    &:first-child {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background-color: $--color-primary;
+      }
+    }
+    // &:last-child {
+    //   &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     right: 1px;
+    //     width: 2px;
+    //     height: 100%;
+    //     background-color: $--color-primary;
+    //   }
+    // }
+  }
+
+  // 可选: 勾选行高亮
+  .checkbox-row > td,
+  .el-table--striped .el-table__body tr.el-table__row--striped.checkbox-row td {
+    background-color: $--color-primary-light-9 !important;
+  }
+
+  // 去除表格内容边框
+  .el-table__body {
+    td { 
+      border-color: transparent transparent $-color-border transparent;
+    }
+    tr.el-table__row.is-current td {
+      border-color: transparent transparent $-color-white transparent;
+    }
+    tr.el-table__row > td:nth-last-child(1) {
+      border-right: none;
+    }
+  }
+}
+
+/* Dropdown 下拉菜单
+------------------- */
+.el-dropdown {
+  // 按钮禁用样式
+  &[disabled="disabled"] {
+    $percentage: 50%;
+    $btn-disabled-bg: (
+      primary: mix($--color-white, $--color-primary, $percentage),
+      success: mix($--color-white, $--color-success, $percentage),
+      warning: mix($--color-white, $--color-warning, $percentage),
+      danger: mix($--color-white, $--color-danger, $percentage),
+    );
+
+    cursor: not-allowed !important;
+
+    > .el-button-group > .el-button {
+      pointer-events: none;
+      @each $name, $value in $btn-disabled-bg {
+        &.el-button--#{$name} {
+          color: $--color-white;
+          background-color: $value;
+          border-color: $value;
+        }
+      }
+    }
+  }
+}
+
+/* Collapse 折叠面板
+------------------- */
+.el-collapse {
+  &[fit] {
+    .el-collapse-item__header.is-active {
+      border-bottom-color: $--border-color-lighter;
+    }
+    .el-collapse-item__content {
+      padding: 10px 15px;
+    }
+  }
+  + .el-table {
+    transition: height .3s cubic-bezier(.645,.045,.355,1);
+  }
+  .el-collapse-item__header {
+    height: 40px;
+    line-height: 40px;
+  }
+  // 作为扩展表单样式
+  &.form-extend {
+    .el-collapse-item__content {
+      padding: 10px;
+      border: 1px dashed $--border-color-base;
+    }
+    .el-collapse-item__header {
+      font-weight: bold;
+    }
+    .el-collapse-item.is-active {
+      > .el-collapse-item__wrap {
+        border-bottom: none;
+      }
+    }
+    // 扩展表单样式
+    > .el-collapse-item .el-collapse-item__content:hover {
+      border-color: $--color-primary;
+    }
+  }
+}
+
+/* Calendar 日历
+------------------- */
+.el-calendar {
+  $cell-height: 50px;
+  > .el-calendar__header {
+    padding: 0 15px;
+    line-height: 40px;
+  }
+  > .el-calendar__body {
+    padding: 0;
+    .el-calendar-day {
+      padding: 0;
+      height: $cell-height;
+      line-height: $cell-height;
+      text-align: center;
+    }
+    .is-selected .el-calendar-day {
+      color: $--color-white;
+      background-color: $--color-primary;
+    }
+  }
+  .el-calendar-table:not(.is-range) td.next,
+  .el-calendar-table:not(.is-range) td.prev {
+    pointer-events: none;
+    > .el-calendar-day {
+      opacity: 0;
+    }
+  }
+  .el-calendar-table thead th {
+    padding: 7px 0;
+  }
+  caption, th {
+    text-align: center;
+  }
+}
+
+/* Pagination 分页
+------------------- */
+.el-pagination {
+  .el-pagination__sizes {
+    width: 100px;
+  }
+}
+
+/* Steps 步骤条
+------------------- */
+.el-steps {
+  &.form-steps.el-steps--horizontal {
+    padding-bottom: 10px;
+    .el-step__description {
+      padding-top: 10px;
+    }
+  }
+}
+
+/* Transfer 穿梭框
+--------- --------- --------- --------- --------- No.26 */
+.el-transfer {
+  $has-title: 40px;
+  $has-filter: $has-title + 47px;   // 含检索框
+  $has-footer: $has-filter;         // 含底栏
+  height: 100%;
+  @extend .flex-y-center;
+  // 中间按钮
+  > .el-transfer__buttons {
+    padding: 0;
+    width: 55px;
+    height: 70px;
+    > .el-transfer__button {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  // 标签右边距
+  .el-checkbox.el-transfer-panel__item {
+    margin-right: 15px !important;
+    .el-checkbox__label > div {
+      display: flex;
+    }
+  }
+  // 两侧容器
+  > .el-transfer-panel {
+    height: 100%;
+    @extend .flex-1;
+  }
+
+  // 两侧容器
+  > .el-transfer-panel > .el-transfer-panel__body {
+    height: 100%;
+    > .el-transfer-panel__filter {
+      margin: 0 !important;
+      padding: 10px 15px 5px;
+      > .el-input__prefix {
+        top: 5px;
+        left: 15px;
+      }
+    }
+    // 计算不同情况下的高度适配
+    > .el-transfer-panel__list {
+      height: calc(100% - #{$has-title});
+    }
+    // 计算检索框
+    > .el-transfer-panel__list.is-filterable {
+      height: calc(100% - #{$has-filter});
+    }
+    // 计算底栏
+    &.is-with-footer {
+      > .el-transfer-panel__list {
+        height: calc(100% - #{$has-footer - 16px});
+      }
+      > .el-transfer-panel__list.is-filterable {
+        height: calc(100% - #{$has-footer});
+      }
+    }
+  }
+}

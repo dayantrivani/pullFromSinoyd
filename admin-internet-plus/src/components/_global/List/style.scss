@@ -1,0 +1,45 @@
+/* list 列表
+-------------------------- */
+.mod-list {
+  $title-height: 40px;
+  $item-height: 36px;
+  $border-color: #efefef;
+
+  border: 1px solid $border-color;
+  .mod-list__title {
+    padding: 0 15px;
+    height: $title-height;
+    line-height: $title-height;
+    border-bottom: 1px solid $border-color;
+    background-color: $-color-lighter;
+    overflow: hidden;
+  }
+  .mod-list__body {
+    height: 100%;
+    overflow: auto;
+  }
+  .mod-list__body.is-title {
+    height: calc(100% - #{$title-height});
+  }
+  .item {
+    position: relative;
+    padding: 5px 15px;
+    min-height: $item-height;
+    line-height: $item-height - 10px;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($--color-primary, 33%);
+    }
+    &.is-active {
+      color: $-color-white;
+      background-color: $--color-primary;
+    }
+    .item-count {
+      position: absolute;
+      top: 50% !important;
+      margin-top: -11px;
+      right: 5px;
+      line-height: inherit;
+    };
+  }
+}

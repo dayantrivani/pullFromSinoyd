@@ -1,0 +1,116 @@
+.toggle-side {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  width: $-head-height;
+  height: $-head-height;
+
+  cursor: pointer;
+  box-sizing: content-box;
+  transform: translateZ(0);
+
+  // 默认状态
+  > .toggle-side-line-wrap {
+    display: inline-block;
+    width: $-head-height * .4;
+    line-height: 0; 
+
+    .toggle-side-line {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      height: 2px;
+      width: 100%;
+      margin-top: 4px;
+      transition: all $-transition;
+      &:first-child { margin-top: 0; }
+      &.toggle-side-line-first {
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: rotateZ(0);
+        opacity: 1;
+      }
+      &.toggle-side-line-middle {
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: rotateZ(0);
+        opacity: 1;
+      }
+      &.toggle-side-line-last {
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: rotateZ(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  &:hover, &.is-opened { color: inherit; }
+
+  // 右箭头状态
+  &:hover .toggle-side-line {
+    &.toggle-side-line-first {
+      width: 50%;
+      top: 2px;
+      left: 4px;
+      transform: rotateZ(45deg);
+      opacity: 1;
+    }
+    &.toggle-side-line-middle {
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform: rotateZ(0);
+      opacity: 1;
+    }
+    &.toggle-side-line-last {
+      width: 50%;
+      top: -2px;
+      left: 4px;
+      transform: rotateZ(-45deg);
+      opacity: 1;
+    }
+  }
+
+  // 左箭头状态
+  &.is-opened:hover .toggle-side-line {
+    &.toggle-side-line-first {
+      width: 50%;
+      top: 2px;
+      left: -4px;
+      transform: rotateZ(-45deg);
+      opacity: 1;
+    }
+    &.toggle-side-line-middle {
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform: rotateZ(0);
+      opacity: 1;
+    }
+    &.toggle-side-line-last {
+      width: 50%;
+      top: -2px;
+      left: -4px;
+      transform: rotateZ(45deg);
+      opacity: 1;
+    }
+  }
+}
+// IE 9 / 10
+@media screen and (min-width: 0\0) {
+  .toggle-side > .toggle-side-line-wrap {
+    position: relative;
+    top: 2px;
+  }
+}
+// Firefox
+@media screen and (min--moz-device-pixel-ratio:0) {
+  .toggle-side > .toggle-side-line-wrap {
+    position: relative;
+    top: 7px;
+  }
+}

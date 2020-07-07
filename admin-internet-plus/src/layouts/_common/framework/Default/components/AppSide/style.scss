@@ -1,0 +1,279 @@
+$menu: 'el-menu';
+$menu-inline: 'el-menu--inline';
+$menu-collapse: 'el-menu--collapse';
+$menu-vertical: 'el-menu--vertical';
+$menu-item: 'el-menu-item';
+$submenu: 'el-submenu';
+$submenu-title: 'el-submenu__title';
+$submenu-icon-more: 'el-submenu__icon-arrow';
+
+$menu-item-indent: 22px;
+$menu-item-pad: 15px;
+$menu-item-height: 40px;
+$menu-item-root-height: 45px;
+
+/* side 侧栏定位
+-------------------------- */
+.app-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-top: $-head-height;
+  float: left;
+
+  width: $-side-max-width;
+  min-height: calc(100% - #{$-head-height + $-tags-height});
+
+  overflow: hidden;
+  box-shadow: $-layout-shadow;
+  transition: width $-transition;
+
+  > .app-brand {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    line-height: $-head-height;
+  }
+  
+  > .menu-scroll {
+    height: 100%;
+    user-select: none;
+    &.toggle {
+      height: calc(100% - #{$-head-height});
+    }
+    > .el-scrollbar__wrap { overflow-x: hidden; }
+    > .el-scrollbar__bar.is-horizontal { display: none; }
+  }
+
+  // 侧栏折叠按钮
+  > .btn-menu-toggle {
+    position: fixed;
+    bottom: 0;
+    height: $-head-height;
+    width: $-side-width;
+    line-height: $-head-height;
+    cursor: pointer;
+    overflow: hidden;
+    > .icon-svg {
+      width: $-side-width;
+      text-align: center;
+    }
+  }
+}
+
+// 设置导航层级缩进
+@mixin nav-item-indent($depth: 0) {
+  $depth-indent: $menu-item-pad !default;
+  @if $depth > 0 {
+    $depth-indent: ($menu-item-indent * $depth) + 17px;
+  }
+  > .#{$menu-item},
+  > .#{$submenu} > .#{$submenu-title} {
+    padding-left: $depth-indent !important;
+  }
+}
+
+// 菜单项尺寸
+@mixin nav-item-size() {
+  .#{$menu-item},
+  .#{$submenu} >.#{$submenu-title} {
+    padding: 0 $menu-item-pad;
+    height: $menu-item-height;
+    line-height: $menu-item-height;
+    color: inherit;
+    &:focus {
+      background-color: transparent;
+    }
+    > i.icon-svg {
+      width: $-side-width - ($menu-item-pad * 2);
+      font-size: 1.1em;
+      color: inherit;
+      text-align: center;
+      vertical-align: middle;
+    }
+    > span {
+      padding-left: 5px;
+    }
+    > .#{$submenu-icon-more} {
+      color: inherit;
+      right: $menu-item-pad;
+    }
+  }
+}
+
+/* sidebar 侧栏导航
+-------------------------- */
+.sidebar.#{$menu} {
+
+  padding: 5px 0;
+  border-right: none;
+  background-color: transparent;
+
+  // 菜单项尺寸
+  @include nav-item-size();
+
+  // 层级缩进
+  @include nav-item-indent();
+  > .#{$submenu} > .#{$menu} {
+    @include nav-item-indent(1);
+    > .#{$submenu} > .#{$menu} {
+      @include nav-item-indent(2);
+      > .#{$submenu} > .#{$menu} {
+        @include nav-item-indent(3);
+      }
+    }
+  }
+
+  // 隐藏子菜单图标（当菜单文字过长时）
+  &.is-hide-icon {
+    // 导航菜单项高度设置（一级）
+    > .#{$submenu} .#{$menu-item},
+    > .#{$submenu} .#{$submenu} > .#{$submenu-title} {
+      > .icon-svg {
+        display: none;
+      }
+    }
+  }
+
+  // 折叠状态
+  &.#{$menu-collapse} {
+    width: $-side-width;
+    > .#{$menu-item},
+    > .#{$menu-item} > .el-tooltip,
+    > .#{$submenu} > .#{$submenu-title} {
+      padding: 0 !important;
+      text-align: center;
+      > i.icon-svg {
+        width: $-side-width;
+        font-size: 1.4em;
+        color: inherit;
+      }
+    }
+  }
+
+  // 导航菜单项高度设置（一级）
+  > .#{$menu-item},
+  > .#{$submenu} > .#{$submenu-title} {
+    position: relative;
+    height: $menu-item-root-height !important;
+    line-height: $menu-item-root-height !important;
+    > i.icon-svg {
+      transition: font-size $-transition;
+    }
+
+    // 活动状态标识
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: $menu-item-root-height;
+      background-color: transparent;
+    }
+  }
+  
+  // 导航菜单项高度设置（一级）
+  > .#{$submenu} .#{$menu-item},
+  > .#{$submenu} .#{$submenu} > .#{$submenu-title} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 0;
+  }
+
+  @at-root .sidebar-popper.#{$menu-vertical} {
+    > .#{$menu} {
+      @include nav-item-size();
+      .#{$menu-item},
+      .#{$submenu} > .#{$submenu-title} {
+        padding: 0 $menu-item-pad !important;
+      }
+    }
+    &.is-hide-icon {
+      .#{$menu-item},
+      .#{$submenu} > .#{$submenu-title} {
+        > i.icon-svg {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+/* 导航风格：蚂蚁线
+--------- --------- --------- --------- ---------  */
+.sidebar.line {
+  $-pad-y: 5px;
+  $-line-width: 8px;
+  $-line-offset-top: $menu-item-height / 2;
+  $-line-offset-y: -($-line-offset-top - 1px);
+  $-line-offset-x: $menu-item-indent + 3px;
+
+  ul {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  > li > ul {
+    padding: $-pad-y 0;
+    &::before,
+    ul::before,
+    li::before,
+    li > div:first-child::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: $-line-width;
+      z-index: 0;
+    }
+    &::before, ul::before {
+      top: $-line-offset-y - $-pad-y;
+      width: 1px;
+      height: 100%;
+      border-left: 1px dashed;
+    }
+    li::before, li > div:first-child::before {
+      width: $-line-width;
+      height: 1px;
+      border-bottom: 1px dashed;
+    }
+    &::before {
+      left: $-line-offset-x;
+    }
+    > li, > li > div:first-child {
+      position: relative;
+      &::before {
+        top: $-line-offset-top;
+        left: $-line-offset-x;
+      }
+      + ul {
+        &::before {
+          top: $-line-offset-y;
+          left: $-line-offset-x + $menu-item-indent;
+        }
+        > li, > li > div:first-child {
+          &::before {
+            top: $-line-offset-top;
+            left: $-line-offset-x + $menu-item-indent;
+          }
+          + ul {
+            &::before {
+              top: $-line-offset-y;
+              left: $-line-offset-x + ($menu-item-indent * 2);
+            }
+            > li, > ul > div:first-child {
+              &::before {
+                top: $-line-offset-top;
+                left: $-line-offset-x + ($menu-item-indent * 2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

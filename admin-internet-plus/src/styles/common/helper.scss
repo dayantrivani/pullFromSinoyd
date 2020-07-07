@@ -1,0 +1,388 @@
+/* 文本样式
+-------------------------- */
+@font-face {
+  font-family: 'Siekoo';   /* LED 字体名称 */
+  src: url('~@/assets/fonts/Siekoo.eot');
+  src: url('~@/assets/fonts/Siekoo.eot') format('embedded-opentype'),
+       url('~@/assets/fonts/Siekoo.woff2') format('woff2'),
+       url('~@/assets/fonts/Siekoo.woff') format('woff'),
+       url('~@/assets/fonts/Siekoo.ttf') format('truetype'),
+       url('~@/assets/fonts/Siekoo.svg#Siekoo') format('svg');
+}
+
+// 行高
+.row-xs { line-height: 1.2 }  // 紧凑
+.row-sm { line-height: 1.5 }  // 正常
+.row-md { line-height: 2 }  // 宽松
+.row-xl { line-height: 2.4 }  // 空旷
+
+.i-md {
+  color: $-color-title;
+}
+h1.i-md { font-size: 3.2rem; }
+h2.i-md { font-size: 2.4rem; }
+h3.i-md { font-size: 1.8rem; }
+h4.i-md { font-size: 1.6rem; }
+h5.i-md { font-size: 1.4rem; }
+h6.i-md { font-size: 1.2rem; }
+
+// 文字粗细
+.i-bold { font-weight: bold }
+.i-bolder { font-weight: bolder }
+.i-lighter { font-weight: lighter }
+
+// 代码字体
+.i-code {
+  font-family: 'Consolas';
+}
+
+.i-string {
+  color: #D65B59;
+  &::after, &::before {
+    content: '"';
+    color: #707070;
+  }
+}
+
+.i-number {
+  color: #1C00D1;
+}
+
+.i-text {
+  font-size: 1.4rem;
+}
+
+// LED 数字字体
+.i-led {
+  font-family: 'Siekoo' !important;
+  font-size: $-font-size;
+  letter-spacing: 1px;
+}
+
+// 竖排文本
+.i-vertical {
+  width: $-font-size;
+  font-size: $-font-size;;
+  word-wrap: break-word;
+  letter-spacing: $-font-size;
+}
+
+// 单行文字溢出时出现省略号，需设定宽度
+.i-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 双行溢出省略
+.i-overflow-2 { @include lines-omit(2) }
+
+// 三行溢出省略
+.i-overflow-3 { @include lines-omit(2) }
+
+// 强制不换行
+.i-wrap-no { white-space: nowrap }
+
+// 强制英文单词不换行
+.i-wrap-en { word-break: break-all }
+
+// 自动换行
+.i-wrap-aoto {
+  word-wrap: break-word;
+  word-break: normal;
+}
+
+// 跳转链接 - 默认下划线
+.i-link {
+  color: #0ae;
+  text-decoration: underline;
+}
+
+// 下载链接 - 悬浮显示下划线
+.i-down {
+  color: #0ae;
+  &:hover { text-decoration: underline };
+}
+
+// 禁选文字
+.i-no-select {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.disabled-event {
+  pointer-events: none;
+}
+
+
+/* 浮动布局
+-------------------------- */
+.fn-left { float: left }
+.fn-right { float: right }
+.fn-clear {
+  zoom: 1; // for IE6 IE7
+  &:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    font-size: 0;
+    clear: both;
+  }
+}
+
+// 设置内联, 减少浮动带来的bug
+.fn-left, .fn-right { display: inline; }
+
+
+
+/* 元素盒子间距
+-------------------------- */
+$spaces: (
+  0: 0,
+  xs: 5px,
+  sm: 10px,
+  md: 15px,
+  lg: 20px,
+  xl: 30px,
+  xxl: 50px,
+  scope: $-scope,
+);
+
+@mixin box-space($name, $value) {
+  .mar-a-#{$name} { margin: $value !important }
+  .mar-l-#{$name}, .mar-x-#{$name} { margin-left: $value !important }
+  .mar-r-#{$name}, .mar-x-#{$name} { margin-right: $value !important }
+  .mar-t-#{$name}, .mar-y-#{$name} { margin-top: $value !important }
+  .mar-b-#{$name}, .mar-y-#{$name} { margin-bottom: $value !important }
+  .pad-a-#{$name} { padding: $value !important }
+  .pad-l-#{$name}, .pad-x-#{$name} { padding-left: $value !important }
+  .pad-r-#{$name}, .pad-x-#{$name} { padding-right: $value !important }
+  .pad-t-#{$name}, .pad-y-#{$name} { padding-top: $value !important }
+  .pad-b-#{$name}, .pad-y-#{$name} { padding-bottom: $value !important }
+}
+
+@each $name, $value in $spaces {
+  @include box-space($name, $value);
+}
+
+
+/* 内容对齐方式
+-------------------------- */
+// 水平
+.text-left { text-align: left !important }
+.text-right { text-align: right !important }
+.text-center { text-align: center !important }
+.text-justify { text-align: justify !important }
+
+// 垂直
+.vertical-top { vertical-align: top !important }
+.vertical-center { vertical-align: middle !important }
+.vertical-bottom { vertical-align: bottom !important }
+
+
+/* 弹性布局
+https://blog.csdn.net/wildye/article/details/80258349
+-------------------------- */
+.flex-0 { flex: none !important; }
+.flex-1 { flex: 1 !important; }
+.flex-2 { flex: 2 !important; }
+.flex-3 { flex: 3 !important; }
+
+
+
+.fn-flex {
+  display: flex;
+  min-width: 0; // https://zhuanlan.zhihu.com/p/56646256
+};
+
+.flex-column { @extend .fn-flex; flex-flow: column }
+
+.flex-x-start { @extend .fn-flex; justify-content: flex-start }       // 水平左对齐
+.flex-x-end { @extend .fn-flex; justify-content: flex-end }           // 水平右对齐
+.flex-x-center { @extend .fn-flex; justify-content: center }          // 水平居中对齐
+.flex-x-between { @extend .fn-flex; justify-content: space-between }  // 水平两端对齐
+.flex-x-around { @extend .fn-flex; justify-content: space-around }    // 水平分散对齐
+
+.flex-y-start { @extend .fn-flex; align-items: start }                // 垂直顶部对齐
+.flex-y-end { @extend .fn-flex; align-items: end }                    // 垂直底部对齐
+.flex-y-center { @extend .fn-flex; align-items: center }              // 垂直居中对齐
+.flex-y-baseline { @extend .fn-flex; align-items: baseline }          // 垂直基线对齐
+.flex-y-stretch { @extend .fn-flex; align-items: stretch }            // 垂直填充
+
+.flex-ys-start { @extend .fn-flex; align-content: flex-start }        // 多行垂直顶部对齐
+.flex-ys-end { @extend .fn-flex; align-content: flex-end }            // 多行垂直底部对齐
+.flex-ys-center { @extend .fn-flex; align-content: center }           // 多行垂直居中对齐
+.flex-ys-between { @extend .fn-flex; align-content: space-between }   // 多行垂直分散对齐-上下贴边
+.flex-ys-around { @extend .fn-flex; align-content: space-around }     // 多行垂直分散对齐-上下空隙
+.flex-ys-stretch { @extend .fn-flex; align-content: stretch }         // 多行垂直分散对齐-上贴边
+
+
+/* 文本颜色与背景
+-------------------------- */
+.text-primary { color: $--color-primary !important }
+.text-success { color: $--color-success !important }
+.text-danger { color: $--color-danger !important }
+.text-warning { color: $--color-warning !important }
+.text-info { color: $--color-info !important }
+
+.text-primary-hover:hover { color: $--color-primary !important }
+
+.bg-white { background-color: $-color-white }
+
+.bg-primary, .bg-success, .bg-danger, .bg-warning, .bg-info { color: $-color-white; }
+
+.bg-primary { background-color: lighten($--color-primary, 5%) !important }
+.bg-success { background-color: lighten($--color-success, 5%) !important }
+.bg-danger { background-color: lighten($--color-danger, 5%) !important }
+.bg-warning { background-color: lighten($--color-warning, 5%) !important }
+.bg-info { background-color: lighten($--color-info, 5%) !important }
+
+.border-primary { border-color: $--color-primary !important; }
+.border-success { border-color: $--color-success !important; }
+.border-danger { border-color: $--color-danger !important; }
+.border-warning { border-color: $--color-warning !important; }
+.border-info { border-color: $--color-info !important; }
+
+.border-t { border-top: 1px solid $-color-border; }
+.border-b { border-bottom: 1px solid $-color-border; }
+.border-l { border-left: 1px solid $-color-border; }
+.border-r { border-right: 1px solid $-color-border; }
+.border-a { border: 1px solid $-color-border; }
+.border-x { @extend .border-l; @extend .border-r; }
+.border-y { @extend .border-t; @extend .border-b; }
+.border-no { border: none !important; }
+
+.border-solid { border-style: solid }
+.border-dashed { border-style: dashed }
+
+
+/* 鼠标指针形状
+-------------------------- */
+.z-text { cursor: text !important; }              // 输入光标 I
+.z-move { cursor: move !important; }              // 移动
+.z-wait { cursor: wait !important; }              // 等待 o
+.z-auto { cursor: auto !important; }              // 还原状态
+.z-help { cursor: help !important; }              // 箭头 ?
+.z-default { cursor: default !important; }        // 默认-指针箭头
+.z-pointer { cursor: pointer !important; }        // 手形
+.z-resize-x { cursor: e-resize !important; }      // 左右双向箭头
+.z-resize-y { cursor: s-resize !important; }      // 上下双向箭头
+.z-grab { cursor: grab !important; }              // 伸手
+.z-grabbing { cursor: grabbing !important; }      // 握拳
+.z-not-allowed { cursor: not-allowed !important } // 禁用
+
+.z-text, .z-move, .z-wait, .z-auto, .z-help, .z-default, .z-pointer {
+  > .el-input, input { cursor: inherit !important; }
+}
+
+// 链接
+.z-link {
+  padding-bottom: 1px;
+  color: $--color-primary;
+  cursor: pointer !important;
+  border-bottom: 1px solid $--color-primary;
+}
+
+// 数据缺省状态
+.z-empty:empty::before {
+  content: '暂无数据';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $--color-info;
+}
+
+
+/* animation 动画
+-------------------------- */
+.am-spin { @include animation(spin, $duration: 1s); }           // 旋转
+.am-fade { @include animation(fade, 1s); }                      // 显隐
+.am-shake { @include animation(shake, $duration: .3s); }        // 摇晃
+.am-zoomIn { @include animation(zoomIn, $count: 1); }           // 缩放
+.am-bounceIn { @include animation(bounceIn, .75s); }         // 回弹
+.am-bounceInDown { @include animation(bounceInDown, .75s, 1); } // 跌落
+
+.am-hover-shake:hover { @extend .am-shake; }
+.am-hover-spin:hover { @extend .am-spin; }
+.am-hover-fade:hover { @extend .am-fade; }
+.am-hover-zoomIn:hover { @extend .am-zoomIn; }
+.am-hover-bounceIn:hover { @extend .am-bounceIn; }
+.am-hover-bounceInDown:hover { @extend .am-bounceInDown; }
+
+
+/* 页面切换过渡效果
+-------------------------- */
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-active,
+.fade-enter-active {
+  transition: opacity .1s;
+}
+
+
+/* 其它
+-------------------------- */
+// 阴影
+.fn-shadow { box-shadow: $-color-shadow !important; }
+
+// 隐藏, 通常用来与 JS 配合
+body .fn-hide { display: none }
+
+// 扩大点击区域
+.click-extend { @include click-extend(10px); }
+
+// 块
+.block { display: block; }
+
+// 行内快
+.inline-block { display: inline-block; }
+
+// 溢出处理
+.over-x-auto { overflow-x: auto !important; }
+.over-y-auto { overflow-y: auto !important; }
+.over-x-hide { overflow-x: hidden !important; }
+.over-y-hide { overflow-y: hidden !important; }
+
+// 自适应滚动条
+.fn-over-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// 定位
+.affix { position: fixed; width: inherit; }
+.fixed { position: fixed; }
+.rel { position: relative; }
+.abs { position: absolute; }
+
+
+// 宽高填充
+.fill-w { width: 100% !important; }
+.fill-h { height: 100% !important; }
+.fill {
+  width: 100% !important;
+  height: 100% !important;
+}
+// 宽高自适应
+.auto-w { width: auto !important; }
+.auto-h { height: auto !important; }
+.auto-a {
+  width: auto !important;
+  height: auto !important;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-auto {
+  overflow: auto;
+}

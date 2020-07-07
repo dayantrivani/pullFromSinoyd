@@ -1,0 +1,385 @@
+/* 框架布局颜色适配
+-------------------- */
+
+// 侧栏主色调（亮/暗）
+$nav-light: #FFFFFF;
+$nav-dark: #454545;
+
+/* 取背景反色（黑白）
+[color：颜色; percent：颜色配比]
+-------------------------- */
+@function color-inverse($color, $percent: 35%) {
+  @if lightness($color) < 65 {
+    @return mix($color, $-color-white, $percent);
+  } @else {
+    @return mix($color, $-color-black, $percent);
+  }
+}
+
+/* 取亮化色彩
+[color：颜色]
+-------------------------- */
+@function color-light($color) {
+  @return mix($-color-white, $color, 80%);
+}
+@function color-lighter($color) {
+  @return mix($-color-white, $color, 90%);
+}
+
+// 导航结构类名
+$menu: 'el-menu';
+$menu-inline: 'el-menu--inline';
+$menu-collapse: 'el-menu--collapse';
+$menu-vertical: 'el-menu--vertical';
+
+$menu-item: 'el-menu-item';
+$submenu: 'el-submenu';
+$submenu-title: 'el-submenu__title';
+$submenu-icon-more: 'el-submenu__icon-arrow';
+
+
+/* Theme 主题生成
+-------------------------- */
+@mixin set-theme-color($color) {
+
+  $head-bg: $color;
+  $side-bg: $color;
+  $theme-bg: $color;
+  $active-bg: $color;
+
+  $-side-dark-bg: mix($theme-bg, $nav-dark, 3%);
+  $-side-light-bg: mix($theme-bg, $nav-light, 3%);
+  $-theme-dark-bg: mix($nav-dark, $theme-bg, 10%);
+  
+  $-head-dark-bg: darken($head-bg, 3%);
+
+  $active: 'is-active';
+  $opened: 'is-opened';
+
+  // 顶栏
+  .app {
+
+    // 置顶标识
+    &.app-head-stick > .app-head > .app-brand {
+      color: color-inverse($head-bg, 0%);
+      background-color: $head-bg;
+    }
+
+    // 顶栏
+    > .app-head > .app-head-content {
+      color: color-inverse($head-bg);
+      background-color: $head-bg;
+      // 顶栏按钮
+      .btn {
+        color: color-inverse($head-bg, 3%);
+        border-color: lighten($head-bg, 5%);
+        &:hover,
+        &.is-opened {
+          background-color: $-head-dark-bg;
+        }
+        .btn-more {
+          border-color: color-inverse($head-bg, 3%) transparent transparent;
+        }
+        .btn-more.mored {
+          border-color: transparent transparent color-inverse($head-bg, 3%);
+        }
+      }
+      // 系统切换
+      .item-system .sys-item {
+        &:hover {
+          color: color-inverse($head-bg, 3%);
+        }
+        &.is-active {
+          color: color-inverse($head-bg, 3%);
+          // border-color: $active-bg;
+          background-color: darken($head-bg, 5%);
+        }
+      }
+      .toggle-side-line {
+        background-color: color-inverse($head-bg);
+      }
+    }
+  }
+
+  // 侧栏导航
+  .app > .app-side .sidebar.#{$menu} {
+    // root active
+    > .#{$menu-item}.#{$active},
+    > .#{$submenu}.#{$active} > .#{$submenu-title} {
+      background-color: transparent;
+      &::before { background-color: $active-bg; }
+    }
+  }
+
+  // 悬浮侧栏
+  .sidebar-popper.#{$menu-vertical} > .#{$menu} {
+    .#{$menu-item}:hover,
+    .#{$submenu}.#{$active} > .#{$submenu-title},
+    .#{$submenu}.#{$opened} > .#{$submenu-title} {
+      color: $active-bg;
+    }
+    .#{$menu-item}.#{$active} {
+      color: $-color-white;
+      background-color: $active-bg;
+    }
+  }
+
+  // 暗色调
+  &[head="dark"] .app {
+
+    // 置顶标识
+    &.app-head-stick > .app-head > .app-brand {
+      color: color-inverse($-side-dark-bg, 0%);
+      background-color: $-side-dark-bg !important;
+    }
+
+    > .app-head > .app-head-content {
+      color: color-inverse($-side-dark-bg);
+      background-color: $-side-dark-bg;
+      .toggle-side-line {
+        background-color: color-inverse($-side-dark-bg);
+      }
+    }
+  }
+
+  // 亮色调
+  &[head="light"] .app {
+
+    // 置顶标识
+    &.app-head-stick > .app-head > .app-brand {
+      color: color-inverse($-side-light-bg, 0%);
+      background-color: $-color-white !important;
+    }
+
+    > .app-head > .app-head-content {
+      color: color-inverse($-side-light-bg);
+      background-color: $-color-white;
+      .toggle-side-line {
+        background-color: color-inverse($-side-light-bg);
+      }
+      // 顶栏按钮
+      .btn {
+        color: color-inverse($-side-light-bg, 3%);
+        border-color: lighten($-side-light-bg, 5%);
+        &:hover,
+        &.is-opened {
+          color: $-color-white;
+          .btn-more {
+            border-color: $-color-white transparent transparent;
+          }
+          .btn-more.mored {
+            border-color: transparent transparent $-color-white;
+          }
+        }
+        .btn-more {
+          border-color: color-inverse($-side-light-bg, 3%) transparent transparent;
+        }
+        .btn-more.mored {
+          border-color: transparent transparent color-inverse($-side-light-bg, 3%);
+        }
+      }
+    }
+  }
+
+  // 跟随主题
+  &[side="theme"] {
+
+    $-color-inverse: mix($-color-white, $theme-bg, 80%);
+
+    .app > .app-side .sidebar.#{$menu} {
+      // root active
+      > .#{$menu-item}.#{$active},
+      > .#{$submenu}.#{$active} > .#{$submenu-title} {
+        &::before { 
+          background-color: $-color-inverse;
+        }
+      }
+    }
+
+    .app > .app-side {
+      color: $-color-inverse;
+      background-color: $-theme-dark-bg;
+      > .app-brand {
+        color: $-color-inverse;
+        background-color: $-theme-dark-bg;
+      }
+      > .btn-menu-toggle:hover {
+        color: $-color-white;
+        background-color: mix($-color-white, $theme-bg, 20%);
+      }
+    }
+
+    .sidebar.#{$menu} {
+
+      color: $-color-inverse;
+      background-color: transparent;
+
+      .#{$menu} {
+        background-color: mix($-color-black, $theme-bg, 20%);
+      }
+
+      .#{$menu-item}::before,
+      .#{$submenu} > .#{$submenu-title}::before {
+        color: $-color-inverse;
+      }
+
+      // hover
+      .#{$menu-item}:hover,
+      .#{$submenu} > .#{$submenu-title}:hover {
+        color: $-color-white;
+        background-color: mix($-color-white, $theme-bg, 20%);
+      }
+
+      // active
+      .#{$menu-item}.#{$active},
+      .#{$submenu}.#{$active} > .#{$submenu-title} {
+        color: $-color-white;
+        background-color: transparent;
+      }
+      .#{$menu-item}.#{$active} {
+        $size: 10px;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          margin-top: -($size / 2);
+          right: -($size / 2);
+          width: $size;
+          height: $size;
+          background-color: $-color-base-bg;
+          transform: rotate(45deg);
+        }
+      }
+
+      // opened
+      .#{$submenu}.#{$opened} > .#{$submenu-title} {
+        color: $-color-white;
+        background-color: transparent;
+      }
+
+      // active
+      .#{$submenu} > .#{$menu} > .#{$menu-item}.#{$active} {
+        background-color: $active-bg;
+      }
+    }
+  }
+
+  // 暗色调
+  &[side="dark"] {
+
+    .app > .app-side {
+      color: color-inverse($-side-dark-bg);
+      background-color: $-side-dark-bg;
+      > .app-brand {
+        color: color-inverse($-side-dark-bg, 0%);
+        background-color: $-side-dark-bg;
+      }
+      > .btn-menu-toggle:hover {
+        color: $-color-white;
+        background-color: transparent;
+      }
+    }
+
+    .sidebar.#{$menu} {
+
+      color: color-inverse($-side-dark-bg, 20%);
+      background-color: transparent;
+
+      .#{$menu} {
+        background-color: mix($-color-black, $-side-dark-bg, 20%);
+      }
+
+      .#{$menu-item}::before,
+      .#{$submenu} > .#{$submenu-title}::before {
+        color: color-inverse($-side-dark-bg);
+      }
+
+      // hover, active, opened
+      .#{$menu-item}:hover,
+      .#{$submenu} > .#{$submenu-title}:hover,
+      .#{$menu-item}.#{$active},
+      .#{$submenu}.#{$active} > .#{$submenu-title},
+      .#{$submenu}.#{$opened} > .#{$submenu-title} {
+        color: $-color-white;
+        background-color: transparent;
+      }
+
+      // active
+      .#{$submenu} > .#{$menu} > .#{$menu-item}.#{$active} {
+        color: $-color-white;
+        background-color: $active-bg;
+      }
+    }
+  }
+
+  // 亮色调
+  &[side="light"] {
+
+    .app > .app-side {
+      color: color-inverse($-color-white);
+      background-color: $-color-white;
+      > .app-brand {
+        color: color-inverse($-color-white, 0%);
+        background-color: $-color-white;
+      }
+      > .btn-menu-toggle:hover {
+        color: $active-bg;
+        background-color: transparent;
+      }
+    }
+
+    .sidebar.#{$menu} {
+
+      background-color: transparent;
+
+      .#{$menu} {
+        background-color: inherit;
+      }
+
+      .#{$menu-item}::before,
+      .#{$submenu} > .#{$submenu-title}::before {
+        color: color-inverse($-side-light-bg);
+      }
+
+      // hover, active, opened
+      .#{$menu-item}:hover,
+      .#{$submenu} > .#{$submenu-title}:hover,
+      .#{$submenu}.#{$opened} > .#{$submenu-title} {
+        color: $active-bg;
+        background-color: transparent;
+      }
+
+      
+      > .#{$menu-item}.#{$active},
+      > .#{$submenu}.#{$active} > .#{$submenu-title} {
+        background-color: mix($theme-bg, $-color-white, 12%) !important;
+      }
+
+      // active
+      .#{$submenu} > .#{$menu} > .#{$menu-item}.#{$active} {
+        color: $-color-white;
+        background-color: $active-bg;
+      }
+    }
+
+  }
+}
+
+// 遍历生成主题样式
+@each $name, $value in $-theme-color {
+  body[theme="#{$name}"] {
+    @include set-theme-color($value);
+  }
+}
+
+
+/* Theme 选择主题色块
+-------------------------- */
+.select-theme {
+  @each $name, $value in $-theme-color {
+    > .item-color[theme="#{$name}"] {
+      background-color: nth($value, 1);
+    }
+  }
+}

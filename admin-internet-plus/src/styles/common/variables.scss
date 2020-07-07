@@ -1,0 +1,91 @@
+@import "./variables.element.scss";
+
+/* 主题颜色定义
+-------------------- */
+
+// 主题配色
+$-theme-list: 
+  #F5222D, #FA541C, #FAAD14, 
+  #52C41A, #38C7A8, #409EFF, 
+  #7266BA;
+
+// 主题配色
+$-theme-color: (
+  1: nth($-theme-list, 1),
+  2: nth($-theme-list, 2),
+  3: nth($-theme-list, 3),
+  4: nth($-theme-list, 4),
+  5: nth($-theme-list, 5),
+  6: nth($-theme-list, 6),
+  7: nth($-theme-list, 7),
+);
+
+// 基础配色
+$-color-white: #fff;
+$-color-black: #000;
+$-color-base: #515a6e;
+$-color-base-bg: #F2F2F2;
+$-color-link: #1890ff;
+$-color-sub: #808695;
+$-color-border: #EBEEF5;
+
+$-color-text: rgba(0, 0, 0, .65);       // 主文本色
+$-color-title: rgba(0, 0, 0, .85);      // 标题色
+$-color-secondary : rgba(0, 0, 0, .45); // 次文本色
+$-color-disabled : rgba(0, 0, 0, .25);  // 失效色
+
+
+// 其他配色
+$-color-lighter: #FBFBFB;
+$-color-shadow: 0 1px 1px rgba(0, 0, 0, .15) !default;
+
+
+/* 基础属性预设变量
+-------------------------- */
+
+// font 字体代码
+$-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei" ,"微软雅黑", Arial, sans-serif;
+
+// rem 基准单位，记得同步 public/reset 的 html
+$root-size: 10px;
+
+// 文字大小
+$-font-size: $root-size * 1.4;
+
+// 元素块间隔
+$-scope: 10px;
+
+// 弹框层级
+$-z-index: 100;
+
+// 过渡动效
+$-transition: .2s ease 0s !default;
+
+
+/* 框架布局尺寸
+-------------------- */
+$-head-height: $root-size * 4;      //  40px
+$-tags-height: $root-size * 3.2;    //  32px
+$-side-width: $root-size * 5.5;     //  55px
+$-side-max-width: $root-size * 22;  // 220px
+
+$-layout-shadow: 10px 0 10px -10px rgba(0,0,0,.2);
+$-head-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+
+
+/* Grid 纵向栅格布局
+-------------------- */
+$-grid-y-name: 'h';            // 区块纵向划分属性名
+$-grid-y-count: 12;            // 区块可划分等份（纵向）
+$-grid-x-space: $-scope;       // 区块左右间隔
+$-grid-y-space: $-grid-x-space; // 区块上下间隔
+
+
+/* 可在js中调用的scss全局变量，通过 $config. 调用
+-------------------- */
+:export {
+  scope: $-scope;
+  zIndex: $-z-index;
+  headHeight: $-head-height;
+  tagsHeight: $-tags-height;
+}

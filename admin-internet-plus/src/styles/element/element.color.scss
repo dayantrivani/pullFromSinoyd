@@ -1,0 +1,132 @@
+/* UI 主题颜色适配，仅适用于非 IE
+-------------------- */
+
+:root {
+  --theme-1: #{nth($-theme-list, 1)};
+  --theme-2: #{nth($-theme-list, 2)};
+  --theme-3: #{nth($-theme-list, 3)};
+  --theme-4: #{nth($-theme-list, 4)};
+  --theme-5: #{nth($-theme-list, 5)};
+  --theme-6: #{nth($-theme-list, 6)};
+  --theme-7: #{nth($-theme-list, 7)};
+  --primary: var(--theme-6);
+}
+
+
+/* Switch
+-------------------- */
+.el-switch.is-checked .el-switch__core {
+	border-color: var(--primary);
+	background-color: var(--primary);
+}
+
+
+/* Radio
+-------------------- */
+.el-radio__input.is-checked .el-radio__inner,
+.el-radio-button__orig-radio:checked+.el-radio-button__inner {
+	border-color: var(--primary);
+	background: var(--primary);
+}
+.el-radio-button__inner:hover,
+.el-radio__input.is-checked + .el-radio__label {
+	color: var(--primary);
+}
+
+
+/* Checkbox
+-------------------- */
+.el-checkbox__input.is-checked+.el-checkbox__label,
+.el-checkbox-button__inner:hover {
+	color: var(--primary);
+}
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox-button.is-checked .el-checkbox-button__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+	background-color: var(--primary);;
+	border-color: var(--primary);;
+}
+
+
+/* Button
+-------------------- */
+.el-button--primary {
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+.el-button--primary.is-active,
+.el-button--primary:active {
+	background: var(--primary);
+	border-color: var(--primary);
+}
+
+
+/* Input
+-------------------- */
+.el-input__inner:focus,
+.el-textarea__inner:focus,
+.el-input.is-active .el-input__inner, .el-input__inner:focus {
+	border-color: var(--primary);
+}
+
+
+/* Select
+-------------------- */
+.el-select .el-input.is-focus .el-input__inner {
+	border-color: var(--primary);
+}
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+	color: var(--primary);
+}
+
+
+/* Slider
+-------------------- */
+.el-slider__bar {
+	background-color: var(--primary);
+}
+.el-slider__button {
+	border-color: var(--primary);
+}
+
+
+/* TimeSelect
+-------------------- */
+.time-select-item.selected:not(.disabled),
+.el-time-panel__btn.confirm {
+	color: var(--primary);
+}
+
+
+/* DateSelect
+-------------------- */
+.el-date-table td.today span,
+.el-date-table td.available:hover,
+.el-month-table td .cell:hover,
+.el-month-table td.today .cell,
+.el-year-table td .cell:hover,
+.el-year-table td.current:not(.disabled) .cell,
+.el-picker-panel__shortcut:hover {
+	color: var(--primary);
+}
+.el-date-table td.selected span {
+	border-color: var(--primary);
+}
+
+
+/* Transfer
+-------------------- */
+.el-transfer-panel__item:hover {
+	color: var(--primary);
+}
+
+
+/* Tabs
+-------------------- */
+.el-tabs__item.is-active,
+.el-tabs__item:hover {
+	color: var(--primary);
+}
+.el-tabs__active-bar {
+	background-color: var(--primary);
+}

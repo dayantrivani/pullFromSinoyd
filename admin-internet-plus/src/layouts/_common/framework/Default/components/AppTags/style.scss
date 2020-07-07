@@ -1,0 +1,109 @@
+$-tags-height: 32px !default;
+$-tags-color: #808695;
+$-tags-btn: 1.1;
+
+.app-tags {
+  display: flex;
+  width: 100%;
+  height: $-tags-height;
+  color: $-color-base;
+  background-color: $-color-white;
+  box-shadow: 0 1px 1px rgba(0,0,0,.03), 0 1px 0 rgba(0,0,0,.03);
+  > .container {
+    flex: 1;
+    position: relative;
+    line-height: $-tags-height;
+    border-left: 1px solid $-color-base-bg;
+    overflow: hidden;
+    z-index: 1;
+    > ul.m-scoll {
+      position: absolute;
+      transition: left $-transition;
+      white-space: nowrap;
+    }
+    > ul.m-scoll > li {
+      position: relative;
+      display: inline-block;
+      padding: 0 15px;
+      color: $-tags-color;
+      user-select: none;
+      border-right: 1px solid $-color-base-bg;
+      cursor: pointer;
+      overflow: hidden;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #292B34;
+        transition: width $-transition;
+      }
+      &:hover, &.is-active {
+        color: $-color-base;
+        background-color: $-color-base-bg;
+        &::after {
+          width: 100%;
+        }
+      }
+      .btn-close:hover {
+        height: 14px;
+        color: $-color-white;
+        background-color: $--color-danger;
+        border-radius: 50%;
+      }
+      .anticon.anticon-close,
+      .anticon.anticon-lock {
+        font-size: .8em;
+        color: inherit;
+      }
+    }
+  }
+  .btn {
+    width: $-tags-height * $-tags-btn;
+    border-left: 1px solid $-color-base-bg;
+    line-height: inherit;
+    height: $-tags-height;
+    font-size: 1.2em;
+    color: $-color-base !important;
+    border-color: transparent !important;
+    &:hover {
+      background-color: $-color-base-bg !important;
+      cursor: pointer;
+    }
+    > i {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+.menu-context {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.tags-dropdown__close {
+  &:hover > ul.tags-dropdown__overlay {
+    display: block;
+  }
+  > button.btn {
+    i { top: 2px; }
+  }
+  > ul.tags-dropdown__overlay {
+    position: absolute;
+    top: $-tags-height - 1px;
+    right: 1px;
+    margin-top: 5px;
+    display: none;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      width: 100%;
+      height: 10px;
+    }
+  }
+}

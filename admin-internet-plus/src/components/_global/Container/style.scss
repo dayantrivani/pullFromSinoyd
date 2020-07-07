@@ -1,0 +1,23 @@
+.app {
+    // 固定顶栏情况下调整
+    &.app-head-fixed .mod-container {
+      overflow-y: auto;
+      &[fill="true"], &.mode-iframe { height: calc(100vh - #{$-head-height}); }
+    }
+    // 固定多页签情况下调整
+    &.app-tags-view .mod-container {
+      &[fill="true"],
+      &.mode-iframe {
+        height: calc(100vh - #{$-head-height + $-tags-height});
+      }
+    }
+  }
+  
+  .mod-container {
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    &[fill="true"] > .container {
+      height: 100%;
+    }
+  }

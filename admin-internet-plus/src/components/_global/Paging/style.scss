@@ -1,0 +1,43 @@
+/* paging 分页查询
+-------------------------- */
+.mod-paging {
+  $icon-color: $-color-text;
+  $icon-hover-color: $--color-primary;
+  display: inline-block;
+  padding: 5px $-scope;
+
+  .btn-refresh {
+    position: relative;
+    top: 1px;
+    margin-right: 15px;
+    color: $icon-color;
+    > i {
+      font-size: 16px;
+      color: $icon-color
+    }
+    > span {
+      margin-left: 5px;
+    }
+  }
+
+  .btn-refresh:hover i { color: $icon-hover-color }
+
+  .btn-refresh::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -10px;
+    left: -10px;
+    cursor: pointer;
+  }
+
+  .el-pagination {
+    padding: 0;
+  }
+
+  .el-pagination__sizes input {
+    height: 22px;
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,260 @@
+/* App Layout 应用布局
+-------------------------- */
+.app {
+
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  color: $-color-base;
+
+  // 是否展开侧栏
+  &.is-collapse {
+    > .app-head > .app-brand {
+      width: $-side-max-width;
+    }
+    > .app-side {
+      width: $-side-max-width;
+    }
+    > .app-main {
+      margin-left: $-side-max-width;
+    }
+  }
+
+  // 启用多页签
+  &.app-tags-view {
+    // 固定多页签
+    &.app-tags-fixed.app-head-fixed {
+      > .app-main {
+        padding-top: $-tags-height;
+        > .app-tags {
+          position: fixed;
+          top: $-head-height;
+          z-index: $-z-index - 1;
+          width: calc(100% - #{$-side-width});
+          transition: width $-transition;
+        }
+      }
+      &.is-collapse > .app-main > .app-tags{
+        width: calc(100% - #{$-side-max-width});
+      }
+    }
+  }
+
+  // 固定顶栏
+  &.app-head-fixed {
+    padding-top: $-head-height;
+    > .app-head {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  // 置顶顶栏
+  &.app-head-fixed.app-head-stick {
+    &.app-side-fixed > .app-head > .app-head-content {
+      margin-left: $-side-max-width;
+    }
+    > .app-head {
+      box-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+      > .app-brand {
+        width: auto !important;
+        min-width: $-side-max-width;
+        box-shadow: none;
+        opacity: 1;
+      }
+      > .app-head-content {
+        margin-left: $-side-max-width;
+        box-shadow: none;
+      }
+    }
+    > .app-head > .app-head-content {
+      margin-left: 0;
+      > .toggle-side {
+        display: none;
+      }
+    }
+  }
+
+  // 固定侧栏
+  &.app-side-fixed {
+    &.is-collapse {
+      > .app-head > .app-head-content {
+        margin-left: $-side-max-width;
+      }
+      > .app-main {
+        margin-left: $-side-max-width;
+      }
+    }
+    > .app-head {
+      > .app-brand {
+        position: fixed;
+      }
+      > .app-head-content {
+        margin-left: $-side-width;
+      }
+    }
+    > .app-side {
+      position: fixed;
+    }
+    > .app-main {
+      margin-left: $-side-width;
+    }
+  }
+
+  // 下滑时隐藏顶栏
+  &.app-head-fixed.app-head-hide {
+    > .app-head {
+      display: none;
+    }
+    &.app-tags-fixed > .app-main > .app-tags {
+      display: none;
+    }
+  }
+}
+
+/* 顶栏
+-------------------------- */
+.app > .app-head {
+  position: relative;
+  z-index: $-z-index + 1;
+  min-height: $-head-height;
+  line-height: $-head-height;
+  > .app-brand {
+    width: $-side-width;
+    z-index: 1;
+    color: transparent;
+    transition: all $-transition;
+  }
+  > .app-head-content {
+    transition: margin-left $-transition;
+  }
+}
+
+
+/* 侧栏
+-------------------------- */
+.app > .app-side {
+  float: left;
+  z-index: $-z-index;
+  width: $-side-width;
+  transition: width $-transition;
+}
+
+
+/* 侧栏收缩按钮（贴边位置）
+-------------------------- */
+.app {
+  $btn-width: 8px;
+  &.is-collapse {
+    .side-toggle {
+      left: $-side-max-width - $btn-width;
+      > .icon {
+        left: -2px;
+      }
+      > .shape {
+        border-bottom: 9px solid transparent;
+        border-right: 13px solid $-color-base-bg;
+        border-left: none;
+        border-top: 9px solid transparent;
+      }
+    }
+    .btn-menu-toggle {
+      width: $-side-max-width;
+    }
+  }
+  &.app-side-fixed {
+    position: absolute;
+    overflow: hidden;
+    .btn-menu-toggle {
+      position: relative;
+      bottom: auto;
+    }
+  }
+  .side-toggle {
+    position: fixed;
+    top: 50%;
+    left: $-side-width;
+    margin-top: -25px;
+    width: $btn-width;
+    height: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2000;
+    transition: all $-transition;
+    > .icon {
+      position: absolute;
+      top: 50%;
+      font-size: 16px;
+      line-height: 16px;
+      height: 16px;
+      margin-top: -8px;
+      left: -4px;
+      color: #546478;
+    }
+    > .shape {
+      left: 0;
+      right: auto;
+      height: 50px;
+      border-bottom: 9px solid transparent;
+      border-right: none;
+      border-left: 13px solid darken($-color-base-bg, 15%);
+      border-top: 9px solid transparent;
+    }
+  }
+}
+
+
+/* 主体内容区
+-------------------------- */
+.app > .app-main {
+  display: block;
+  margin-left: $-side-width;
+  height: calc(100% - #{$-head-height});
+  overflow: hidden;
+  transition: margin-left $-transition;
+}
+
+
+/* 下拉菜单(页签)
+-------------------------- */
+.m-dropdown {
+  // 预定义变量
+  $-pad: 7px 12px;
+  $-font-size: 14px;
+  $-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  $-color: rgba(0, 0, 0, 0.65);
+  $-active-bg: #e6f7ff;
+  
+  z-index: 9999;
+  outline: none;
+  list-style-type: none;
+  padding: 4px 0;
+  margin: 0;
+  text-align: left;
+  background-color: $-color-white;;
+  border-radius: 4px;
+  box-shadow: $-box-shadow;
+  background-clip: padding-box;
+
+  > li {
+    padding: $-pad;
+    margin: 0;
+    clear: both;
+    font-size: $-font-size;
+    font-weight: normal;
+    color: $-color;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+    line-height: $-font-size + 2px;
+    &:hover, &.is-active {
+      background-color: $-active-bg;
+    }
+    > i.icon-svg {
+      width: 20px;
+      text-align: left;
+    }
+  }
+}
