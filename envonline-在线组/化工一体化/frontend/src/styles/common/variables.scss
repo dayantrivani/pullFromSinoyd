@@ -1,0 +1,51 @@
+/* 基础属性预设变量
+-------------------------- */
+
+// font 字体代码
+$-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei" ,"微软雅黑", Arial, sans-serif;
+
+// 文字大小
+$-font-size: 14px;
+
+// 元素块间隔
+$-scope: 10px;
+
+// 弹框层级
+$-z-index: 2000;
+
+// 过渡动效
+$-transition: .3s cubic-bezier(.645,.045,.355,1) !default;
+
+
+/* Grid 纵向栅格布局
+-------------------- */
+$grid-y-name: 'h';            // 区块纵向划分属性名
+$grid-y-count: 12;            // 区块可划分等份（纵向）
+$grid-x-space: $-scope;       // 区块左右间隔
+$grid-y-space: $grid-x-space; // 区块上下间隔
+
+
+/* 主题颜色定义
+-------------------- */
+// 基础配色
+$-base-color: #515a6e;
+$-base-bg: #F0F3F4;
+$-sub-color: #808695;
+
+$--color-white: #fff !default;
+$--color-black: #000 !default;
+$--color-primary: #409EFF !default;
+$--color-success: #67c23a !default;
+$--color-warning: #e6a23c !default;
+$--color-danger: #f56c6c !default;
+$--color-info: #909399 !default;
+$--border-color-lighter: #ebeef5 !default;
+
+
+/* 可在js中调用的scss变量，通过 $config. 调用
+-------------------- */
+:export {
+  scope: $-scope;
+  zIndex: $-z-index;
+  // theme: $-theme-color,
+}

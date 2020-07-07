@@ -1,0 +1,21 @@
+/* Grid 栅格布局
+--------- --------- --------- --------- --------- No.04 */
+.el-row {
+  $row-count: $grid-y-count;  // 区块可划分等份（纵向）
+  $row-h: 100% / $row-count;  // 区块高度
+  $row-space: $grid-y-space;  // 区块上下间隔
+  $name-y: $grid-y-name;      // 纵向划分属性名
+
+  > .el-col {
+    height: inherit;
+    transition: all $-transition;
+    &:last-child { margin-bottom: 0; }
+  }
+  @for $i from 1 through $row-count {
+    $space-count: $row-count / $i;  // 高度划分间隔数
+    > .el-col[#{$name-y}='#{$i}'], > div > .el-col[#{$name-y}='#{$i}'] {
+      // 区块高度 - 间隔数 * 每个间隔的 margin(10px) / 元素个数
+      height: calc(#{$row-h * $i} - #{($space-count * $row-space - $row-space) / $space-count});
+    }
+  }
+}

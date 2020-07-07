@@ -1,0 +1,109 @@
+{
+  "name": "vue-admin-element",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint --fix --ext .js,.vue src",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "bluebird": "^3.5.5",
+    "core-js": "^2.6.5",
+    "crypto-js": "^3.1.9-1",
+    "element-ui": "^2.8.2",
+    "js-cookie": "^2.2.0",
+    "lodash": "^4.17.11",
+    "lottie-web": "^5.5.10",
+    "vue": "^2.6.10",
+    "vue-jsonp": "^0.1.8",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^8.1.5",
+    "node-sass": "^4.9.0",
+    "portfinder": "1.0.21",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21",
+    "vuepress": "^0.14.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "rules": {
+      "eqeqeq": 1,
+      "no-plusplus": 0,
+      "no-mixed-operators": 0,
+      "max-len": [
+        1,
+        {
+          "code": 140
+        }
+      ],
+      "no-shadow": 0,
+      "no-underscore-dangle": 0,
+      "prefer-const": 1,
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "always-multiline",
+          "objects": "always-multiline",
+          "imports": "always-multiline",
+          "exports": "always-multiline",
+          "functions": "ignore"
+        }
+      ],
+      "import/extensions": 0,
+      "no-param-reassign": 0,
+      "import/no-extraneous-dependencies": 0,
+      "no-debugger": 1,
+      "import/no-unresolved": 0,
+      "no-console": 1,
+      "no-multi-spaces": 0,
+      "quote-props": 0,
+      "vue/valid-v-for": 0
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie <=8",
+    "last 3 versions"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

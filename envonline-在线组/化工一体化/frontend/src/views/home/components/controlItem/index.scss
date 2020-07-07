@@ -1,0 +1,58 @@
+.control-item {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  >ul {
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    >li {
+      font-size: 0.18rem;
+      color: #fcfcfc;
+      >p {
+        >span {
+          font-size: 0.36rem;
+          color: #00fff8;
+          padding-left: 0.5em;
+          >.unit {
+            font-size: 0.18rem;
+          }
+        }
+      }
+    }
+  }
+  .item-bg {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    .bg-top-icon {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: {
+        size: 20% auto;
+        repeat: no-repeat;
+        position: 50% 25%;
+        // image: url('~@/assets/wholeprocessImage/controlIcon1.png');
+      }
+      @for $var from 1 to 6 {
+        &.icon-index#{$var} {
+          background-image: url('~@/assets/wholeprocessImage/controlIcon#{$var}.png');
+        }
+      }
+    }
+  }
+  .hover-link {
+    > * {
+      cursor: pointer;
+    }
+    &:hover *:not([type="bg"]) {
+      transform: scale(1.2);
+    }
+    &:not(div):hover {
+      transform: scale(1.2);
+    }
+  }
+}
