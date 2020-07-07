@@ -1,0 +1,135 @@
+// 动态列表
+.dynamic-table{
+  margin-top: 5px !important;
+  .ant-table-content{
+    min-height: 506px;
+    .ant-table-placeholder{
+      // min-height: 516px;
+      // line-height: 516px;
+      padding: 0;
+      border-bottom: none;
+      // border: none;
+      .ant-empty{
+        min-height: 468px;
+        line-height: 468px;
+        margin: 0;
+      }
+    }
+    .ant-table-tbody > tr > td{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+// 卡片内列表
+.mar-t-table{
+  // margin-top: 5px !important;
+  .ant-table-content{
+    min-height: 548px;
+    .ant-table-placeholder{
+      // min-height: 516px;
+      // line-height: 516px;
+      padding: 0;
+      border-bottom: none;
+      // border: none;
+      .ant-empty{
+        min-height: 468px;
+        line-height: 468px;
+        margin: 0;
+      }
+    }
+    .ant-table-tbody > tr > td,th{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 14px 8px 13px 8px!important;
+      .ant-btn{
+        height: 22px;
+        padding: 0 5px;
+      }
+    }
+  }
+}
+.mar-d-table{
+  margin-top: 5px !important;
+  .ant-table-content{
+    min-height: 506px;
+    .ant-table-placeholder{
+      min-height: 455px;
+      line-height: 455px;
+      padding: 0;
+      border: none;
+    }
+  }
+}
+/* upload-file 附件上传
+-------------------------- */
+.mod-upload-file {
+  display: inline-block;
+  width: 100%;
+  .file-item {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ebeef5;
+    &:hover { border-color: #409eff; }
+  }
+  .item-type {
+    width: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    > .icon {
+      font-size: inherit;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  }
+  .item-name {
+    overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    > div:nth-child(1) {
+      color: #333333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    > div:nth-child(2) { color: #303133; }
+  }
+  .item-option {
+    display: flex;
+    width: 40px;
+    line-height: 40px;
+    > .btn-down, > .btn-close {
+      flex: 1;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    > .btn-down:hover { color: #409eff; }
+    > .btn-close:hover { color: #f56c6c; }
+  }
+}
+
+// 按钮
+.ant-btn.ant-btn-success{
+  background-color: #fff;
+  color: $-color-success;
+}
+.ant-btn.ant-btn-success:hover{
+  background-color: $-color-success;
+  color: #fff;
+  border-color: $-color-success;
+}
+.ant-btn.ant-btn-success:focus{
+  background-color: #fff;
+  color: #52ef1a;
+  border-color: #52ef1a;
+}

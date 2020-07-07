@@ -1,0 +1,20 @@
+.app-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-top: $-head-height;
+  float: left;
+  width: $-side-max-width;
+  min-height: calc(100% - #{$-head-height + $-tags-height});
+  transition: width $-transition;
+  overflow: hidden;
+  box-shadow: $-layout-shadow;
+  > .app-brand {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    line-height: $-head-height;
+  }
+}

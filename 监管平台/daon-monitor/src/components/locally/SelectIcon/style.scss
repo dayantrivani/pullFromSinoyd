@@ -1,0 +1,141 @@
+/* select-icon 图标选择器
+-------------------------- */
+.mod-select-icon {
+  $size: 40px;      // 图标项大小
+  $col-count: 8;    // 多少列
+  $row-count: 4;    // 多少行
+  $scope: 5px;      // 间隔
+  $icon-size: 14px; // 图标大小
+
+  position: relative;
+  display: inline-block;
+  width: $size + 2px;
+  height: $size + 2px;
+  border: 1px dashed $-color-border;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+
+  // 菜单打开状态
+  &.is-opened, &:hover { border-color: $-color-primary; }
+  // 禁用状态
+  &.is-disabled:hover { border-color: $-color-border !important; } 
+  &.is-disabled,
+  &.is-disabled > .icon-item,
+  &.is-disabled > .btn-clear {
+    cursor: not-allowed !important;
+    background-color: $-color-base-bg;
+  }
+  // 已选状态
+  &.is-active {
+    border-style: solid;
+    border-radius: 0;
+    > .icon-item {
+      width: $size;
+      height: $size;
+      line-height: $size;
+      padding: $scope;
+      text-align: center;
+      cursor: pointer;
+      > i, > .icon-svg {
+        top: -1px;
+        display: block;
+        font-size: $size - 10px;
+        color: $-color-primary;
+      }
+    }
+  }
+  > .icon-item {
+    > i, > .icon-svg {
+      position: relative;
+      top: 2px;
+      font-size: $size - 10px;
+      width: 100%;
+      line-height: $size;
+      font-size: ($size / 2);
+      font-weight: bold;
+      color: $-color-info;
+      cursor: inherit;
+    }
+  }
+  &:hover .btn-clear {
+    display: inline-block;
+  }
+
+  // 清空按钮
+  .btn-clear {
+    display: none;
+    width: 0;
+    height: 0;
+    border-width: ($size / 2) 0 0 ($size / 2);
+    border-style: solid;
+    border-color: $-color-danger transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    > i.icon-svg {
+      position: absolute;
+      top: -($size / 2);
+      right: 0;
+      color: $-color-white;
+      font-size: .7em;
+      &:hover { color: darken($-color-white, 5%); }
+    }
+  }
+
+  // 弹出内容
+  @at-root .pupop-select-icon {
+    .ant-popover-inner-content {
+      padding: 0;
+      width: ($size + $scope * 2) * $col-count + 12px;
+      height: ($size + $scope * 2) * $row-count + 14px;
+      overflow-x: hidden;
+      .icon-group {
+        margin: 5px;
+      }
+    }
+    .el-scrollbar {
+      height: 100%;
+      .el-scrollbar__wrap {
+        overflow-x: hidden;
+      }
+      .el-scrollbar__view {
+        zoom: 1; // for IE6 IE7
+        &:after {
+          content: " ";
+          visibility: hidden;
+          display: block;
+          height: 0;
+          font-size: 0;
+          clear: both;
+        }
+      }
+    }
+
+    .icon-item {
+      float: left;
+      width: $size;
+      height: $size;
+      line-height: $size;
+      margin: $scope;
+      padding: $scope;
+      text-align: center;
+      cursor: pointer;
+      &:hover { background-color: color-light($-color-info) }
+      &.is-active {
+        background-color: color-light($-color-success);
+        border: 1px solid $-color-success;
+      }
+      > i, > .icon-svg {
+        position: relative;
+        top: -2px;
+        display: block;
+        font-size: $size - 10px;
+        color: $-color-sub;
+      }
+    }
+  }
+}

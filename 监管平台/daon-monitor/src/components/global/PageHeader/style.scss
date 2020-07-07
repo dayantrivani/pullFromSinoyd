@@ -1,0 +1,11 @@
+/* page-header 页头
+-------------------------- */
+.mod-page-header {
+  // margin: -5px #{-$-scope} $-scope;
+  margin: -5px -15px 13px;
+  // padding: $-scope;
+  padding: 11px 15px;
+  color: $-color-info;
+  background-color: $-color-white;
+  border-bottom: 1px solid lighten($-color-border, 7%);
+}

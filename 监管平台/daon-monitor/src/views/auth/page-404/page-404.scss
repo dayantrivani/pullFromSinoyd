@@ -1,0 +1,40 @@
+.page404 {
+  $page404-brand-img: '~@/assets/img/404_brand_526x277.png';
+  $page404-bg-img: '~@/assets/img/404_bg_1470x259.png';
+
+  height: 100%;
+  background: transparent url($page404-bg-img) 50% 50% no-repeat;
+  background-position: bottom;
+
+  button {
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: $-color-white;
+    background: #00bfb4;
+    cursor: pointer;
+  }
+
+  .img-responsive {
+    width: auto;
+    height: 277px;
+    max-width: 100%;
+    background: transparent url($page404-brand-img) 50% 50% no-repeat;
+    background-position: bottom;
+  }
+  
+  .title {
+    padding: 10vh 30px 0;
+    text-align: center;
+    > * {
+      &:nth-child(2) {
+        margin-top: 25px;
+      }
+      &:nth-child(3) {
+        margin: 50px 0 25px;
+      }
+    }
+  }
+  .lime{
+    color: #00bfb4;
+  }
+}

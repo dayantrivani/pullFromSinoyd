@@ -1,0 +1,7 @@
+.mod-markdown {
+	height: 100%;
+	z-index: 1 !important;
+	&.fullscreen {
+		z-index: $-z-index + 10 !important;
+	}
+}

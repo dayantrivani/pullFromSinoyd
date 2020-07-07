@@ -1,0 +1,66 @@
+.mod-upload-file {
+  display: inline-block;
+  width: 100%;
+  .file-item {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    border: 1px solid color-lighter($-color-border);
+    &:hover { border-color: $-color-primary; }
+  }
+  .item-type {
+    width: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    > .icon {
+      font-size: inherit;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  }
+  .item-name {
+    overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    > div:nth-child(1) {
+      color: #333333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    // > div:nth-child(2) { color: $--color-text-primary; }
+  }
+  .item-option {
+    display: flex;
+    width: 40px;
+    line-height: 40px;
+    > .btn-down, > .btn-close {
+      flex: 1;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    > .btn-down:hover { color: $-color-primary; }
+    > .btn-close:hover { color: $-color-danger; }
+  }
+}
+
+.mod-upload-file__content {
+  margin-top: -5px;
+  > .el-col { margin-top: 5px; }
+  > .el-col > .file-item {
+    // 悬浮
+    &:hover {
+      border-color: $-color-primary;
+    }
+    // 选中
+    // &.is-active {}
+    // 只读&禁用
+    // &.is-readonly {}
+  }
+}

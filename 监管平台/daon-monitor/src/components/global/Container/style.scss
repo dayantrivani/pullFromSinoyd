@@ -1,0 +1,52 @@
+/* container 布局容器
+-------------------------- */
+.app {
+  &.app-head-fixed .mod-container {
+    overflow: auto;
+    &.is-fill { height: calc(100vh - #{$-head-height + $-tags-height}); }
+  }
+  &.app-tags-view .mod-container {
+    padding: 5px $-scope $-scope;
+    &.layout-empty {
+      padding: 0;
+    }
+  }
+}
+
+.mod-container {
+  height: 100%;
+  padding: $-scope;
+}
+
+// 布局类型 - 侧边固定
+.mod-container.layout-fixed {
+  > .container {
+    display: flex;
+    > .left {
+      flex: 1;
+      p {
+        line-height: 30px;
+      }
+    }
+    > .right {
+      margin-left: $-scope;
+      padding-top: $-scope;
+      width: 200px;
+      background-color: $-color-white;
+      overflow: hidden;
+      > .fixed {
+        width: inherit;
+        .ant-anchor-wrapper {
+          margin-left: 2px;
+          padding-left: $-scope;
+        }
+      }
+    }
+  }
+}
+
+.mod-container.layout-empty {
+  // position: relative;
+  // top: 0;
+  padding: 0;
+}

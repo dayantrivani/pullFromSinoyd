@@ -1,0 +1,28 @@
+.app-brand {
+  display: inline-block;
+  height: $-head-height;
+
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  white-space: nowrap;
+
+  transition: inherit;
+  overflow: hidden;
+  box-shadow: $-layout-shadow;
+
+  > .brand {
+    float: left;
+    position: relative;
+    top: 5px;
+    width: $-side-width;
+    height: $-head-height;
+    line-height: $-head-height;
+
+    font-size: 2em;
+    text-align: center;
+  }
+
+  > .text-bright {
+    font-style: italic;
+  }
+}

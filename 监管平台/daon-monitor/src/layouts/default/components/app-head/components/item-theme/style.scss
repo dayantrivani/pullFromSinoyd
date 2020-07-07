@@ -1,0 +1,140 @@
+.pupop-theme {
+  margin-top: 1px !important;
+  > .ant-drawer-content-wrapper {
+    top: $-head-height;
+    height: calc(100% - #{$-head-height}) !important;
+    .ant-drawer-body {
+      padding: 0 15px;
+      .label-block {
+        line-height: 35px;
+      }
+    }
+  }
+  .ant-popover-inner-content {
+    padding: 0 15px;
+  }
+}
+
+.item-theme-type > .item-preview {
+  color: $-color-link;
+  &::after { background-color: $-color-white; }
+  &:nth-child(1) {
+    &::before { background-color: #3A3F51; }
+    > .block { background-color: #3A3F51; }
+  }
+  &:nth-child(2) {
+    &::before { background-color: $-color-white; }
+    > .block { background-color: $-color-white; }
+  }
+}
+.item-theme-type .item-preview {
+  $width-left: 30%;
+  $width-right: 100% - $width-left;
+
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  width: 50px;
+  height: 26px;
+  background-color: $-color-base-bg;
+  box-shadow: 0 0 2px rgba(0, 21, 41, 0.2);
+  box-sizing: border-box;
+  cursor: pointer;
+  &:nth-child(even) { margin-left: 0; }
+  &::before { left: 0; width: $width-left; }
+  &::after { right: 0; width: $width-right; }
+  &.is-active > .mask {
+    opacity: 1;
+    &::before { content: '✔'; }
+  }
+  &::before, &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: $width-left;
+  }
+  &:hover {
+    border: 1px solid $-color-primary;
+  }
+  > .mask {
+    position: absolute;
+    width: 100%;
+    line-height: 26px;
+    font-size: 1.4em;
+    text-align: center;
+    color: $-color-link;
+    z-index: 10;
+    opacity: 0;
+  }
+  > .block {
+    display: inline-block;
+    position: absolute;
+    top: $width-left;
+    width: $width-left;
+    height: $width-right;
+  }
+}
+
+.item-theme-color {
+  @mixin theme-set-color($color) {
+    background-color: nth($color, 1);
+  }
+  @each $name, $value in $-theme-color {
+    > .item-color[theme="#{$name}"] {
+      @include theme-set-color($value);
+    }
+  }
+}
+.item-theme-color {
+  position: relative;
+  display: flex;
+  height: 50px;
+  > .item-color {
+    flex: 1;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 9px;
+    text-align: center;
+    color: $-color-white;
+    font-weight: 700;
+    box-shadow: 0 0 2px rgba(0, 21, 41, 0.2);
+    &:nth-child(1), &:nth-child(2) {
+      position: absolute;
+      top: 30px;
+    }
+    &:nth-child(2) {
+      left: 30px;
+      color: #000;
+    }
+  }
+}
+
+.pupop-theme {
+  .item-option {
+    width: 100%;
+    height: 40px;
+    zoom: 1; // for IE6 IE7
+    &:after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      font-size: 0;
+      clear: both;
+    }
+    &:hover > label {
+      color: $-color-primary;
+    }
+    &.is-disabled > label {
+      color: $-color-info;
+    }
+    > .ant-switch {
+      position: relative;
+      top: 3px;
+      float: right;
+    }
+  }
+}

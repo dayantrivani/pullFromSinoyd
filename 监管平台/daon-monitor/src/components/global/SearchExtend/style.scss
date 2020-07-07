@@ -1,0 +1,56 @@
+/* search-extend 检索扩展
+-------------------------- */
+.mod-search-extend {
+  $row-height: 40px;  // 行高度
+  $row-offset: 2px;   // 垂直偏移量
+
+  position: relative;
+  display: block;
+  // padding-bottom: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: $row-height;
+  // overflow: hidden;
+  white-space: nowrap;
+
+  > .body {
+    position: absolute;
+    top: $row-offset;
+    width: 100%;
+    transition: top .3s linear 0s;
+    &.is-extend {
+      top: -($row-height);
+    }
+    > .default, > .extend {
+      display: flex;
+      height: $row-height;
+      justify-content: space-between;
+      white-space: nowrap;
+      > .left{
+        > div{
+          > *{
+            margin-left: 10px;
+          }
+        }
+      }
+      > .right {
+        display: flex;
+        padding-left: 10px;
+        > .btn-toggle {
+          padding: 0;
+          width: 70px;
+        }
+      }
+      > .btn-toggle {
+        margin-left: 10px;
+        padding-right: 0;
+      }
+      .btn-toggle {
+        height: 30px;
+        font-size: 14px;
+        color: #409EFF;
+        cursor: pointer;
+      }
+    }
+  }
+}

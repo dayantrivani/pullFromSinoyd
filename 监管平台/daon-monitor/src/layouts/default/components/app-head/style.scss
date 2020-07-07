@@ -1,0 +1,54 @@
+// 顶栏
+.app-head {
+  display: flex;
+  width: 100%;
+  height: $-head-height;
+  line-height: $-head-height;
+}
+
+// 顶栏内容
+.app-head > .app-head-content {
+  position: relative;
+  flex: 1;
+  height: $-head-height;
+  transition: all $-transition;
+  box-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+  .btn {
+    position: relative;
+    display: inline-block;
+    width: $-head-height - 10px;
+    height: inherit;
+    line-height: inherit;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .item-user,
+  .item-helper {
+    display: inline-block;
+    width: auto;
+    > .btn {
+      border-left: none;
+    }
+  }
+  .btn-more {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid dashed dashed;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    margin-top: -3px;
+    border-width: 6px;
+    border-top-color: rgba(255,255,255,.7);
+    &.mored {
+      margin-top: -9px;
+      border-style: dashed dashed solid;
+    }
+  }
+}

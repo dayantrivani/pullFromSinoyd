@@ -1,0 +1,627 @@
+/* login 登录页
+ * @see views/auth/login.vue
+-------------------------- */
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.page-login {
+  $overlay-to-bg: #52C41A;
+  $overlay-from-bg: #0896d8;
+  $login-bg-img: '~@/assets/img/login_bg_1920x1080.jpg';
+  $login-new-bg-img: '~@/assets/img/bg.png';
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // background: transparent url($login-bg-img) center top no-repeat;
+  // background-size: cover;
+  // overflow: hidden;
+
+  > .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 768px;
+    max-width: 100%;
+    min-height: 420px;
+    border-radius: 10px;
+    background-color: $-color-white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    &.right-panel-active {
+      > .app-title {
+        color: $-color-white;
+      }
+      > .overlay-container {
+        transform: translateX(-100%);
+        > .overlay {
+          transform: translateX(50%);
+          > .overlay-panel.overlay-left { transform: translateX(0); }
+          > .overlay-panel.overlay-right { transform: translateX(20%); }
+        }
+      }
+      > .form-container.sign-in-container {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      > .form-container.sign-up-container {
+        padding: 0 !important;
+        transform: translateX(100%);
+        opacity: 1;
+        z-index: 5;
+        animation: show 0.6s;
+      }
+    }
+  }
+
+  .app-title {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    white-space: nowrap;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 1em;
+    text-transform: uppercase;
+    color: #333;
+    background-color: $-color-white;
+    border-radius: 3px;
+  }
+
+  > .container > .form-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+    background-color: $-color-white;
+    transition: all 0.6s ease-in-out;
+    // 输入框交互样式
+    .input-outline-x {
+      width: 100%;
+      position: relative;
+      margin: 8px 0;
+    }
+    .input-control {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+        outline: none;
+    }
+    .input-outline {
+      border: 1px solid #d0d0d5;
+      transition: border-color .15s;
+    }
+    .input-label {
+      position: absolute;
+      font-size: 14px;
+      line-height: 1.5;
+      left: 16px; top: 14px;
+      color: #a2a9b6;
+      padding: 0 2px;
+      transform-origin: 0 0;
+      pointer-events: none;
+      transition: all .15s;
+    }
+    /* 线框交互下有个白色背景 */
+    .input-outline ~ .input-label {
+      background-color: #fff;
+    }
+    /* 默认placeholder颜色透明不可见 */
+    .input-control:placeholder-shown::placeholder {
+      color: transparent;
+    }
+    &.sign-in-container {
+      left: 0;
+      width: 50%;
+      z-index: 2;
+      .btn { background-color: $overlay-from-bg; }
+      .btn.is-disable { background-color: lighten($overlay-from-bg, 30%); }
+      .input-outline:focus { border-color: $overlay-from-bg; }
+      /* 线框样式label定位 */
+      .input-outline:not(:placeholder-shown) ~ .input-label,
+      .input-outline:focus ~ .input-label {
+        padding: 0 4px;
+        color: $overlay-from-bg;
+        transform: scale(0.85) translate(-2px, -28px);
+      }
+    }
+    &.sign-up-container {
+      left: 0;
+      width: 50%;
+      opacity: 0;
+      z-index: 1;
+      .btn { background-color: $overlay-to-bg; }
+      .btn.is-disable { background-color: lighten($overlay-to-bg, 30%); }
+      .input-outline:focus { border-color: $overlay-to-bg; }
+      /* 线框样式label定位 */
+      .input-outline:not(:placeholder-shown) ~ .input-label,
+      .input-outline:focus ~ .input-label {
+        padding: 0 4px;
+        color: $overlay-to-bg;
+        transform: scale(0.85) translate(-2px, -28px);
+      }
+    }
+    .btn {
+      padding: 0 5em;
+      &.is-disable {
+        cursor: not-allowed;
+      }
+    }
+    .checkbox {
+      margin: 7px 0 15px;
+      width: 100%;
+      text-align: left;
+      &.is-active {
+        > input[type="checkbox"] {
+          border: none;
+          &:focus, &:hover { border: none; }
+          &::before { opacity: 1 !important; }
+        }
+        .remember {
+          font-style: italic
+        }
+      }
+      > input[type="checkbox"] {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 17px;
+        height: 17px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: all .2s;
+        cursor: pointer;
+        &:focus, &:hover {
+          border: 1px solid #ccc;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 1px;
+          left: -1px;
+          width: 22px;
+          height: 9px;
+          border-bottom: 2px solid #009688;
+          border-left: 2px solid #009688;
+          border-bottom-left-radius: 2px;
+          transform: rotate(-50deg);
+          opacity: 0;
+          transition: all .2s;
+        }
+      }
+      .remember {
+        position: relative;
+        top: -3px;
+        left: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  > .container > .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 10;
+    > .overlay {
+      background: $overlay-from-bg;
+      background: -webkit-linear-gradient(to right, $overlay-to-bg, $overlay-from-bg);
+      background: linear-gradient(to right, $overlay-to-bg, $overlay-from-bg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 0;
+      color: $-color-white;
+      position: relative;
+      left: -100%;
+      height: 100%;
+      width: 200%;
+        transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+    }
+    > .overlay > .overlay-panel {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 40px;
+      text-align: center;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+      &.overlay-left {
+        transform: translateX(-20%);
+        .app-title {
+          box-shadow: -15px -15px 0px $-color-white, 15px 15px 0px $-color-white;
+        }
+      }
+      &.overlay-right {
+        right: 0;
+        transform: translateX(0);
+        .app-title {
+          box-shadow: -15px 15px 0px $-color-white, 15px -15px 0px $-color-white;
+        }
+      }
+      .btn {
+        border: 1px solid $-color-white;
+      }
+    }
+  }
+
+  .btn {
+    padding: 0 2em;
+    height: 2.4em;
+    line-height: 2.4em;
+    color: $-color-white;
+    border-radius: 2em;
+    cursor: pointer;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2em;
+    color: inherit;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.4em;
+    color: inherit;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+  }
+  // input {
+  //   background-color: #fff;
+  //   border: none;
+  //   // padding: 12px 15px;
+  //   padding: 12px 25px 12px 15px;
+  //   margin: 8px 0;
+  //   width: 100%;
+  // }
+  .showPsw-wrapper{
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    .showPsw{
+      cursor: pointer;
+    }
+  }
+  > .copyright {
+    position: absolute;
+    bottom: 0;
+    padding: 3px 0;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: $-color-info;
+    // background-color: rgba(0, 0, 0, .35);
+  }
+  .box-group {
+    // display: flex;
+    // justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding-top: 78px;
+    .box-item {
+      padding: 10px;
+      width: 100%;
+      height: 120px;
+      text-align: center;
+      border: 1px dashed transparent;
+      cursor: pointer;
+      &:hover {
+        border-color: inherit;
+      }
+      .icon-svg {
+        font-size: 70px;
+        line-height: 0;
+        float: left;
+        margin-top: 10px;
+      }
+      span {
+        display: inline-block;
+        font-size: 16px;
+        // width: 80px;
+      }
+      .der{
+        margin: 0;
+        margin-top: 10px;
+        font-size: 13px;
+        float: left;
+        width: calc(100% - 70px);
+        padding-left: 10px;
+      }
+    }
+  }
+  .ps-group {
+    width: 100%;
+    height: 300px;
+    overflow-x: hidden;
+    .el-scrollbar__wrap {
+      overflow-x: hidden;
+    }
+    .ps-item {
+      margin: 15px 15px 0;
+      padding: 0 20px;
+      height: 60px;
+      line-height: 60px;
+      border: 1px solid $-color-border;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 5px;
+      &:hover {
+        border-color: $overlay-to-bg;
+      }
+      &.is-active {
+        color: $-color-white;
+        border-color: $overlay-to-bg;
+        background-color: $overlay-to-bg;
+      }
+      .ps-type {
+        background-color: $overlay-to-bg
+      }
+    }
+  }
+  .registered-class{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    > span{
+      color: #19A1AC;
+      cursor: pointer;
+    }
+  }
+  .img-class{
+    width: 65px;
+    height: 55px;
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    top: -2px;
+    > img{
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      border: 1px solid #7EC15D;
+    }
+  }
+  .login_header{
+    height: 13%;
+    background: #F5F6FA;
+    position: relative;
+    .header_main{
+      width: 80%;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      >img{
+        width: 55px;
+        position: absolute;
+        left: 0;
+      }
+      >p{
+        white-space: nowrap;
+        line-height: 40px;
+        padding: 0 1em;
+        text-transform: uppercase;
+        color: #333;
+        display: inline-block;
+        font-size: 25px;
+        border-radius: 3px;
+        position: absolute;
+        left: 70px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+  .login_main{
+    background: transparent url($login-new-bg-img) center top no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 74vh;
+    > .canvas {
+      height: 100%;
+      z-index: 1;
+    }
+    >.content{
+      width: 900px;
+      height: 340px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 10;
+      >.bg_title{
+        width: 430px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 175px;
+        >.login_img{
+          width: 410px;
+          display: inline-block;
+          float: right;
+        }
+        >.titile_des{
+          width: 100%;
+          font-size: 14px;
+          font-weight: 100;
+          line-height: 20px;
+          letter-spacing: 0.5px;
+          margin: 15px 0 10px;
+          text-align: right;
+          color: #fff;
+          display: inline-block;
+        }
+        >.title_mes{
+          display: inline-block;
+          border: 1px solid #61d4ff;
+          padding: 2px 10px 2px 30px;
+          background-color: #041d30;
+          color: #2ac0ff;
+          margin-top: 10px;
+          width: 100%;
+          text-align: right;
+          font-size: 16px;
+        }
+      }
+      >.login_class{
+        width: 320px;
+        height: 92%;
+        display: inline-block;
+        float: right;
+        position: relative;
+        >.login_title{
+          color: #000;
+          font-size: 20px;
+          background: #fff;
+          padding: 20px 15px 10px;
+          height: 70px;
+          >.login_title_name{
+            line-height: 1.8;
+            font-weight: 900;
+            margin-top: 10px;
+          }
+        }
+        >.login_content{
+          position: relative;
+          background: #fff;
+          padding: 0 20px 20px;
+          height: calc(100% - 70px);
+          input{
+            margin: 10px 0;
+          }
+          button{
+            margin-top: 15px;
+            width: 100%;
+          }
+          >.regire_new{
+            width: 62px;
+            height: 30px;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            color: #F29000;
+            font-size: 12px;
+            &:hover{
+              cursor: pointer;
+              color: #38a0f4;
+            }
+          }
+        }
+        >.login_img{
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          width: 40px;
+          height: 40px;
+        }
+        .pos-abstext-xs{
+          border: 1px solid #f3d995;
+          position: absolute;
+          top: 10px;
+          left: 130px;
+          right: 50px;
+          padding: 4px 10px;
+          color: #df9c1f;
+          background-color: #fefcee;
+          font-size: 0.8em;
+          >.pos-rel{
+            position: relative;
+            >.pos-abs{
+              position: absolute;
+              top: 3px;
+              right: -15px;
+              width: 8px;
+              height: 10px;
+              color: #df9c1f;
+              background-color: #fefcee;
+              border-top: 1px solid #f3d995;
+              border-right: 1px solid #f3d995;
+              transform: rotate(45deg);
+            }
+          }
+        }
+        .login_erweim{
+          position: absolute;
+          width: 275px;
+          height: 270px;
+          top:60px;
+          left:48%;
+          background: #fff;
+          border: 1px solid #303133;
+          border-radius: 4px;
+          padding: 5px;
+          font-size: 12px;
+          line-height: 1.2;
+          box-sizing: border-box;
+          text-align: center;
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.4s ease;
+          &>img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .login_erweim::after{
+          content:'';
+          position: absolute;
+          top: -5px;
+          right: 50%;
+          width: 8px;
+          height: 8px;
+          color: #303133;
+          background-color: #fefcee;
+          border-top: 1px solid #303133;
+          border-right: 1px solid #303133;
+          transform: rotate(-45deg);
+        }
+        >.login_img:hover~.login_erweim{
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+ 

@@ -1,0 +1,44 @@
+.mod-modal.ant-modal > .ant-modal-content {
+  $head-height: 42px;
+  $head-font-size: $-font-size;
+  $head-color: #333;
+  $head-bg: #F8F8F8;
+  $head-border-color: #F8F8F8;
+
+  min-width: 300px;
+
+  > .ant-modal-close {
+    .ant-modal-close-x {
+      width: $head-height;
+      height: $head-height;
+      line-height: $head-height;
+    }
+  }
+
+  // 对话框标题区
+  > .ant-modal-header {
+    padding: 10px 15px;
+    > .ant-modal-title {
+      line-height: inherit;
+      > .icon-svg {
+        display: inline-block;
+        margin-right: 7px;
+      }
+    }
+  }
+
+  // 对话框内容区
+  > .ant-modal-body {
+    padding: 0;
+    > .content {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // 对话框底部
+  > .ant-modal-footer {
+    padding: 10px 15px;
+    border-top: 1px solid $head-border-color;
+  }
+}

@@ -1,0 +1,15 @@
+/* icon-svg 图标
+-------------------------- */
+i.icon-svg {
+  position: relative;
+  display: inline-block;
+  > svg {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    min-width: 14px;
+    vertical-align: 0;
+    fill: currentColor;
+    overflow: hidden;
+  }
+}

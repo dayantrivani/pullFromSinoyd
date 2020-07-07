@@ -1,0 +1,92 @@
+/* 基础属性预设变量
+-------------------------- */
+
+// font 字体代码
+$-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei" ,"微软雅黑", Arial, sans-serif;
+
+// rem 基准单位
+$root-size: 10px;
+
+// 文字大小
+$-font-size: $root-size * 1.4;
+
+// 元素块间隔
+$-scope: 15px;
+
+// 弹框层级
+$-z-index: 100;
+
+// 过渡动效
+$-transition: .2s ease 0s !default;
+
+
+/* 框架布局尺寸
+-------------------- */
+$-head-height: $root-size * 4.5;    //  45px
+$-tags-height: $root-size * 3.2;    //  35px
+$-side-width: $root-size * 5.5;     //  55px
+$-side-max-width: $root-size * 21;  // 210px
+$-draw-width: $root-size * 22;      // 220px
+
+$-layout-shadow: 2px -1px 2px rgba(0, 21, 41, 0.2);
+$-head-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+
+// 导航
+$-nav-indent: 22px;
+$-nav-item-pad: 15px;
+
+
+/* Grid 纵向栅格布局
+-------------------- */
+$-grid-y-name: 'h';            // 区块纵向划分属性名
+$-grid-y-count: 12;            // 区块可划分等份（纵向）
+$-grid-x-space: $-scope;       // 区块左右间隔
+$-grid-y-space: $-grid-x-space; // 区块上下间隔
+
+
+/* 主题颜色定义
+-------------------- */
+// 基础配色
+$-color-white: #fff;
+$-color-black: #000;
+$-color-base: #515a6e;
+$-color-base-bg: #F5F7F9;
+$-color-link: #1890ff;
+$-color-sub: #808695;
+$-color-border: #d9d9d9;
+
+$-color-text: rgba(0, 0, 0, .65);       // 主文本色
+$-color-title: rgba(0, 0, 0, .85);      // 标题色
+$-color-secondary : rgba(0, 0, 0, .45); // 次文本色
+$-color-disabled : rgba(0, 0, 0, .25);  // 失效色
+
+// 颜色类型配色
+$-color-primary: #1890ff;
+$-color-success: #52c41a;
+$-color-warning: #faad14;
+$-color-danger: #f5222d;
+$-color-info: #b9bdc7;
+
+// 其他配色
+$-color-shadow: 0 1px 1px rgba(0, 0, 0, .15) !default;;
+
+// 主题配色(head, side, nav:active)
+$-theme-color: (
+  1: (#3A3F51, #23B7E5),
+  2: (#FFFFFF, #23B7E5),
+  3: (#F5222D, #F5222D),
+  4: (#FA541C, #FA541C),
+  5: (#FAAD14, #FAAD14),
+  6: (#52C41A, #52C41A),
+  7: (#23B7E5, #23B7E5),
+  8: (#1890ff, #1890ff),
+  9: (#7266BA, #7266BA),
+);
+
+
+/* 可在js中调用的scss全局变量，通过 $config. 调用
+-------------------- */
+:export {
+  scope: $-scope;
+  zIndex: $-z-index;
+}

@@ -1,0 +1,50 @@
+/* CodeDoc 布局容器
+-------------------------- */
+.mod-doc-code {
+  .i-md {
+    line-height: 2.5em;
+  }
+  &.ant-card {
+    > .ant-card-head {
+      min-height: auto;
+      .ant-card-head-title {
+        padding: 7px 0;
+        font-size: 15px;
+      }
+    }
+    > .ant-card-body {
+      padding: $-scope $-scope 0;
+      > .ant-collapse {
+        margin: $-scope #{-$-scope} 0;
+        border-top: 1px dashed #e8e8e8;
+        > .ant-collapse-item {
+          border-bottom: none;
+          pre * {
+            font-family: 'Consolas';
+          }
+        }
+        .ant-collapse-header {
+          padding: 7px $-scope;
+          user-select: none;
+          .anticon.anticon-right {
+            left: 90px;
+            line-height: normal;
+            transform: translateY(-44%);
+          }
+        }
+      }
+      > .ant-divider {
+        margin: $-scope 0;
+      }
+      > p code {
+        font-family: 'Consolas';
+        margin: 0 3px;
+        background: #f2f4f5;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+        border: 1px solid #eee;
+      }
+    }
+  }
+}

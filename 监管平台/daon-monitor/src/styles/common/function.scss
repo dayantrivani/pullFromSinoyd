@@ -1,0 +1,20 @@
+/* 取背景反色（黑白）
+[color：颜色; percent：颜色配比]
+-------------------------- */
+@function color-inverse($color, $percent: 35%) {
+  @if lightness($color) < 60 {
+    @return mix($color, $-color-white, $percent);
+  } @else {
+    @return mix($color, $-color-black, $percent);
+  }
+}
+
+/* 取亮化色彩
+[color：颜色]
+-------------------------- */
+@function color-light($color) {
+  @return mix($-color-white, $color, 80%);
+}
+@function color-lighter($color) {
+  @return mix($-color-white, $color, 90%);
+}

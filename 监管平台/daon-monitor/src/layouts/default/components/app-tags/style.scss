@@ -1,0 +1,142 @@
+$-tags-height: 32px !default;
+$-tags-color: #808695;
+$-tags-top: 3px;
+$-tags-btn: 1.1;
+
+.app-tags {
+  display: flex;
+  padding-top: $-tags-top;
+  width: 100%;
+  height: $-tags-height;
+  // line-height: $-tags-height - 1px;
+  color: $-color-base;
+  background-color: $-color-base-bg;
+  border-top: 1px solid color-light($-color-border);
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    margin-left: -1px;
+    width: 1px;
+    height: $-tags-height + 2px;
+    top: -1px;
+    left: -2px;
+    box-shadow: $-layout-shadow;
+    z-index: 1;
+    background-color: transparent;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: $-tags-height - 2px;
+    left: $-tags-height * $-tags-btn;
+    display: block;
+    width: calc(100% - #{($-tags-height * $-tags-btn) * 3});
+    height: 1px;
+    background-color: $-color-white;
+    z-index: 0;
+  }
+  > .container {
+    flex: 1;
+    position: relative;
+    line-height: $-tags-height - $-tags-top - 3px;
+    border-left: 1px solid $-color-base-bg;
+    overflow: hidden;
+    z-index: 1;
+    > ul.m-scoll {
+      position: absolute;
+      transition: left $-transition;
+      white-space: nowrap;
+    }
+    > ul.m-scoll > li {
+      position: relative;
+      display: inline-block;
+      margin-right: 5px;
+      padding: 0 10px;
+      color: $-tags-color;
+      background-color: $-color-white;
+      border-radius: 4px;
+      user-select: none;
+      border: 1px solid transparent;
+      border-radius: 4px 4px 0 0;
+      cursor: pointer;
+      &:hover {
+        color: $-color-base;
+        background-color: lighten($-color-base-bg, 3%);
+        &::before {
+          width: 100%;
+          background-color: $-color-primary;
+        }
+      }
+      &.is-active {
+        color: $-color-primary;
+        background-color: $-color-white;
+        border-bottom-color: $-color-white !important;
+      }
+      .anticon.anticon-close,
+      .anticon.anticon-lock {
+        font-size: .8em;
+        color: inherit;
+      }
+    }
+  }
+  .btn {
+    width: $-tags-height * $-tags-btn;
+    border-left: 1px solid $-color-base-bg;
+    line-height: inherit;
+    font-size: 1.2em;
+    color: $-color-base !important;
+    border-color: transparent !important;
+    &:hover {
+      background-color: $-color-base-bg !important;
+      cursor: pointer;
+    }
+    > i {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+.menu-context {
+  // 预定义变量
+  $-pad: 7px 12px;
+  $-font-size: 14px;
+  $-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  $-color: rgba(0, 0, 0, 0.65);
+  $-active-bg: #e6f7ff;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  outline: none;
+  list-style-type: none;
+  padding: 4px 0;
+  margin: 0;
+  text-align: left;
+  background-color: $-color-white;;
+  border-radius: 4px;
+  box-shadow: $-box-shadow;
+  background-clip: padding-box;
+
+  > li {
+    padding: $-pad;
+    margin: 0;
+    clear: both;
+    font-size: $-font-size;
+    font-weight: normal;
+    color: $-color;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+    line-height: $-font-size + 2px;
+    &:hover, &.is-active {
+      background-color: $-active-bg;
+    }
+    > .icon-svg {
+      width: 20px;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.jscode{
+  width: 100vw;
+  height: 100vh;
+  font-size: 12px!important;
+  background-color: white;
+  overflow: hidden;
+  header {
+    width: 100vw;
+    height: 8rem;
+    background-color: rgb(52, 52, 52);
+    color: #eae7e7;
+    padding: 2rem;
+    box-sizing: border-box;
+    font-size: .8rem;
+  }
+
+  .container {
+    width: 100vw;
+    height: calc(100vh - 8rem);
+    &>.title {
+      width: 100vw;
+      height: 8rem;
+      border-bottom: 1px solid #efefef;
+      padding: 2rem 2rem 1rem;
+      box-sizing: border-box;
+      &>h2 {
+        text-align: center;
+        margin: auto;
+        font-family: unset;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      &>p {
+        margin-top: 1.5rem;
+        color: #827b7b;
+        font-size: .8rem;
+      }
+    }
+  }
+  .content {
+    width: 100vw;
+    height: calc(100% - 8rem);
+  }
+
+  .download {
+    width: 96vw;
+    height: 16rem;
+    text-align: center;
+    margin: auto;
+    border-bottom: 2px dashed #efefef;
+    padding: 2rem;
+    box-sizing: border-box;
+    &>img {
+      width: 4rem;
+      height: 3rem;
+      display: block;
+      margin: 1rem auto;
+    }
+    &>a {
+      display: flex;
+      width: 13rem;
+      height: 3rem;
+      line-height: 3rem;
+      margin: 0.5rem auto 1rem;
+      border-radius: 2px;
+      background-color: #19bd9b;
+      color: white;
+      align-items: center;
+      padding: 0 1rem;
+      box-sizing: border-box;
+      justify-content: center;
+      &>svg {
+        margin-right: 5px;
+      }
+    }
+    &>p {
+      margin-top: 2rem;
+      font-size: .8rem;
+    }
+  }
+
+  .describtion {
+    width: 100vw;
+    height: calc(100% - 16rem);
+    &>div {
+      width: 95vw;
+      height: 8rem;
+      border: 1px solid #efefef;
+      background-color: #FAFAFA;
+      border-radius: 2px;
+      margin: 2rem auto;
+      display: flex;
+      padding: 0rem 1rem;
+      box-sizing: border-box;
+      &>h2 {
+        line-height: 8rem;
+        font-family: unset;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

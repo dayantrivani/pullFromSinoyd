@@ -1,0 +1,328 @@
+/* App Layout 应用布局
+-------------------------- */
+.app {
+
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  color: $-color-base;
+
+  // 是否展开侧栏
+  &.is-collapse {
+    & > .app-head > .app-brand {
+      width: $-side-max-width;
+    }
+    & > .app-side {
+      width: $-side-max-width;
+    }
+    & > .app-main {
+      margin-left: $-side-max-width;
+    }
+  }
+  // 启用多页签
+  &.app-tags-view {
+    // 固定多页签
+    &.app-tags-fixed.app-head-fixed {
+      > .app-main {
+        padding-top: $-tags-height;
+        > .app-tags {
+          position: fixed;
+          top: $-head-height;
+          z-index: $-z-index - 1;
+          width: calc(100% - #{$-side-width});
+          transition: width $-transition;
+        }
+      }
+      &.is-collapse > .app-main > .app-tags{
+        width: calc(100% - #{$-side-max-width});
+      }
+    }
+  }
+  // 固定顶栏
+  &.app-head-fixed {
+    padding-top: $-head-height;
+    > .app-head {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  }
+  // 置顶顶栏 :not(.app-side-fixed)
+  &.app-head-fixed.app-head-stick {
+    > .app-head {
+      box-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+      > .app-brand {
+        width: $-side-max-width !important;
+        box-shadow: none;
+        opacity: 1;
+      }
+      > .app-head-content {
+        margin-left: $-side-max-width;
+        box-shadow: none;
+      }
+    }
+    > .app-head > .app-head-content {
+      margin-left: 0;
+    }
+    &.app-side-fixed > .app-head > .app-head-content {
+      margin-left: $-side-max-width;
+    }
+  }
+  // 固定侧栏
+  &.app-side-fixed {
+    > .app-head {
+      > .app-brand {
+        position: fixed;
+      }
+      > .app-head-content {
+        margin-left: $-side-width;
+      }
+    }
+    > .app-side {
+      position: fixed;
+    }
+    > .app-main {
+      margin-left: $-side-width;
+    }
+    &.is-collapse {
+      > .app-head > .app-head-content {
+        margin-left: $-side-max-width;
+      }
+      > .app-main {
+        margin-left: $-side-max-width;
+      }
+    }
+  }
+  // 下滑时隐藏顶栏
+  &.app-head-fixed.app-head-hide {
+    > .app-head {
+      display: none;
+    }
+    &.app-tags-fixed > .app-main > .app-tags {
+      display: none;
+    }
+  }
+}
+
+/* 顶栏
+-------------------------- */
+.app > .app-head {
+  position: relative;
+  min-height: $-head-height;
+  line-height: $-head-height;
+  z-index: $-z-index + 1;
+  > .app-brand {
+    width: $-side-width;
+    transition: all $-transition;
+    z-index: 1;
+    color: transparent;
+  }
+  > .app-head-content {
+    transition: margin-left $-transition;
+  }
+}
+
+
+/* 侧栏
+-------------------------- */
+.app > .app-side {
+  float: left;
+  width: $-side-width;
+  transition: width $-transition;
+  z-index: $-z-index;
+}
+
+
+/* 主体内容区
+-------------------------- */
+.app > .app-main {
+  margin-left: $-side-width;
+  height: calc(100vh - #{$-head-height});
+  overflow: hidden;
+  transition: margin-left $-transition;
+}
+
+
+/* Theme 主题生成
+-------------------------- */
+@mixin set-theme-color($color) {
+  $theme-bg: nth($color, 1);
+  $head-bg: nth($color, 1);
+  $side-bg: nth($color, 2);
+  $active-bg: nth($color, 2);
+
+  $-side-dark-bg: mix($theme-bg, $-color-black, 12%);
+  $-side-light-bg: mix($theme-bg, $-color-white, 2%);
+
+  .app {
+    // layout top
+    > .app-head > .app-head-content {
+      // head content
+      color: color-inverse($head-bg);
+      background-color: $head-bg;
+      .btn {
+        color: color-inverse($head-bg, 3%);
+        border-color: lighten($head-bg, 5%);
+        &:hover, &.is-opened { background-color: darken($head-bg, 3%); }
+        .btn-more {
+          border-color: color-inverse($head-bg, 3%) transparent transparent;
+          &.mored {
+            border-color: transparent transparent color-inverse($head-bg, 3%);
+          }
+        }
+      }
+      .item-system .sys-item {
+        &:hover { color: color-inverse($head-bg, 3%); }
+        &.is-active {
+          color: color-inverse($head-bg, 3%);
+          // border-color: $active-bg;
+          background-color: darken($head-bg, 5%);
+        }
+      }
+      .toggle-side-line {
+        background-color: color-inverse($head-bg);
+      }
+      .ant-breadcrumb-link,
+      .ant-breadcrumb-separator {
+        color: color-inverse($head-bg, 3%);
+      }
+    }
+    &.app-head-stick > .app-head > .app-brand {
+      color: color-inverse($head-bg, 0%);
+      background-color: $head-bg;
+    }
+    // layout left
+    > .app-side .nav-side.ant-menu {
+      // 活动高亮
+      &.ant-menu-inline-collapsed {
+        > .ant-menu-item.ant-menu-item-selected,
+        > .ant-menu-submenu.ant-menu-submenu-selected {
+          background-color: transparent;
+          &::before { background-color: $active-bg; }
+        }
+      }
+      &.ant-menu-inline {
+        > .ant-menu-item.ant-menu-item-selected,
+        > .ant-menu-submenu.ant-menu-submenu-selected {
+          background-color: rgba($active-bg, .1);
+          &::before { background-color: $active-bg; }
+        }
+        > .ant-menu-submenu .ant-menu-item.ant-menu-item-selected {
+          color: color-inverse($active-bg, 0%) !important;
+        }
+      }
+    }
+    // layout tags
+    > .app-main > .app-tags {
+      &::after { background-color: $active-bg; }
+      > .container > .m-scoll > li {
+        border-bottom-color: $active-bg;
+        &.is-active {
+          color: $active-bg;
+          border-color: $active-bg;
+        }
+      }
+    }
+  }
+
+  &[themetype="dark"] {
+    // head title
+    .app > .app-side > .app-brand {
+      color: color-inverse($-side-dark-bg, 0%);
+      background-color: $-side-dark-bg;
+    }
+    .app > .app-side {
+      color: color-inverse($-side-dark-bg);
+      background-color: $-side-dark-bg;
+      .nav-side.ant-menu > .ant-menu-submenu > .ant-menu-sub {
+        background-color: mix($theme-bg, $-color-black, 7%);;
+      }
+      // 展开状态
+      .ant-menu-inline {
+        .ant-menu-submenu-selected,
+        .ant-menu-item.ant-menu-item-selected {
+          color: color-inverse($-side-dark-bg, 0%);
+          background-color: $active-bg;
+        }
+        .ant-menu-submenu.ant-menu-submenu-open.ant-menu-submenu-selected {
+          background-color: $-side-dark-bg;
+        }
+      }
+      // 折叠状态
+      .ant-menu-inline-collapsed {
+        .ant-menu-submenu-selected,
+        .ant-menu-item.ant-menu-item-selected {
+          color: color-inverse($-side-dark-bg, 0%);
+          background-color: $active-bg;
+        }
+      }
+    }
+    // nav-menu-popup
+    .ant-menu-submenu-popup.ant-menu-submenu-placement-rightTop {
+      // :active
+      .ant-menu-item.ant-menu-item-selected {
+        color: color-inverse($-side-dark-bg, 0%) !important;
+        background-color: $active-bg !important;
+      }
+      // :opened
+      .ant-menu-submenu.ant-menu-submenu-open {
+        color: color-inverse($-side-dark-bg, 0%) !important;
+      }
+    }
+  }
+  &[themetype="light"] {
+    // head title
+    .app > .app-side > .app-brand {
+      color: color-inverse($-side-light-bg, 0%);
+      background-color: $-side-light-bg;
+    }
+    .app > .app-side {
+      color: color-inverse($-side-light-bg);
+      background-color: $-side-light-bg;
+      // 展开状态
+      .ant-menu-inline {
+        .ant-menu-submenu-selected,
+        .ant-menu-item.ant-menu-item-selected {
+          color: color-inverse($-side-light-bg, 0%);
+          background-color: $active-bg;
+        }
+        .ant-menu-submenu.ant-menu-submenu-open.ant-menu-submenu-selected {
+          background-color: $-side-light-bg;
+        }
+      }
+      // 折叠状态
+      .ant-menu-inline-collapsed {
+        .ant-menu-submenu-selected,
+        .ant-menu-item.ant-menu-item-selected {
+          color: color-inverse($-side-light-bg, 0%);
+          background-color: $active-bg;
+        }
+      }
+    }
+    // nav-menu-popup
+    .ant-menu-submenu-popup.ant-menu-submenu-placement-rightTop {
+      // :active
+      .ant-menu-item.ant-menu-item-selected {
+        color: color-inverse($active-bg, 0%) !important;
+        background-color: $active-bg !important;
+      }
+      // :opened
+      .ant-menu-submenu.ant-menu-submenu-open {
+        color: color-inverse($-side-light-bg, 0%) !important;
+      }
+    }
+  }
+
+  // 返回顶部
+  .ant-back-top > .ant-back-top-content {
+    background-color: $active-bg;
+  }
+}
+
+// 遍历生成主题样式
+@each $name, $value in $-theme-color {
+  body[theme="#{$name}"] {
+    @include set-theme-color($value);
+  }
+}

@@ -1,0 +1,185 @@
+/* 导航样式
+--------- --------- --------- --------- ---------  */
+.app-side .nav-menu {
+  $item-height: 50px;
+  $icon-width: 50px;
+  user-select: none;
+
+  height: 100%;
+
+  > .btn-group {
+    display: flex;
+    height: $-tags-height + 1px;
+    > .btn-item {
+      flex: 1;
+      color: inherit;
+      cursor: pointer;
+      > i, > .icon-svg {
+        font-size: 1.3em;
+      }
+    }
+  }
+
+  > .menu-scroll {
+    height: 100%;
+    > .el-scrollbar__wrap { overflow-x: hidden; }
+    > .el-scrollbar__bar.is-horizontal { display: none; }
+  }
+  
+  .ant-menu > .ant-menu-item.ant-menu-item-selected,
+  .ant-menu > .ant-menu-submenu.ant-menu-submenu-selected {
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: transparent;
+    }
+  }
+
+  .ant-menu {
+    color: inherit;
+    background-color: transparent;
+    border-right: none !important;
+    &.ant-menu-dark {
+      background-color: inherit;
+      > li {
+        margin: 5px 0 0 !important;
+        background-color: transparent;
+      }
+    }
+    @include set-nav-indent();
+    > .ant-menu-submenu > .ant-menu-sub {
+      @include set-nav-indent(1);
+      > .ant-menu-submenu > .ant-menu-sub {
+        @include set-nav-indent(2);
+        > .ant-menu-submenu > .ant-menu-sub {
+          @include set-nav-indent(3);
+        }
+      }
+    }
+  }
+  .ant-menu-inline-collapsed {
+    width: $-side-width !important;
+    > .ant-menu-item,
+    > .ant-menu-submenu > .ant-menu-submenu-title {
+      width: $-side-width !important;
+      padding: 0 !important;
+      text-align: center;
+      overflow: hidden;
+      > .icon-svg, > span > .icon-svg {
+        display: inline-block;
+      }
+    }
+  }
+  .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+    border-right: none;
+  }
+  .ant-menu-item:active, .ant-menu-submenu-title:active {
+    background-color: inherit;
+  }
+  .nav-side {
+    > .ant-menu-submenu .ant-menu-item { 
+      height: $item-height - 18px !important;
+      line-height: $item-height - 18px !important;
+    }
+    // 第一级导航高亮
+    > .ant-menu-item.ant-menu-item-selected,
+    > .ant-menu-submenu.ant-menu-submenu-selected {
+      position: relative;
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        width: 4px;
+        height: $item-height - 10px;
+        background-color: transparent;
+      }
+      &::after {
+        border-right: none !important;
+      }
+    }
+  }
+}
+
+.ant-menu.ant-menu-vertical.ant-menu-sub.ant-menu-submenu-content {
+  margin-top: -4px;
+}
+
+/* 导航风格：蚂蚁线
+--------- --------- --------- --------- ---------  */
+.app-side .nav-menu .nav-side.ant-menu {
+  $-pad-y: 5px;
+  $-line-width: 8px;
+  $-line-offset-top: 17px;
+  $-line-offset-y: -20px;
+  $-line-offset-x: $-nav-indent;
+  ul {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  > li > ul {
+    padding: $-pad-y 0;
+    &::before,
+    ul::before,
+    li.ant-menu-item::before,
+    li > div:first-child::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: $-line-width;
+      z-index: 1;
+    }
+    &::before, ul::before {
+      top: $-line-offset-y - $-pad-y;
+      width: 1px;
+      height: 100%;
+      border-left: 1px dashed;
+    }
+    li.ant-menu-item::before, li > div:first-child::before {
+      width: $-line-width;
+      height: 1px;
+      border-bottom: 1px dashed;
+    }
+    &::before {
+      left: $-line-offset-x;
+    }
+    > li.ant-menu-item, > li > div:first-child {
+      position: relative;
+      &::before {
+        top: $-line-offset-top;
+        left: $-line-offset-x;
+      }
+      + ul {
+        &::before {
+          top: $-line-offset-y;
+          left: $-line-offset-x + $-nav-indent;
+        }
+        > li.ant-menu-item, > li > div:first-child {
+          &::before {
+            top: $-line-offset-top;
+            left: $-line-offset-x + $-nav-indent;;
+          }
+          + ul {
+            &::before {
+              top: $-line-offset-y;
+              left: $-line-offset-x + ($-nav-indent * 2);
+            }
+            > li.ant-menu-item, > ul > div:first-child {
+              &::before {
+                top: $-line-offset-top;
+                left: $-line-offset-x + ($-nav-indent * 2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
